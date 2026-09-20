@@ -1,0 +1,59 @@
+.modal-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  background-color:
+    rgba(0, 0, 0, 0.4);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal {
+  width: 420px;
+
+  max-width:
+    calc(100% - 40px);
+
+  padding: 24px;
+
+  background-color:
+    white;
+
+  border-radius: 12px;
+}
+
+.modal form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.modal input,
+.modal textarea {
+  padding: 10px;
+}
+
+.modal textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+
+  justify-content:
+    flex-end;
+
+  gap: 8px;
+
+  margin-top: 16px;
+}

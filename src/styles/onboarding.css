@@ -1,0 +1,23 @@
+.onboarding {
+  max-width: 480px;
+
+  margin: 120px auto;
+
+  padding: 24px;
+}
+
+.onboarding form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.onboarding input,
+.onboarding button {
+  padding: 12px;
+
+  font-size: 16px;
+}
