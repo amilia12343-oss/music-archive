@@ -82,6 +82,52 @@ function monthToIndex(value: string): number {
   return year * 12 + (month - 1)
 }
 
+type EraWithLane = {
+  era: Era
+  lane: number
+}
+
+function assignEraLanes(eras: Era[]): EraWithLane[] {
+  const sortedEras = [...eras].sort((a, b) => {
+    return (
+      monthToIndex(a.startMonth) -
+      monthToIndex(b.startMonth)
+    )
+  })
+
+  const laneEndMonths: number[] = []
+
+  return sortedEras.map((era) => {
+    const eraStart = monthToIndex(era.startMonth)
+    const eraEnd = monthToIndex(era.endMonth)
+
+    let assignedLane = -1
+
+    for (
+      let lane = 0;
+      lane < laneEndMonths.length;
+      lane++
+    ) {
+      if (eraStart > laneEndMonths[lane]) {
+        assignedLane = lane
+        break
+      }
+    }
+
+    if (assignedLane === -1) {
+      assignedLane = laneEndMonths.length
+      laneEndMonths.push(eraEnd)
+    } else {
+      laneEndMonths[assignedLane] = eraEnd
+    }
+
+    return {
+      era,
+      lane: assignedLane,
+    }
+  })
+}
+
 function App() {
   const [birthYear, setBirthYear] =
     useState('')
@@ -237,6 +283,11 @@ function App() {
     timelineStart +
     1
 
+  const monthWidth = 8
+
+  const timelineCanvasWidth =
+    totalMonths * monthWidth
+  
   const years =
     Array.from(
       {
@@ -249,6 +300,26 @@ function App() {
       (_, index) =>
         userProfile.birthYear +
         index,
+    )
+
+  const erasWithLanes = 
+    assignEraLanes(eras)
+
+  const laneCount =
+    erasWithLanes.length === 0
+      ? 1
+      : Math.max(
+          ...erasWithLanes.map(
+            ({ lane }) => lane,
+          ),
+        ) + 1
+
+  const laneHeight = 72
+
+  const eraCanvasHeight =
+    Math.max(
+      250,
+      laneCount * laneHeight + 40,
     )
 
   function handleCreateEra(
@@ -349,88 +420,89 @@ function App() {
       </header>
 
       <section className="timeline-wrapper">
-        <div className="timeline">
-          {/* 연도 */}
-
-          <div className="year-row">
-            {years.map(
-              (year) => {
+        <div className="timeline-scroll">
+          <div
+            className="timeline-canvas"
+            style={{
+              width: `${timelineCanvasWidth}px`,
+            }}
+          >
+            {/* 연도 */}
+            <div className="year-row">
+              {years.map((year) => {
                 const yearPosition =
-                  ((year * 12 -
-                    timelineStart) /
-                    totalMonths) *
-                  100
+                  (year * 12 -
+                    timelineStart) *
+                  monthWidth
 
                 return (
                   <div
                     className="year"
                     key={year}
                     style={{
-                      left: `${yearPosition}%`,
+                      left: `${yearPosition}px`,
                     }}
                   >
                     {year}
                   </div>
                 )
-              },
-            )}
-          </div>
+              })}
+            </div>
 
-          {/* Era */}
+            {/* Era */}
+            <div
+              className="era-area"
+              style={{
+                height: `${eraCanvasHeight}px`,
+                backgroundImage:
+                  'linear-gradient(to right, #eeeeee 1px, transparent 1px)',
+                backgroundSize:
+                  `${monthWidth * 12}px 100%`,
+              }}
+            >
+              {erasWithLanes.map(
+                ({ era, lane }) => {
+                  const eraStart =
+                    monthToIndex(
+                      era.startMonth,
+                    )
 
-          <div className="era-area">
-            {eras.map(
-              (era) => {
-                const eraStart =
-                  monthToIndex(
-                    era.startMonth,
-                  )
+                  const eraEnd =
+                    monthToIndex(
+                      era.endMonth,
+                    )
 
-                const eraEnd =
-                  monthToIndex(
-                    era.endMonth,
-                  )
+                  const left =
+                    (eraStart -
+                      timelineStart) *
+                    monthWidth
 
-                const left =
-                  ((eraStart -
-                    timelineStart) /
-                    totalMonths) *
-                  100
+                  const width =
+                    (eraEnd -
+                      eraStart +
+                      1) *
+                    monthWidth
 
-                const width =
-                  ((eraEnd -
-                    eraStart +
-                    1) /
-                    totalMonths) *
-                  100
-
-                return (
-                  <button
-                    type="button"
-                    className="era-bar"
-                    key={era.id}
-                    style={{
-                      left: `${left}%`,
-                      width: `${width}%`,
-                    }}
-                  >
-                    <strong>
+                  return (
+                    <button
+                      type="button"
+                      className="era-bar"
+                      key={era.id}
+                      style={{
+                        left: `${left}px`,
+                        width: `${width}px`,
+                        top: `${
+                          20 +
+                          lane * laneHeight
+                        }px`,
+                      }}
+                    >
                       {era.name}
-                    </strong>
-
-                    <span>
-                      {
-                        era.startMonth
-                      }
-                      {' ~ '}
-                      {
-                        era.endMonth
-                      }
-                    </span>
-                  </button>
-                )
-              },
-            )}
+                    </button>
+                  )
+                },
+              )}
+            </div>
           </div>
         </div>
       </section>
