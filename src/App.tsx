@@ -138,6 +138,9 @@ function App() {
   const [eras, setEras] =
     useState<Era[]>([])
 
+  const [selectedEraId, setSelectedEraId] =
+    useState<string | null>(null)
+  
   const [
     isEraModalOpen,
     setIsEraModalOpen,
@@ -304,6 +307,12 @@ function App() {
 
   const erasWithLanes = 
     assignEraLanes(eras)
+
+  const selectedEra =
+    eras.find(
+      (era) =>
+        era.id === selectedEraId,
+    ) ?? null
 
   const laneCount =
     erasWithLanes.length === 0
@@ -486,14 +495,20 @@ function App() {
                   return (
                     <button
                       type="button"
-                      className="era-bar"
+                      className={`era-bar ${
+                        selectedEraId === era.id
+                          ? 'selected'
+                          : ''
+                      }`}
                       key={era.id}
+                      onClick={() =>
+                        setSelectedEraId(era.id)
+                      }
                       style={{
                         left: `${left}px`,
                         width: `${width}px`,
                         top: `${
-                          20 +
-                          lane * laneHeight
+                          20 + lane * laneHeight
                         }px`,
                       }}
                     >
@@ -506,6 +521,24 @@ function App() {
           </div>
         </div>
       </section>
+
+      {selectedEra && (
+        <section className="era-detail">
+          <h2>{selectedEra.name}</h2>
+
+          <p>
+            {selectedEra.startMonth}
+            {' ~ '}
+            {selectedEra.endMonth}
+          </p>
+
+          {selectedEra.description && (
+            <p>
+              {selectedEra.description}
+            </p>
+          )}
+        </section>
+      )}
 
       {/* Era 생성 모달 */}
 

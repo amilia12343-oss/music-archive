@@ -81,3 +81,25 @@
 
   text-align: left;
 }
+
+.era-bar.selected {
+  outline: 3px solid #333333;
+  outline-offset: 2px;
+}
+
+.era-detail {
+  margin-top: 24px;
+  padding: 20px;
+
+  border: 1px solid #dddddd;
+
+  background-color: #ffffff;
+}
+
+.era-detail h2 {
+  margin-top: 0;
+}
+
+.era-detail p {
+  margin: 8px 0;
+}
