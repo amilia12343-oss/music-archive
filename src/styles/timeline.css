@@ -103,3 +103,10 @@
 .era-detail p {
   margin: 8px 0;
 }
+
+.era-detail-actions {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 16px;
+}

@@ -141,6 +141,9 @@ function App() {
   const [selectedEraId, setSelectedEraId] =
     useState<string | null>(null)
   
+  const [editingEraId, setEditingEraId] =
+    useState<string | null>(null)
+
   const [
     isEraModalOpen,
     setIsEraModalOpen,
@@ -331,7 +334,7 @@ function App() {
       laneCount * laneHeight + 40,
     )
 
-  function handleCreateEra(
+  function handleSaveEra(
     event: FormEvent<HTMLFormElement>,
   ) {
     event.preventDefault()
@@ -368,34 +371,68 @@ function App() {
       return
     }
 
-    const newEra: Era = {
-      id: crypto.randomUUID(),
-      name: newEraName,
-      startMonth:
-        newEraStartMonth,
-      endMonth:
-        newEraEndMonth,
-      description:
-        newEraDescription,
-      origin: 'CUSTOM',
-    }
+    if (editingEraId !== null) {
+      setEras((previousEras) =>
+        previousEras.map((era) => {
+          if (era.id !== editingEraId) {
+            return era
+          }
 
-    setEras(
-      (previousEras) => [
+          return {
+            ...era,
+            name: newEraName,
+            startMonth: newEraStartMonth,
+            endMonth: newEraEndMonth,
+            description: newEraDescription,
+          }
+        }),
+      )
+    } else {
+      const newEra: Era = {
+        id: crypto.randomUUID(),
+        name: newEraName,
+        startMonth: newEraStartMonth,
+        endMonth: newEraEndMonth,
+        description: newEraDescription,
+        origin: 'CUSTOM',
+      }
+
+      setEras((previousEras) => [
         ...previousEras,
         newEra,
-      ],
-    )
+      ])
+    }
+
+    closeEraModal()
+  }
+
+  function openCreateEraModal() {
+    setEditingEraId(null)
 
     setNewEraName('')
     setNewEraStartMonth('')
     setNewEraEndMonth('')
     setNewEraDescription('')
 
-    setIsEraModalOpen(false)
+    setIsEraModalOpen(true)
+  }
+
+  function openEditEraModal(era: Era) {
+    setEditingEraId(era.id)
+
+    setNewEraName(era.name)
+    setNewEraStartMonth(era.startMonth)
+    setNewEraEndMonth(era.endMonth)
+    setNewEraDescription(
+      era.description ?? '',
+    )
+
+    setIsEraModalOpen(true)
   }
 
   function closeEraModal() {
+    setEditingEraId(null)
+
     setNewEraName('')
     setNewEraStartMonth('')
     setNewEraEndMonth('')
@@ -420,9 +457,7 @@ function App() {
 
         <button
           type="button"
-          onClick={() =>
-            setIsEraModalOpen(true)
-          }
+          onClick={openCreateEraModal}
         >
           + 새로운 시절 만들기
         </button>
@@ -537,6 +572,17 @@ function App() {
               {selectedEra.description}
             </p>
           )}
+
+          <div className="era-detail-actions">
+            <button
+              type="button"
+              onClick={() =>
+                openEditEraModal(selectedEra)
+              }
+            >
+              수정
+            </button>
+          </div>
         </section>
       )}
 
@@ -546,12 +592,14 @@ function App() {
         <div className="modal-backdrop">
           <div className="modal">
             <h2>
-              새로운 시절 만들기
+              {editingEraId === null
+                ? '새로운 시절 만들기'
+                : '시절 수정하기'}
             </h2>
 
             <form
               onSubmit={
-                handleCreateEra
+                handleSaveEra
               }
             >
               <label htmlFor="eraName">
@@ -661,7 +709,9 @@ function App() {
                 </button>
 
                 <button type="submit">
-                  저장
+                  {editingEraId === null
+                    ? '만들기'
+                    : '수정 완료'}
                 </button>
               </div>
             </form>
