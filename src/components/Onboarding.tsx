@@ -42,6 +42,7 @@ function Onboarding({ currentYear, onComplete }: OnboardingProps) {
         당신의 음악 타임라인을
         만들어보세요.
       </p>
+      <p className="onboarding-hint">출생연도를 입력하면 학창 시절이 만들어집니다. 시절마다 기억나는 곡을 기록해보세요.</p>
 
       <form
         onSubmit={handleSubmit}

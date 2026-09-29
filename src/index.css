@@ -29,4 +29,32 @@ select {
 
 button {
   cursor: pointer;
+  padding: 10px 16px;
+  border: 1px solid #c6cbd2;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #222222;
+}
+
+body { line-height: 1.5; }
+input, textarea, select {
+  border: 1px solid #b8bec7;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #222222;
+}
+button:not(:disabled):hover { background-color: #f1f3f5; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #476a94;
+  outline-offset: 2px;
+}
+.onboarding button, .track-form button, .modal-actions button[type="submit"], .archive-header > button {
+  background: #293c53;
+  border-color: #293c53;
+  color: #ffffff;
+}
+.onboarding button:not(:disabled):hover, .track-form button:not(:disabled):hover,
+.modal-actions button[type="submit"]:hover, .archive-header > button:hover {
+  background: #3b526e;
 }

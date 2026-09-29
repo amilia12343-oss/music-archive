@@ -1,5 +1,7 @@
 .archive {
   padding: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .archive-header {
@@ -11,7 +13,14 @@
   align-items: center;
 
   margin-bottom: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
+
+.archive-header h1 { margin: 0 0 8px; }
+.archive-header p { margin: 0; color: #606975; }
+.timeline-hint { margin: 0 0 12px; color: #606975; font-size: 14px; }
+.year:first-child { transform: none; padding-left: 4px; }
 
 .timeline-wrapper {
   width: 100%;
@@ -24,6 +33,7 @@
   overflow: auto;
 
   border: 1px solid #cccccc;
+  border-radius: 8px;
 }
 
 .timeline-canvas {
@@ -83,7 +93,10 @@
 }
 
 .era-bar.selected {
-  outline: 3px solid #333333;
+  background-color: #e4edf7;
+  border-color: #476a94;
+  font-weight: 600;
+  outline: 3px solid #476a94;
   outline-offset: 2px;
 }
 
@@ -94,7 +107,12 @@
   border: 1px solid #dddddd;
 
   background-color: #ffffff;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
 }
+
+.era-period { color: #606975; font-size: 14px; }
+.era-bar.selected:hover { background-color: #d8e5f4; }
 
 .era-detail h2 {
   margin-top: 0;
@@ -127,10 +145,16 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1 1 220px;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .track-form input {
-  padding: 8px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
   max-width: 100%;
 }
 
@@ -152,3 +176,9 @@
   overflow-wrap: anywhere;
   min-width: 0;
 }
+
+.track-info { display: flex; flex-direction: column; gap: 2px; }
+.track-artist { color: #606975; font-size: 14px; }
+.track-delete { flex-shrink: 0; color: #963737; border-color: #dfbdbd; font-size: 14px; }
+.track-delete:hover { background-color: #fff3f3 !important; }
+.era-detail .track-empty { margin-top: 20px; padding: 16px; background: #f6f7f9; color: #606975; border-radius: 6px; }

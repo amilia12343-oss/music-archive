@@ -15,7 +15,7 @@ function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack }: EraDetail
     <section className="era-detail">
       <h2>{era.name}</h2>
 
-      <p>
+      <p className="era-period">
         {era.startMonth}
         {' ~ '}
         {era.endMonth}
@@ -34,7 +34,7 @@ function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack }: EraDetail
             onEdit(era)
           }
         >
-          수정
+          시절 수정
         </button>
       </div>
       <EraTracks key={era.id} tracks={tracks} onAdd={onAddTrack} onRemove={onRemoveTrack} />

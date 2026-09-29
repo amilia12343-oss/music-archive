@@ -36,6 +36,7 @@ function Timeline({
 
   return (
     <section className="timeline-wrapper">
+      <p className="timeline-hint">시절을 선택해 곡을 기록하세요. 좌우로 스크롤하면 다른 시기를 볼 수 있습니다.</p>
       <div className="timeline-scroll">
         <div
           className="timeline-canvas"
@@ -108,6 +109,8 @@ function Timeline({
                         : ''
                     }`}
                     key={era.id}
+                    aria-pressed={selectedEraId === era.id}
+                    title={era.name}
                     onClick={() =>
                       onSelectEra(era.id)
                     }
