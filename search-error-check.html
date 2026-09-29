@@ -1,0 +1,8 @@
+<!doctype html><html><body><div id="root"></div><script type="module">
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import EraTracks from '/src/components/EraTracks.tsx';
+window.fetch = async () => ({ ok: false, status: 503 });
+createRoot(document.getElementById('root')).render(React.createElement(EraTracks,{tracks:[],onAdd:()=>{},onRemove:()=>{}}));
+</script></body></html>
+

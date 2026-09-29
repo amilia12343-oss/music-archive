@@ -178,6 +178,10 @@
 }
 
 .track-info { display: flex; flex-direction: column; gap: 2px; }
+.music-search { padding-bottom: 16px; border-bottom: 1px solid #dddddd; }
+.music-search [role="status"] { color: #606975; font-size: 14px; }
+.music-search .track-list { max-height: 360px; overflow-y: auto; }
+.music-search .track-list button { flex-shrink: 0; }
 .track-artist { color: #606975; font-size: 14px; }
 .track-delete { flex-shrink: 0; color: #963737; border-color: #dfbdbd; font-size: 14px; }
 .track-delete:hover { background-color: #fff3f3 !important; }
