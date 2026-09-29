@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Onboarding from './components/Onboarding'
 import Timeline from './components/Timeline'
 import EraDetail from './components/EraDetail'
@@ -7,26 +7,25 @@ import type { Era, EraFormValues } from './types/era'
 import type { Track, EraTrack } from './types/track'
 import { formatMonth } from './utils/date'
 import { createSchoolEras } from './utils/era'
+import { loadArchive, saveArchive } from './utils/storage'
+import type { UserProfile } from './utils/storage'
 
 import './styles/onboarding.css'
 import './styles/timeline.css'
 import './styles/modal.css'
 
-type UserProfile = {
-  id: string
-  birthYear: number
-}
-
 function App() {
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(null)
-  const [eras, setEras] = useState<Era[]>([])
-  const [music, setMusic] = useState<{ tracks: Track[]; eraTracks: EraTrack[] }>({
-    tracks: [],
-    eraTracks: [],
-  })
+  const [initialData] = useState(loadArchive)
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(initialData.userProfile)
+  const [eras, setEras] = useState<Era[]>(initialData.eras)
+  const [music, setMusic] = useState<{ tracks: Track[]; eraTracks: EraTrack[] }>(initialData.music)
   const [selectedEraId, setSelectedEraId] = useState<string | null>(null)
   const [editingEraId, setEditingEraId] = useState<string | null>(null)
   const [isEraModalOpen, setIsEraModalOpen] = useState(false)
+
+  useEffect(() => {
+    saveArchive({ userProfile, eras, music })
+  }, [userProfile, eras, music])
 
   const now = new Date()
   const currentYear = now.getFullYear()

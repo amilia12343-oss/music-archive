@@ -44,7 +44,7 @@ Music Archive는 개인 포트폴리오용 실제 웹 서비스이자 React·Typ
 - 데스크톱뿐 아니라 모바일에서도 사용하기 편한 반응형 웹을 지향한다.
 - React + TypeScript + Vite + 일반 CSS를 사용한다. 버전은 `package.json`과 실제 코드로 확인한다.
 - 초기 MVP는 서버 없이 핵심 사용자 경험을 검증한다. 서버·로그인·사용자 계정을 먼저 만들지 않는다.
-- 첫 저장 수단은 `localStorage`를 우선 검토하는 방향이다. 아직 구현되지 않았고 저장 형식·복원·migration 세부 설계도 미정이다.
+- 지원용 v0.1은 `music-archive-data` localStorage 키에 프로필·Era·Track·EraTrack을 하나의 JSON 객체로 저장하고 앱 시작 시 복원한다. 임시 UI 상태는 저장하지 않으며 서버·마이그레이션·버전 관리는 구현하지 않는다.
 - 현재 상태 관리는 React `useState` 중심이다. Redux, Zustand, 복잡한 Context를 선제 도입하지 않는다.
 - React Router는 독립 화면·URL 탐색이 실제로 필요해지는 시점에 검토한다. 예상 화면이 있다는 이유만으로 즉시 설치하지 않는다.
 
@@ -109,7 +109,7 @@ Timeline UX의 현재 방향:
 | 예상 화면 | 제품 역할 | 현재 구현 여부 |
 | --- | --- | --- |
 | Home / Life Timeline | Era 탐색·선택·추가 | 타임라인 영역 구현. 독립 라우트는 없음. |
-| Era Detail | Era 정보와 해당 시기 음악 Archive | 이름·기간·설명·수정, 제목·아티스트 수동 입력과 Era별 곡 목록·삭제 구현. 메모리 상태만 사용. |
+| Era Detail | Era 정보와 해당 시기 음악 Archive | 이름·기간·설명·수정, 제목·아티스트 수동 입력과 Era별 곡 목록·삭제 구현. localStorage 저장·복원 구현. |
 | Seed Selection | 기억나는 대표곡 선택 | 미구현 |
 | Memory Reconstruction | 후보 음악에 대한 기억 확인 | 미구현 |
 | Unassigned | 기억나지만 시절이 불명확한 곡 보관·배정 | 미구현 |
@@ -230,7 +230,7 @@ type Track = {
 
 ### Era ↔ Track / EraTrack — Confirmed / Current Direction, 일부 구현
 
-지원용 v0.1은 `EraTrack { eraId, trackId }` 타입과 메모리 관계 목록을 사용한다. 해당 Era에서 삭제하면 그 관계를 제거한다. 동일 Track을 여러 Era에 연결하는 선택 UI와 저장·복원은 아직 없다.
+지원용 v0.1은 `EraTrack { eraId, trackId }` 타입과 메모리 관계 목록을 사용한다. 해당 Era에서 삭제하면 그 관계를 제거한다. localStorage로 저장·복원한다. 동일 Track을 여러 Era에 연결하는 선택 UI는 아직 없다.
 
 Track과 Era는 **다대다 관계**다. 한 Track은 여러 Era에 포함될 수 있고 한 Era에는 여러 Track이 포함될 수 있다. 중학교 때 듣던 곡을 대학 시절 다시 들었다면 두 Era에 모두 기록할 수 있다. 대학 Era는 사용자가 직접 만들 수 있으며 자동 생성 대상에서만 제외된다.
 

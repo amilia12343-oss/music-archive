@@ -1,6 +1,6 @@
 # Music Archive — Roadmap
 
-최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 추가·목록·삭제 완료. 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
+최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리와 localStorage 저장·복원 완료. 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
 
 코드 확인일: 2026-09-22. 기준은 `888ac47` (`feat: implement era timeline and management`) 이후의 현재 작업 폴더이며, 아래 리팩터링 변경은 아직 커밋되지 않았다.
 
@@ -15,7 +15,7 @@
 
 위 표기는 구현 진행 상태다. 제품 결정의 Confirmed / Current Direction, Candidate / Needs Decision, Later / Out of MVP, Superseded / Historical Alternative와 구분한다. 과거 대안의 상세 내용은 DECISIONS에만 기록하며 예정 기능으로 복구하지 않는다.
 
-현재는 **Era 관리·Timeline 기반과 App 구조 분리가 완료된 Phase 1**이다. 컴포넌트 4개, Era 타입, 날짜·Era 유틸리티 분리를 구현했고 타입 검사·린트·빌드 및 일부 브라우저 흐름을 확인했다. 검증 범위는 9절에 기록한다. Era 삭제·폼 검증 개선·저장 기능은 아직 구현하지 않았다. 이번 문서 갱신에서는 기능 코드·UI를 수정하거나 commit/push하지 않는다.
+리팩터링 당시에는 **Era 관리·Timeline 기반과 App 구조 분리가 완료된 Phase 1**이다. 컴포넌트 4개, Era 타입, 날짜·Era 유틸리티 분리를 구현했고 타입 검사·린트·빌드 및 일부 브라우저 흐름을 확인했다. 검증 범위는 9절에 기록한다. 당시 Era 삭제·폼 검증 개선·저장 기능은 구현하지 않았다. 이번 문서 갱신에서는 기능 코드·UI를 수정하거나 commit/push하지 않는다.
 
 ## 2. 실제 구현 완료
 
@@ -61,9 +61,9 @@
 
 ### 아직 없는 기능
 
-Era 삭제, 출생연도 재설정 UI, 저장·복원, Seed, 검색, 추천·피드백, Unassigned, Playlist, 외부 API, 서버·로그인·계정은 구현되지 않았다. 새로고침하면 모든 데이터가 사라진다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
+Era 삭제, 출생연도 재설정 UI, Seed, 검색, 추천·피드백, Unassigned, Playlist, 외부 API, 서버·로그인·계정은 구현되지 않았다. 프로필·Era·곡은 localStorage로 복원한다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
 
-RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** EraTrack은 v0.1에서 최소 관계 타입과 메모리 목록을 구현했다. 저장·복원은 미구현이다.
+RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** EraTrack은 v0.1에서 최소 관계 타입과 메모리 목록을 구현했다. localStorage 저장·복원을 구현했다.
 
 ## 3. 현재 폴더와 코드 구조
 
@@ -175,7 +175,7 @@ node node_modules/typescript/bin/tsc -p tsconfig.node.json --noEmit --incrementa
 | 짧은 Era | 한 달 계산 너비 8px에 비해 좌우 패딩 합계 16px와 border가 큼 | 표시·클릭 영역을 실제 화면에서 검토 |
 | 첫 연도 눈금 | 첫 눈금에 `translateX(-50%)` 적용 | 왼쪽 잘림 여부를 브라우저에서 확인 |
 | 진행 중 학교 기간 | 생성 시 현재 월을 종료값으로 저장할 뿐 자동 연장 상태 없음 | 저장·복원 구현 전 정책 검토 |
-| 지속성 없음 | state만 사용, 새로고침 시 초기화 | Phase 2 |
+| 지속성 | localStorage 저장·복원 구현 | Phase 2 완료 |
 | 계산 테스트 없음 | 날짜·학교 생성·겹침 배치 테스트 없음 | 분리 후 필요한 경계 조건 중심 검토 |
 | 기본 템플릿 잔재 | 기본 README, 미사용 에셋, 한국어 UI와 HTML 언어 불일치 | 별도 작은 정리 작업 |
 
@@ -210,7 +210,7 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 | 단계 | 상태 | 작업 및 완료 기준 |
 | --- | --- | --- |
 | Phase 1 — Era 기반 안정화 | 일부 완료 / 나머지 예정 | 생성·선택·수정·Timeline과 App 구조·타입·util 분리 완료. Era 삭제, 폼 검증 개선, 모바일·반응형 검증은 남아 있음. |
-| Phase 2 — 지속성 | 예정 | localStorage 우선 검토, 저장·앱 시작 시 복원, 데이터 구조·손상 데이터 처리 결정. 필요한 경우만 migration 전략 검토. 새로고침 후 복원 확인. |
+| Phase 2 — 지속성 | 완료 | 프로필·Era·Track·관계를 단일 JSON으로 저장·복원. 누락/잘못된 값과 저장 예외 처리. 임시 UI 상태·migration·버전 관리는 제외. |
 | Phase 3 — 음악 Archive 기반 | 일부 완료 | v0.1 최소 Track·EraTrack, Era별 수동 곡 추가·목록·삭제 완료. 기존 Track을 여러 Era에 연결하는 UI는 미구현. 미사용 관계 metadata는 추가하지 않음. |
 | Phase 4 — Seed | 예정 | 당시 인기곡 후보·검색·개인 대표곡 선택, 곡 정보와 복원 중인 Era의 시절 라벨/맥락 표시, 최소 약 5곡 UX와 최대 제한 없음. 정확한 최소 기준·진행 제한·데이터 공급 방식은 먼저 결정. |
 | Phase 5 — Memory Reconstruction | 예정 | 약 30곡을 함께 탐색하는 밀도 높은 목록/표, 아티스트 이름 오름차순·그룹화 없음. 평가 상태/아이콘과 범례, 선택 항목의 세 액션. `RecommendationFeedback { eraId, trackId, status }`로 Era별 반응 기록, 미평가에는 레코드 미생성. 추천 더 보기와 같은 Era의 평가곡 제외. 발매 시기만으로 후보를 제한하지 않음. |
@@ -270,3 +270,12 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 모든 화면 크기·가로/세로 스크롤 조작, 모든 날짜 경계와 입력 오류, 수정 전후 화면의 픽셀 단위 비교를 검증한 것은 아니다. 자동화된 회귀 테스트 파일도 추가하지 않았다. 확인한 흐름의 결과를 전체 동작 보장으로 확대하지 않는다.
 
 Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. 기록 요청이 있다면 같은 날짜에 작은 기록을 여러 개 만들기보다 하루 종합 기록 하나와 최종 반영 시각을 선호한다. Codex 개발의 직접적인 기준은 repository 문서다.
+
+### 2026-09-29 — localStorage 저장·복원
+
+- `src/utils/storage.ts` 추가: 키 `music-archive-data`, 구조 `{ userProfile, eras, music: { tracks, eraTracks } }`. UserProfile 타입은 App과 유틸리티에서 공유한다.
+- App은 lazy state 초기화로 복원하고 `useEffect`로 확정 데이터 변경을 저장한다. 선택 Era·모달·입력값은 저장하지 않는다. 학교 Era 기간은 저장된 값 그대로 유지한다.
+- 누락 목록은 빈 배열, 유효하지 않은 항목·없는 Era/Track을 가리키는 관계는 제외한다. 프로필이 유효하지 않거나 JSON/읽기에 실패하면 초기 화면으로 시작한다. 유효한 프로필이 없을 때는 저장을 건너뛰며, 쓰기 실패는 콘솔 경고 후 메모리 동작을 유지한다.
+- 검증: lint와 타입 검사 포함 build 통과. 별도 로컬 테스트 주소에서 빈 상태 → 온보딩 → 사용자 Era → 곡 2개 → 새로고침 복원 → 곡 1개 삭제 → 새로고침 → Era 이름·설명 수정 → 새로고침 유지까지 브라우저 확인. 선택 상태가 복원되지 않는 것도 확인.
+- 저장 유틸리티 검사: 빈 값, 손상 JSON, 누락 필드, 잘못된 항목, 끊어진 관계, 저장/복원 왕복, 읽기·쓰기 예외 통과. 실제 브라우저 용량 초과·저장 권한 차단은 재현하지 않았다.
+- 새 패키지·UI 변경·commit/push 없음.

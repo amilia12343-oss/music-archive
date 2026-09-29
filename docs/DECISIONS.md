@@ -43,10 +43,10 @@
 
 ### D-05 — 백엔드 없이 시작, localStorage 우선 검토
 
-- **상태:** 서버 없는 초기 MVP는 Confirmed. localStorage는 Current Direction, 세부 저장 설계는 Open.
-- **결정:** 첫 저장 수단으로 localStorage를 우선 검토한다. 서버·로그인·계정은 먼저 만들지 않는다. Supabase 등 DB는 Later다.
+- **상태:** 서버 없는 초기 MVP는 Confirmed. localStorage는 Current Direction, v0.1 저장·복원 구현 완료.
+- **결정:** 첫 저장 수단으로 localStorage를 사용한다. 서버·로그인·계정은 먼저 만들지 않는다. Supabase 등 DB는 Later다.
 - **이유:** 백엔드 구축보다 기억 복원 경험 검증을 먼저 하고, 저장·복원도 작은 단계로 학습한다.
-- **영향:** 현재 저장 기능은 없다. 형식·복원·오류 처리·migration은 O-07에서 필요에 맞게 결정한다.
+- **영향:** `music-archive-data`에 `{ userProfile, eras, music: { tracks, eraTracks } }`를 저장한다. 최초 state 초기화에서 복원하고 데이터 변경 시 Effect로 저장한다. 누락 목록은 빈 배열, 잘못된 항목·끊어진 관계는 제외한다. 프로필이 없거나 잘못되면 온보딩으로 시작한다. 읽기/JSON 오류는 초기 상태로 처리하고 쓰기 실패는 콘솔 경고 후 메모리 동작을 유지한다. 버전·migration은 이번 범위 밖이다.
 
 ### D-06 — Era-first 기억 복원
 
@@ -113,7 +113,7 @@
 
 ### D-15 — EraTrack으로 Era와 Track의 다대다 관계 표현
 
-- **상태:** 다대다 관계는 Confirmed. EraTrack 관계 모델 사용은 Current Direction. 지원용 v0.1에서 최소 타입과 메모리 관계 목록 구현. 저장 방식과 기존 곡을 여러 Era에 배정하는 UI는 미구현.
+- **상태:** 다대다 관계는 Confirmed. EraTrack 관계 모델 사용은 Current Direction. 지원용 v0.1에서 최소 타입과 메모리 관계 목록 구현. localStorage 저장·복원 구현. 기존 곡을 여러 Era에 배정하는 UI는 미구현.
 - **결정:** Track 자체와 Era에 저장된 관계를 분리하고 `EraTrack { eraId, trackId }` 관계 개념을 사용한다. 한 Track은 여러 Era에, 한 Era에는 여러 Track이 포함될 수 있다. 관계 모델 자체를 단순한 가능성으로 두지 않는다.
 - **이유:** 한 번의 청취 시기로 음악의 개인적 의미를 제한하지 않는다.
 - **영향:** 가장 단순한 구현·저장 방식을 실제 구현 시 선택한다. `addedFrom`, `memo`, `evidence`, 불필요한 recommendation metadata와 현재 사용하지 않는 관계 metadata는 미리 넣지 않는다. 실제 기능에서 필요할 때만 검토한다.
@@ -174,7 +174,7 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | O-04 | 사용자 방향 + 설계 검토: RecommendationFeedback 구현 | 모델 유지, eraId·trackId·status의 최소 의미, 세 status와 미평가 레코드 미생성은 Current Direction. 추가 필드·별도 ID·timestamp·DB schema·persistence, 평가 변경/취소와 미평가 재노출 정책만 미정. | 피드백 구현 전 |
 | O-05 | 사용자 방향 + 설계 검토: EraTrack 구현·Seed | EraTrack 다대다 관계와 한 Track 여러 Era는 현재 방향. 구체적 타입·저장 형식·중복 처리, Seed 선택이 청취 확인을 겸할지, Track 결측값 처리 미정. | 음악 Archive·Seed 구현 전 |
 | O-06 | 사용자 방향 + 설계 검토: UnassignedTrack 구현 | 별도 UnassignedTrack 모델은 현재 방향. `sourceEraId`는 발견 맥락 후보이며 청취 Era가 아님. 구체적 타입·저장 방식, 여러 출처, 중복 저장, 출처 Era 삭제, 배정 후 잔류/제거 정책 미정. | 최소 시절 미정 보관 구현 전 |
-| O-07 | 사용자 방향 + 코드 검토: 저장·진행 중 Era | localStorage 우선. 저장 키·형식·복원 검증·실패 처리·필요 시 migration, 현재 월로 잘린 학교 Era의 향후 연장 정책 미정. | 지속성 구현 전 |
+| O-07 | 사용자 방향 + 코드 검토: 저장·진행 중 Era | 저장 키·형식·기본 복원 검증·실패 처리는 D-05로 결정하고 구현했다. 학교 Era 기간은 저장된 값 그대로 복원하며 자동 연장은 하지 않는다. 향후 연장 정책은 미정. migration은 이번 범위 밖이다. | 지속성 구현 전 |
 | O-08 (Resolved) | 앞선 구조 검토: 리팩터링 경계 | 2026-09-22 D-21로 확정하고 구현 완료. 추적 이력을 위해 행을 유지하며 더 이상 Open Decision이 아니다. | 해결됨: D-21 |
 | O-09 | 사용자 방향 + 설계 검토: 내부 Playlist·라우팅 | Playlist가 Era Archive의 표현인지 별도 모델인지, 독립 URL·라우터가 필요한 시점은 미정. | 해당 화면의 실제 확장 시 |
 
