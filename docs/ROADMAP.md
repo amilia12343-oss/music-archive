@@ -1,6 +1,6 @@
 # Music Archive — Roadmap
 
-최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리와 localStorage 저장·복원 완료. 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
+최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리, localStorage 저장·복원, iTunes Search API 기반 검색·선택 추가 완료. Live Demo 배포 완료(사용자 확인 및 README 기준). 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
 
 코드 확인일: 2026-09-22. 기준은 `888ac47` (`feat: implement era timeline and management`) 이후의 현재 작업 폴더이며, 아래 리팩터링 변경은 아직 커밋되지 않았다.
 
@@ -32,6 +32,7 @@
 | 겹침 배치 | 시작 월 순으로 정렬한 복사본을 사용하고 겹치는 Era를 다른 lane에 배치 | `utils/era.ts`의 `assignEraLanes` |
 | 스크롤 | 가로·세로 스크롤과 상단에 유지되는 연도 행 | `timeline.css`의 `overflow: auto`, `position: sticky` |
 | 모달 | 생성·수정 공용 입력 화면, 취소와 저장 후 닫기·입력 초기화 | App의 조건부 렌더링, `EraModal.tsx`의 로컬 상태, `modal.css` |
+| 음악 검색 | iTunes Search API로 최대 10곡 검색, 선택한 곡을 기존 Track 추가 흐름으로 현재 Era에 저장. 직접 입력 유지 | `services/musicSearch.ts`, `types/musicSearch.ts`, `EraTracks.tsx`, App의 `handleAddTrack` |
 
 ### 날짜와 배치의 현재 규칙
 
@@ -61,7 +62,7 @@
 
 ### 아직 없는 기능
 
-Era 삭제, 출생연도 재설정 UI, Seed, 검색, 추천·피드백, Unassigned, Playlist, 외부 API, 서버·로그인·계정은 구현되지 않았다. 프로필·Era·곡은 localStorage로 복원한다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
+Era 삭제, 출생연도 재설정 UI, Seed, 추천·피드백, Unassigned, Playlist, Spotify·Apple Music 정식 계정 연동, 서버·로그인·계정은 구현되지 않았다. 기본 곡 검색 API는 지원용 v0.1에서 선행 구현했다. 프로필·Era·곡은 localStorage로 복원한다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
 
 RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** EraTrack은 v0.1에서 최소 관계 타입과 메모리 목록을 구현했다. localStorage 저장·복원을 구현했다.
 
@@ -88,9 +89,14 @@ music-archive/
 │  │  ├─ Onboarding.tsx
 │  │  ├─ Timeline.tsx
 │  │  ├─ EraDetail.tsx
-│  │  └─ EraModal.tsx
+│  │  ├─ EraModal.tsx
+│  │  └─ EraTracks.tsx
+│  ├─ services/
+│  │  └─ musicSearch.ts
 │  ├─ types/
-│  │  └─ era.ts
+│  │  ├─ era.ts
+│  │  ├─ track.ts
+│  │  └─ musicSearch.ts
 │  ├─ utils/
 │  │  ├─ date.ts
 │  │  └─ era.ts
@@ -120,6 +126,9 @@ music-archive/
 | `src/components/Timeline.tsx` | 연도·막대·스크롤 영역과 표시용 좌표·크기를 계산하고 선택 ID를 전달한다. |
 | `src/components/EraDetail.tsx` | 선택한 Era 정보와 수정 버튼을 표시한다. |
 | `src/components/EraModal.tsx` | 생성·수정 임시 입력과 기존 검증을 담당하고 `onSave`로 입력값을 전달한다. |
+| `src/components/EraTracks.tsx` | 공통 검색 결과 표시·선택 추가, 직접 입력·곡 목록·삭제. 검색 상태는 임시 UI 상태. |
+| `src/services/musicSearch.ts` | iTunes HTTP GET 요청과 JSON 응답의 공통 검색 결과 변환. |
+| `src/types/musicSearch.ts` | `MusicSearchResult`: `externalId`, `title`, `artist`. |
 | `src/types/era.ts` | `Era`, `EraFormValues` 공용 타입. |
 | `src/utils/date.ts` | `monthToIndex`, 로컬 날짜를 월 문자열로 만드는 `formatMonth`. |
 | `src/utils/era.ts` | `createSchoolEras`, `assignEraLanes`와 내부 결과 타입. |
@@ -130,7 +139,7 @@ music-archive/
 | `vite.config.ts` | React 플러그인을 적용하는 기본 Vite 설정. |
 | `tsconfig*.json` | 앱과 Vite 설정 코드의 TypeScript 검사 범위·옵션. |
 | `eslint.config.js` | TypeScript·Hooks·React Refresh 권장 규칙. |
-| `README.md` | 아직 React + TypeScript + Vite 기본 템플릿 설명. |
+| `README.md` | v0.1 소개·실행 방법·검색 기능·Live Demo 안내. |
 
 `components/`, `types/`, `utils/` 분리를 완료했다. 테스트·서버 구조는 아직 없다. `src/assets/`의 파일들과 `public/icons.svg`는 현재 앱에서 참조하지 않는다. `public/favicon.svg`는 사용한다.
 
@@ -219,13 +228,13 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 
 Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Phase 6 일부를 앞당길 수 있다. 시절 미정 선택을 유실시키는 중간 구현을 만들지 않도록 해당 기능 시작 시 범위를 정한다. 전체 Unassigned 화면은 이후 확장할 수 있다.
 
-검색·인기곡·추천에 사용할 데이터가 아직 없다. 외부 API 연동은 Later이므로 샘플/로컬 데이터 등 초기 검증 방식은 [DECISIONS](DECISIONS.md)의 O-03에서 결정한다. 샘플 후보를 실제 개인 청취 이력이나 검증된 과거 차트로 제시해서는 안 된다.
+지원용 v0.1의 기본 곡 검색은 iTunes Search API로 선행 구현했다. 이는 Seed·추천 시스템 구현 완료를 뜻하지 않으며 기존 Phase 순서와 장기 우선순위를 바꾸지 않는다. 당시 인기곡·추천용 데이터 공급과 초기 검증 방식은 [DECISIONS](DECISIONS.md)의 O-03에서 결정한다. 샘플 후보를 실제 개인 청취 이력이나 검증된 과거 차트로 제시해서는 안 된다.
 
 추천은 Seed와 사용자 피드백을 우선한다. 같은 아티스트·비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate recommendation signals이며 Phase 5의 필수 알고리즘이나 선제 수집 필드로 확정하지 않는다. 추천은 한 곡씩 넘기는 UI가 아니며, 각 항목의 앨범 이미지·제목·아티스트·발매 시기·평가 상태를 목록에서 확인하는 방향이다. 별도 정렬 선택 기능은 현재 범위에 추가하지 않는다.
 
 ### Later
 
-외부 음악 API, Spotify·Apple Music 등 서비스 연동·내보내기·과거 기록 가져오기, 서버·Supabase·로그인·계정, 공유·소셜, 통계·추천 알고리즘 고도화, 비슷한 사용자들의 선택 기반 추천/collaborative filtering, Moment/Event, 모바일 앱. 좋아하는 곡의 장르 자동분류, Era별 장르 통계·취향 변화도 핵심 복원 경험보다 뒤에 둔다. `primaryGenre` 사용은 자동분류 시스템 구현을 뜻하지 않는다.
+v0.1 기본 검색을 넘어서는 외부 음악 API 확장, Spotify·Apple Music 등 정식 서비스 연동·내보내기·과거 기록 가져오기, 서버·Supabase·로그인·계정, 공유·소셜, 통계·추천 알고리즘 고도화, 비슷한 사용자들의 선택 기반 추천/collaborative filtering, Moment/Event, 모바일 앱. 좋아하는 곡의 장르 자동분류, Era별 장르 통계·취향 변화도 핵심 복원 경험보다 뒤에 둔다. `primaryGenre` 사용은 자동분류 시스템 구현을 뜻하지 않는다.
 
 ## 8. 제공된 설명과 실제 코드의 차이
 
@@ -279,3 +288,11 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - 검증: lint와 타입 검사 포함 build 통과. 별도 로컬 테스트 주소에서 빈 상태 → 온보딩 → 사용자 Era → 곡 2개 → 새로고침 복원 → 곡 1개 삭제 → 새로고침 → Era 이름·설명 수정 → 새로고침 유지까지 브라우저 확인. 선택 상태가 복원되지 않는 것도 확인.
 - 저장 유틸리티 검사: 빈 값, 손상 JSON, 누락 필드, 잘못된 항목, 끊어진 관계, 저장/복원 왕복, 읽기·쓰기 예외 통과. 실제 브라우저 용량 초과·저장 권한 차단은 재현하지 않았다.
 - 새 패키지·UI 변경·commit/push 없음.
+
+### 2026-09-29 — 지원용 v0.1 음악 검색 구현 반영
+
+- `searchMusic(query)`는 `URLSearchParams`로 `term`, `media=music`, `entity=song`, `limit=10`을 구성해 iTunes Search API에 HTTP GET 요청한다. country·인증·새 패키지는 추가하지 않았다. `response.ok`와 JSON 구조를 검사한다.
+- `trackId` → 문자열 `externalId`, `trackName` → `title`, `artistName` → `artist`로 변환한다. EraTracks는 공통 결과만 사용하며 검색 전·중·결과 있음·없음·실패를 표시한다. 빈 검색어는 요청하지 않는다.
+- 검색 선택과 직접 입력 모두 기존 `onAdd(title, artist)` → App의 `handleAddTrack`을 사용한다. 내부 ID는 `crypto.randomUUID()`이며 externalId는 Track/localStorage에 저장하지 않는다. 검색어·결과·상태도 저장하지 않는다.
+- 기본 Timeline은 구현되어 있으며 Seed·추천·Unassigned·Life Timeline의 추가 확장과 정식 서비스 계정 연동은 향후 계획으로 유지한다. [Live Demo](https://music-archive-cyan.vercel.app/)는 사용자와 README의 배포 완료 정보를 반영했다.
+- 이번 작업은 관련 코드·README와 문서 상태를 대조한 문서 갱신이다. 배포 사이트 실행이나 앱 테스트는 재수행하지 않았다.
