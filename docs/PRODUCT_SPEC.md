@@ -109,7 +109,7 @@ Timeline UX의 현재 방향:
 | 예상 화면 | 제품 역할 | 현재 구현 여부 |
 | --- | --- | --- |
 | Home / Life Timeline | Era 탐색·선택·추가 | 타임라인 영역 구현. 독립 라우트는 없음. |
-| Era Detail | Era 정보와 해당 시기 음악 Archive | 이름·기간·설명·수정만 구현. 음악 목록은 없음. |
+| Era Detail | Era 정보와 해당 시기 음악 Archive | 이름·기간·설명·수정, 제목·아티스트 수동 입력과 Era별 곡 목록·삭제 구현. 메모리 상태만 사용. |
 | Seed Selection | 기억나는 대표곡 선택 | 미구현 |
 | Memory Reconstruction | 후보 음악에 대한 기억 확인 | 미구현 |
 | Unassigned | 기억나지만 시절이 불명확한 곡 보관·배정 | 미구현 |
@@ -201,7 +201,9 @@ RecommendationFeedback {
 
 추천 결과를 자동으로 사용자의 과거 청취 기록으로 확정하지 않는다. **해당 Era에서 들었다고 사용자가 직접 확인한 곡만** 그 Era Archive에 들어간다. 시스템의 추측과 사용자의 확인을 구분한다.
 
-### 최소 Track 모델 — Current Direction, 미구현
+### 최소 Track 모델 — Current Direction, 일부 구현
+
+지원용 v0.1에서는 `id`, `title`, `artist`만 구현한다. 아래의 장기 모델 방향은 유지하되 앨범 이미지·발매일·장르는 실제 필요할 때 추가한다. 수동 추가 시마다 별도 Track을 생성하며 중복 판별은 이번 범위가 아니다.
 
 음악 기능을 구현할 때 사용할 최소 모델 방향은 다음과 같다. 이 문서 작성만으로 타입을 코드에 추가하지 않는다.
 
@@ -226,7 +228,9 @@ type Track = {
 
 `primaryGenre`를 사용하는 것은 현재 장르 자동분류 시스템을 구현하라는 뜻이 아니다. 자동분류와 장르 통계/취향 변화는 핵심 기억 복원 경험 이후의 Later 아이디어다.
 
-### Era ↔ Track / EraTrack — Confirmed / Current Direction, 미구현
+### Era ↔ Track / EraTrack — Confirmed / Current Direction, 일부 구현
+
+지원용 v0.1은 `EraTrack { eraId, trackId }` 타입과 메모리 관계 목록을 사용한다. 해당 Era에서 삭제하면 그 관계를 제거한다. 동일 Track을 여러 Era에 연결하는 선택 UI와 저장·복원은 아직 없다.
 
 Track과 Era는 **다대다 관계**다. 한 Track은 여러 Era에 포함될 수 있고 한 Era에는 여러 Track이 포함될 수 있다. 중학교 때 듣던 곡을 대학 시절 다시 들었다면 두 Era에 모두 기록할 수 있다. 대학 Era는 사용자가 직접 만들 수 있으며 자동 생성 대상에서만 제외된다.
 

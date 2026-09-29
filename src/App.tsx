@@ -4,6 +4,7 @@ import Timeline from './components/Timeline'
 import EraDetail from './components/EraDetail'
 import EraModal from './components/EraModal'
 import type { Era, EraFormValues } from './types/era'
+import type { Track, EraTrack } from './types/track'
 import { formatMonth } from './utils/date'
 import { createSchoolEras } from './utils/era'
 
@@ -19,6 +20,10 @@ type UserProfile = {
 function App() {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null)
   const [eras, setEras] = useState<Era[]>([])
+  const [music, setMusic] = useState<{ tracks: Track[]; eraTracks: EraTrack[] }>({
+    tracks: [],
+    eraTracks: [],
+  })
   const [selectedEraId, setSelectedEraId] = useState<string | null>(null)
   const [editingEraId, setEditingEraId] = useState<string | null>(null)
   const [isEraModalOpen, setIsEraModalOpen] = useState(false)
@@ -56,6 +61,30 @@ function App() {
     setIsEraModalOpen(true)
   }
 
+  function handleAddTrack(title: string, artist: string) {
+    if (selectedEraId === null || !title.trim() || !artist.trim()) return
+    const track: Track = { id: crypto.randomUUID(), title: title.trim(), artist: artist.trim() }
+    setMusic((previous) => ({
+      tracks: [...previous.tracks, track],
+      eraTracks: [...previous.eraTracks, { eraId: selectedEraId, trackId: track.id }],
+    }))
+  }
+
+  function handleRemoveTrack(trackId: string) {
+    setMusic((previous) => {
+      const eraTracks = previous.eraTracks.filter(
+        (relation) => !(relation.eraId === selectedEraId && relation.trackId === trackId),
+      )
+      return {
+        eraTracks,
+        // 다른 Era에서도 사용하는 곡은 유지한다.
+        tracks: previous.tracks.filter(
+          (track) => track.id !== trackId || eraTracks.some((relation) => relation.trackId === trackId),
+        ),
+      }
+    })
+  }
+
   function openEditEraModal(era: Era) {
     setEditingEraId(era.id)
     setIsEraModalOpen(true)
@@ -78,6 +107,9 @@ function App() {
   const birthMonthValue = `${userProfile.birthYear}-01`
   const selectedEra = eras.find((era) => era.id === selectedEraId) ?? null
   const editingEra = eras.find((era) => era.id === editingEraId) ?? null
+  const selectedTracks = music.tracks.filter((track) =>
+    music.eraTracks.some((relation) => relation.eraId === selectedEraId && relation.trackId === track.id),
+  ).sort((a, b) => a.artist.localeCompare(b.artist, 'ko'))
 
   return (
     <main className="archive">
@@ -110,7 +142,8 @@ function App() {
       />
 
       {selectedEra && (
-        <EraDetail era={selectedEra} onEdit={openEditEraModal} />
+        <EraDetail era={selectedEra} onEdit={openEditEraModal}
+          tracks={selectedTracks} onAddTrack={handleAddTrack} onRemoveTrack={handleRemoveTrack} />
       )}
 
       {isEraModalOpen && (

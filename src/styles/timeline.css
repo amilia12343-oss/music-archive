@@ -110,3 +110,45 @@
 
   margin-top: 16px;
 }
+
+.era-tracks {
+  margin-top: 24px;
+  border-top: 1px solid #dddddd;
+}
+
+.track-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px;
+}
+
+.track-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-form input {
+  padding: 8px;
+  max-width: 100%;
+}
+
+.track-list {
+  list-style: none;
+  padding: 0;
+}
+
+.track-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.track-list span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}

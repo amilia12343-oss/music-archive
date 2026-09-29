@@ -1,5 +1,7 @@
 # Music Archive — Roadmap
 
+최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 추가·목록·삭제 완료. 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
+
 코드 확인일: 2026-09-22. 기준은 `888ac47` (`feat: implement era timeline and management`) 이후의 현재 작업 폴더이며, 아래 리팩터링 변경은 아직 커밋되지 않았다.
 
 이 문서는 실제 구현 상태와 다음 작업을 기록한다. 제품 방향은 [PRODUCT_SPEC](PRODUCT_SPEC.md), 결정 이유와 미결정 사항은 [DECISIONS](DECISIONS.md), 개발 규칙은 [AGENTS](../AGENTS.md)를 따른다. 기능 변경 후 코드와 함께 갱신한다.
@@ -59,9 +61,9 @@
 
 ### 아직 없는 기능
 
-Era 삭제, 출생연도 재설정 UI, 저장·복원, Track/음악 목록, Seed, 검색, 추천·피드백, Unassigned, Playlist, 외부 API, 서버·로그인·계정은 구현되지 않았다. 새로고침하면 모든 데이터가 사라진다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
+Era 삭제, 출생연도 재설정 UI, 저장·복원, Seed, 검색, 추천·피드백, Unassigned, Playlist, 외부 API, 서버·로그인·계정은 구현되지 않았다. 새로고침하면 모든 데이터가 사라진다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
 
-RecommendationFeedback, EraTrack, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** 해당 모델의 최소 의미와 원칙은 PRODUCT_SPEC을 따르고, 구체적인 타입·추가 필드·저장 방식은 구현 시 결정한다.
+RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** EraTrack은 v0.1에서 최소 관계 타입과 메모리 목록을 구현했다. 저장·복원은 미구현이다.
 
 ## 3. 현재 폴더와 코드 구조
 
@@ -209,7 +211,7 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 | --- | --- | --- |
 | Phase 1 — Era 기반 안정화 | 일부 완료 / 나머지 예정 | 생성·선택·수정·Timeline과 App 구조·타입·util 분리 완료. Era 삭제, 폼 검증 개선, 모바일·반응형 검증은 남아 있음. |
 | Phase 2 — 지속성 | 예정 | localStorage 우선 검토, 저장·앱 시작 시 복원, 데이터 구조·손상 데이터 처리 결정. 필요한 경우만 migration 전략 검토. 새로고침 후 복원 확인. |
-| Phase 3 — 음악 Archive 기반 | 예정 | 최소 Track, `EraTrack { eraId, trackId }` 다대다 관계, Era Detail 음악 목록과 기본 데이터 흐름. 사용자 확인된 기록만 저장하며 한 곡을 여러 Era에 연결. 미사용 관계 metadata는 추가하지 않음. |
+| Phase 3 — 음악 Archive 기반 | 일부 완료 | v0.1 최소 Track·EraTrack, Era별 수동 곡 추가·목록·삭제 완료. 기존 Track을 여러 Era에 연결하는 UI는 미구현. 미사용 관계 metadata는 추가하지 않음. |
 | Phase 4 — Seed | 예정 | 당시 인기곡 후보·검색·개인 대표곡 선택, 곡 정보와 복원 중인 Era의 시절 라벨/맥락 표시, 최소 약 5곡 UX와 최대 제한 없음. 정확한 최소 기준·진행 제한·데이터 공급 방식은 먼저 결정. |
 | Phase 5 — Memory Reconstruction | 예정 | 약 30곡을 함께 탐색하는 밀도 높은 목록/표, 아티스트 이름 오름차순·그룹화 없음. 평가 상태/아이콘과 범례, 선택 항목의 세 액션. `RecommendationFeedback { eraId, trackId, status }`로 Era별 반응 기록, 미평가에는 레코드 미생성. 추천 더 보기와 같은 Era의 평가곡 제외. 발매 시기만으로 후보를 제한하지 않음. |
 | Phase 6 — Unassigned | 예정 | 별도 UnassignedTrack 모델과 보관함, Era 선택·재배정과 여러 Era 저장. `sourceEraId`는 발견 맥락 Candidate이며 청취 Era가 아님. 중복·여러 출처·배정 후 잔류/삭제·저장 세부사항은 결정 후 구현. |
@@ -234,7 +236,15 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 - ‘진행 중인 학교 과정은 현재까지’는 생성 당시 월로 잘라 저장하는 방식이다. 시간 경과 후 자동 연장·복원 처리는 없다.
 - 학교 Era 수정은 해당 항목만 바꾼다. 이후 학교 Era 이동 확인은 후보 UX이며 구현되어 있지 않다.
 - 반응형 웹은 제품 방향이다. 현재 CSS만으로 모바일 사용성 검증 완료를 의미하지 않는다.
-- Track·Seed·추천·Unassigned·Playlist와 저장 기능은 모두 제품 계획이며 실제 기능으로 기록하지 않았다.
+- 위 리팩터링 검증 당시에는 Track·Seed·추천·Unassigned·Playlist와 저장 기능이 모두 제품 계획이었다. 이후 v0.1 곡 기능은 아래 기록을 따른다.
+
+### 2026-09-29 — 지원용 v0.1 Era별 곡 관리
+
+- 구현: 제목·아티스트 수동 입력, 앞뒤 공백 제거, 빈 값/공백만 입력 차단, 추가 후 입력 초기화, Era별 목록과 삭제. 목록은 아티스트 오름차순이다.
+- `src/types/track.ts`: 최소 Track과 EraTrack. App에 공유 음악 상태와 추가·삭제 콜백을 두고 EraDetail을 통해 전달한다. `src/components/EraTracks.tsx`는 폼·목록을 담당하며 Era 변경 시 key로 임시 입력을 초기화한다. 기존 폴더 구조에 이 두 파일만 추가했다.
+- 메모리 상태만 사용한다. 동일 Track을 다른 Era도 참조하면 해당 Track은 보존한다. 수동 입력은 매번 새 Track을 생성하며 기존 곡 재사용 UI는 없다.
+- 검증: 타입 검사를 포함한 build, lint 통과. 브라우저에서 두 Era 곡 추가·재선택·목록 분리·삭제, 제목/아티스트 각각 빈 값과 공백 차단, 입력 초기화, 온보딩·Era 생성·이름 수정 후 곡 유지 확인.
+- 저장·API·추천·새 패키지는 추가하지 않았다. 새로고침 지속성은 검증 대상에서 제외했다. commit/push는 수행하지 않았다.
 
 ## 9. 검증 및 기록 운영
 

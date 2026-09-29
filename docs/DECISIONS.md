@@ -106,14 +106,14 @@
 
 ### D-14 — Track은 실제 사용하는 최소 데이터
 
-- **상태:** Current Direction, 미구현.
+- **상태:** Current Direction, 일부 구현. 지원용 v0.1은 `id`, `title`, `artist`만 구현하며 나머지는 실제 필요한 시점까지 미룬다.
 - **결정:** 최소 모델 방향은 `id`, `title`, `artist`, `albumImageUrl`, `releaseDate`, `primaryGenre`다. 실제 필요하기 전 `album`, 서비스별 URL/ID, popularity, chartRanking, memo, 추천 metadata, 복잡한 다중 genre를 추가하지 않는다.
 - **이유:** 사용하지 않는 데이터와 서비스 종속성이 모델을 불필요하게 복잡하게 만든다.
 - **영향:** 미래 확장만을 이유로 필드를 선제 추가하지 않는다. 데이터 공급에 따른 결측값 처리 등은 실제 구현 시 결정한다. `primaryGenre`를 사용하는 것은 현재 장르 자동분류 시스템을 구현하라는 의미가 아니다.
 
 ### D-15 — EraTrack으로 Era와 Track의 다대다 관계 표현
 
-- **상태:** 다대다 관계는 Confirmed. EraTrack 관계 모델 사용은 Current Direction, 미구현. 구체적인 타입·저장 방식은 Open.
+- **상태:** 다대다 관계는 Confirmed. EraTrack 관계 모델 사용은 Current Direction. 지원용 v0.1에서 최소 타입과 메모리 관계 목록 구현. 저장 방식과 기존 곡을 여러 Era에 배정하는 UI는 미구현.
 - **결정:** Track 자체와 Era에 저장된 관계를 분리하고 `EraTrack { eraId, trackId }` 관계 개념을 사용한다. 한 Track은 여러 Era에, 한 Era에는 여러 Track이 포함될 수 있다. 관계 모델 자체를 단순한 가능성으로 두지 않는다.
 - **이유:** 한 번의 청취 시기로 음악의 개인적 의미를 제한하지 않는다.
 - **영향:** 가장 단순한 구현·저장 방식을 실제 구현 시 선택한다. `addedFrom`, `memo`, `evidence`, 불필요한 recommendation metadata와 현재 사용하지 않는 관계 metadata는 미리 넣지 않는다. 실제 기능에서 필요할 때만 검토한다.
