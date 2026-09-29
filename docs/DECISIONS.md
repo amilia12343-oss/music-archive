@@ -76,10 +76,10 @@
 - **이유:** 긴 인생 시기와 짧은 기억을 하나의 기간 모델에 억지로 맞추지 않는다.
 - **영향:** Moment/Event도 음악과 연결할 수 있지만 지금 타입·필드를 만들지 않는다.
 
-### D-10 — 곡 중심 Seed, 최소 약 5곡과 최대 제한 없음
+### D-10 — 곡 중심 Seed, 최소 5곡과 최대 제한 없음
 
-- **상태:** Current Direction. 정확한 최소 기준·진행 제한 UX는 O-02.
-- **결정:** 기억나는 대표곡을 최소 약 5곡 선택하는 방향이며 최대 개수는 제한하지 않는다. 개인적으로 중요한 ‘나만의 곡’을 강한 신호로 취급한다. 아티스트 자체를 Seed로 고르는 기능은 MVP에서 제외한다.
+- **상태:** Confirmed / Current Direction. D-23에서 정확히 5곡과 완료 제한을 확정했다.
+- **결정:** 기억나는 대표곡을 최소 정확히 5곡 선택하며 최대 개수는 제한하지 않는다. 개인적으로 중요한 ‘나만의 곡’을 강한 신호로 취급한다. 아티스트 자체를 Seed로 고르는 기능은 MVP에서 제외한다.
 - **이유:** 인기곡만으로는 개인의 음악 기억을 충분히 표현하기 어렵다.
 - **영향:** 당시 인기곡 후보 외에 개인 대표곡 검색을 고려한다. 곡 제목·아티스트·앨범 이미지·발매연도/발매일과 현재 복원 중인 Era의 시절 라벨/맥락을 표시한다. 사용자가 어느 시절에 관련된 후보인지 이해할 수 있게 하되 청취 사실을 확정하는 표시는 아니다.
 
@@ -106,7 +106,7 @@
 
 ### D-14 — Track은 실제 사용하는 최소 데이터
 
-- **상태:** Current Direction, 일부 구현. 지원용 v0.1은 `id`, `title`, `artist`만 구현하며 나머지는 실제 필요한 시점까지 미룬다.
+- **상태:** Current Direction, 일부 구현. v0.1의 `id`, `title`, `artist`에 Phase 4에서 실제 사용하는 optional `albumImageUrl`, `releaseDate`를 추가했다. 나머지는 실제 필요한 시점까지 미룬다.
 - **결정:** 최소 모델 방향은 `id`, `title`, `artist`, `albumImageUrl`, `releaseDate`, `primaryGenre`다. 실제 필요하기 전 `album`, 서비스별 URL/ID, popularity, chartRanking, memo, 추천 metadata, 복잡한 다중 genre를 추가하지 않는다.
 - **이유:** 사용하지 않는 데이터와 서비스 종속성이 모델을 불필요하게 복잡하게 만든다.
 - **영향:** 미래 확장만을 이유로 필드를 선제 추가하지 않는다. 데이터 공급에 따른 결측값 처리 등은 실제 구현 시 결정한다. `primaryGenre`를 사용하는 것은 현재 장르 자동분류 시스템을 구현하라는 의미가 아니다.
@@ -166,10 +166,29 @@
 
 - **상태:** Confirmed / Current Direction, 구현 완료.
 - **결정:** 지원용 v0.1에서 iTunes Search API 기반 곡 검색·선택 추가만 제한적으로 선행 구현한다. 기존 곡 직접 입력 기능은 유지한다.
-- **구조:** 외부 요청과 응답 변환은 `src/services/musicSearch.ts`의 `searchMusic(query)`에 둔다. `src/types/musicSearch.ts`의 공통 결과 타입은 `externalId`, `title`, `artist`만 가진다. EraTracks는 iTunes 원본 필드에 직접 의존하지 않는다.
+- **구조:** 외부 요청과 응답 변환은 `src/services/musicSearch.ts`의 `searchMusic(query)`에 둔다. `src/types/musicSearch.ts`의 도입 당시 공통 결과 타입은 `externalId`, `title`, `artist`만 가졌다. 이후 D-23에서 optional 이미지·발매일을 추가했다. EraTracks는 iTunes 원본 필드에 직접 의존하지 않는다.
 - **ID와 저장:** iTunes `trackId`는 문자열 `externalId`로 변환해 검색 결과 식별에만 사용한다. 내부 `Track.id`는 기존 `crypto.randomUUID()`를 유지한다. 검색 선택과 직접 입력은 동일한 Track 생성·Era 연결·localStorage 저장 흐름을 사용하며 externalId는 영구 저장하지 않는다.
 - **이유:** 실제 REST API 검색 흐름을 구현하면서 UI와 핵심 저장 모델이 특정 서비스에 종속되지 않게 한다. 이후 Spotify·Apple Music 등으로 교체·확장할 수 있도록 작은 검색 계층만 분리하며 Provider/Strategy/Factory는 도입하지 않는다.
 - **범위:** 앞선 외부 API Later 방향에서 기본 검색만 선행한 결정이다. Spotify·Apple Music 정식 계정 연동·내보내기·과거 기록 가져오기는 여전히 Later다. Seed·추천·Unassigned 등 장기 기능의 구현 여부나 우선순위는 변경하지 않는다.
+
+### D-23 — Phase 4 Seed Selection 확정과 임시 복원 세션
+
+- **상태:** Confirmed / Current Direction, 구현 완료.
+- **결정:** 최소 정확히 5곡, 최대 제한 없음. 기존 Era 곡은 후보지만 자동 선택하지 않는다. 검색과 직접 입력한 나만의 곡도 선택·해제할 수 있다. 선택 중에는 Archive/localStorage를 변경하지 않으며 뒤로 가면 미확정 상태를 버린다.
+- **확정 의미:** 최종 완료는 해당 Era에서 들었다는 명시적 사용자 확인이다. 기존 곡은 재사용하고 새로운 곡만 Track + EraTrack으로 저장한다. 같은 Era에서 trim 후 title + artist를 대소문자 무시 비교해 중복을 합치되 전역 병합은 하지 않는다. 동명이곡/버전 식별은 별도 결정이다.
+- **세션:** App은 `{ eraId, trackIds }`만 임시로 기억한다. 영구 Seed entity·DB·timestamp·score·weight를 만들거나 세션을 localStorage에 저장하지 않는다. 확정 후 Era Detail 복귀는 Phase 5 이전의 임시 연결이다. 재진입은 새 미선택 초안이며 취소는 이전 확정 세션을 바꾸지 않는다. 해당 Era에서 곡을 삭제하면 오래된 세션을 해제한다.
+- **메타데이터:** Track·MusicSearchResult에 optional albumImageUrl/releaseDate를 추가하고 이미지·발매연도를 실제 표시한다. 없거나 잘못된 metadata는 생략하고 기존 Track은 복원한다. iTunes artworkUrl100/releaseDate에서 유효한 값만 변환한다. externalId는 검색 전용이며 영구 Track ID는 UUID다.
+- **구조:** 작은 MusicSearch 컴포넌트를 두 화면에서 공유하고 TrackSummary로 이미지·제목·아티스트·연도 표시를 통일한다. TrackInput 객체로 실제 필드만 전달하고 createTrack에서 영구 필드만 골라 저장한다. Router·새 dependency·Provider 패턴은 추가하지 않는다.
+- **범위:** 역사적 인기곡은 신뢰 가능한 공급 방식 결정 전 미구현이다. iTunes를 과거 차트로 사용하지 않고 임의 샘플도 만들지 않는다. 추천 알고리즘·Feedback·Unassigned 등 Phase 5 이후 기능은 추가하지 않는다.
+
+### D-24 — 2026-09-30 검색 우선 UX와 Era별 추가 규칙 공통화
+
+- **상태:** Confirmed / Current Direction, 구현 완료.
+- **결정:** EraTracks와 SeedSelection이 공유하는 MusicSearch에서 검색을 우선하고 검색 완료 후 결과 유무·실패 여부와 관계없이 직접 입력 fallback을 제공한다. 직접 입력 Track에는 releaseDate를 생성하지 않는다.
+- **기간:** D-11의 과거 발매곡 허용 원칙을 유지한다. 유효한 발매일의 원본 YYYY-MM이 Era 종료 월 이후일 때만 제외하며 같은 월·이전 곡·발매일 결측/판별 불가는 허용한다. UI 후보 필터와 공통 추가 로직에서 같은 검사를 사용한다. 추천 시스템 구현을 뜻하지 않는다.
+- **중복:** Seed 확정에만 있던 검사를 일반 검색·직접 입력에도 적용하도록 addTracksToEra로 공통화했다. 같은 Era에서 title + artist를 trim·대소문자 무시 비교해 기존 ID를 재사용한다. 전역 병합·기존 중복 데이터 정리는 하지 않는다.
+- **조회:** iTunes 후보 50개를 한 번 조회한 뒤 Era 필터를 적용하고 최대 10개를 표시한다. 처음 10개에서 미래 곡을 제거하면 결과가 지나치게 줄어드는 문제를 완화하기 위한 단순한 여유분이다. 항상 10개를 보장하지 않으며 pagination·자동 추가 요청은 도입하지 않는다. 숫자는 현 구현 선택이며 영구 제품 요구가 아니다.
+- **후속 UI 방향, 미구현:** 현재 세로형 UI는 핵심 기능 검증용 임시 구조다. 데스크톱은 왼쪽 Era 탐색/내비게이션과 오른쪽 선택한 Era 음악 작업 영역을 목표로 한다. Seed·Memory Reconstruction 흐름이 자리 잡은 뒤 구조화하며 Phase 4에서는 레이아웃을 변경하지 않는다.
 
 ## Candidate / Open Decisions
 
@@ -178,10 +197,10 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | ID | 출처·주제 | 현재 후보/미결정 사항 | 결정 시점 |
 | --- | --- | --- | --- |
 | O-01 | 사용자 제안: 학교 Era 예외 | “이후 학교 Era도 함께 이동할까요?” 확인 UX. 대상·이동량·이미 편집된 학교 Era·기간 충돌 처리 미정. 무경고 자동 변경 금지 방향. | 핵심 MVP 이후 필요 시, 낮은 우선순위 |
-| O-02 | 사용자 제안: Seed 개수 UX | 최소 약 5곡의 정확한 값, 미달 시 진행 제한 여부와 안내. 최대 제한 없음 방향은 유지. | Seed Selection 구현 전 |
+| O-02 (Resolved) | 사용자 제안: Seed 개수 UX | D-23으로 최소 정확히 5곡, 0~4곡 완료 불가, 최대 제한 없음 확정·구현. | 해결됨: D-23 |
 | O-03 | 코드·기획 대조 + 사용자 아이디어: 음악 데이터·신호 | 기본 검색은 D-22의 iTunes API로 구현했다. 인기곡·추천용 데이터는 로컬/샘플 데이터 등 공급 방식을 별도 검토하며 정식 서비스 연동은 Later다. Seed·피드백 우선. 같은 아티스트·비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate 신호로 사용 여부·가중치 미정. 약 30곡의 정확한 수는 조정 가능. collaborative filtering은 Later. | 음악 데이터 흐름과 추천 구현 전 |
 | O-04 | 사용자 방향 + 설계 검토: RecommendationFeedback 구현 | 모델 유지, eraId·trackId·status의 최소 의미, 세 status와 미평가 레코드 미생성은 Current Direction. 추가 필드·별도 ID·timestamp·DB schema·persistence, 평가 변경/취소와 미평가 재노출 정책만 미정. | 피드백 구현 전 |
-| O-05 | 사용자 방향 + 설계 검토: EraTrack 구현·Seed | EraTrack 다대다 관계와 한 Track 여러 Era는 현재 방향. 구체적 타입·저장 형식·중복 처리, Seed 선택이 청취 확인을 겸할지, Track 결측값 처리 미정. | 음악 Archive·Seed 구현 전 |
+| O-05 | 사용자 방향 + 설계 검토: EraTrack 구현·Seed | EraTrack 다대다 관계와 한 Track 여러 Era는 현재 방향. 최소 타입·localStorage 구현 완료. D-23에서 Seed 최종 확정은 청취 확인으로 정하고 같은 Era의 title + artist 중복 및 optional metadata 결측 처리를 구현했다. 전역 Track identity와 다른 버전 판별은 미정. | 음악 Archive·Seed 구현 전 |
 | O-06 | 사용자 방향 + 설계 검토: UnassignedTrack 구현 | 별도 UnassignedTrack 모델은 현재 방향. `sourceEraId`는 발견 맥락 후보이며 청취 Era가 아님. 구체적 타입·저장 방식, 여러 출처, 중복 저장, 출처 Era 삭제, 배정 후 잔류/제거 정책 미정. | 최소 시절 미정 보관 구현 전 |
 | O-07 | 사용자 방향 + 코드 검토: 저장·진행 중 Era | 저장 키·형식·기본 복원 검증·실패 처리는 D-05로 결정하고 구현했다. 학교 Era 기간은 저장된 값 그대로 복원하며 자동 연장은 하지 않는다. 향후 연장 정책은 미정. migration은 이번 범위 밖이다. | 지속성 구현 전 |
 | O-08 (Resolved) | 앞선 구조 검토: 리팩터링 경계 | 2026-09-22 D-21로 확정하고 구현 완료. 추적 이력을 위해 행을 유지하며 더 이상 Open Decision이 아니다. | 해결됨: D-21 |
@@ -213,7 +232,7 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 - **학교 Era 기본 비중첩 vs 수정 후 겹침:** 자동 생성의 기본 성질과 사용자 수정 정책을 구분한다. 현재 코드는 수정 후 겹침을 금지하거나 이후 Era를 자동 이동하지 않는다.
 - **검색·추천 필요 vs 외부 API Later:** 제품 기능과 데이터 공급 수단은 별개다. D-22에 따라 지원용 v0.1에서 기본 곡 검색만 선행 구현했다. 정식 서비스 연동은 Later이며 인기곡·추천 데이터는 O-03에서 별도 결정한다.
 - **최소 metadata vs sourceEraId:** Track에 불필요한 출처를 넣지 않는 원칙과 Unassigned 발견 맥락 후보를 구분한다. O-06의 필요성이 확인될 때만 최소 필드를 검토한다.
-- **추천 후보 vs 실제 Archive:** 후보 생성·Seed 선택만으로 확인 사실을 임의 확정하지 않는다. O-05의 UX와 무관하게 사용자 청취 확인 원칙을 유지한다.
+- **추천 후보 vs 실제 Archive:** 후보 생성·선택 중에는 Archive를 바꾸지 않는다. D-23에 따라 사용자가 Seed를 최종 완료한 경우에만 해당 Era 청취 확인으로 처리한다. 추천 후보의 자동 저장은 여전히 금지한다.
 - **관계 모델 vs 구현 세부사항:** RecommendationFeedback·EraTrack·UnassignedTrack 모델은 Current Direction이다. 미평가 레코드 미생성도 현재 방향이며, 실제 타입 추가 필드·저장 방식 등이 Open이라는 이유로 모델 자체를 미정으로 되돌리지 않는다.
 - **과거 피드백 vs 현재 구조:** H-01·H-02는 Historical에만 보존한다. D-12의 세 명시적 status와 미평가 원칙에 섞지 않는다.
 
@@ -225,3 +244,4 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | 2026-09-22 (보완) | 사용자 정정에 따라 D-12·D-15·D-16에서 모델 자체와 구현 세부사항의 상태를 구분하고, O-04~O-06을 구현 질문으로 한정. 추천 목록·Timeline·Seed 맥락을 구체화하고 추가 신호의 Candidate/Later와 과거 대안 H-01·H-02를 기록. 코드 변경 없음. |
 | 2026-09-22 (리팩터링 기록) | 앞선 코드 리팩터링의 실제 결과를 D-21에 기록하고 O-08을 Resolved로 전환. ROADMAP의 코드 구조·완료 상태·검증 범위를 갱신. 이번 문서 갱신에서는 기능 코드 변경 및 commit/push 없음. |
 | 2026-09-29 (음악 검색) | D-22에 v0.1 iTunes 검색 선행 구현, 공통 검색 service·타입, 내부 UUID와 externalId 분리, 기존 저장 흐름 재사용을 기록. 정식 서비스 연동의 Later 방향은 유지. |
+| Phase 4 구현 | D-23에 정확히 5곡·확정 시 청취 확인·임시 세션·Era 내 중복·optional metadata 결정을 기록. O-02 해결, O-05의 잔여 전역 식별 질문을 분리. |

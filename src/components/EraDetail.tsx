@@ -1,16 +1,18 @@
 import type { Era } from '../types/era'
-import type { Track } from '../types/track'
+import type { Track, TrackInput } from '../types/track'
 import EraTracks from './EraTracks'
 
 type EraDetailProps = {
   era: Era
   onEdit: (era: Era) => void
   tracks: Track[]
-  onAddTrack: (title: string, artist: string) => void
+  onAddTrack: (input: TrackInput) => void
   onRemoveTrack: (trackId: string) => void
+  onStartReconstruction: () => void
+  confirmedSeedCount: number
 }
 
-function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack }: EraDetailProps) {
+function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack, onStartReconstruction, confirmedSeedCount }: EraDetailProps) {
   return (
     <section className="era-detail">
       <h2>{era.name}</h2>
@@ -37,7 +39,9 @@ function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack }: EraDetail
           시절 수정
         </button>
       </div>
-      <EraTracks key={era.id} tracks={tracks} onAdd={onAddTrack} onRemove={onRemoveTrack} />
+      <p><button type="button" onClick={onStartReconstruction}>기억 복원 시작</button></p>
+      {confirmedSeedCount > 0 && <p role="status">대표곡 {confirmedSeedCount}곡 선택을 완료했습니다. 기억 복원 추천 화면은 준비 중입니다.</p>}
+      <EraTracks key={era.id} endMonth={era.endMonth} tracks={tracks} onAdd={onAddTrack} onRemove={onRemoveTrack} />
     </section>
   )
 }

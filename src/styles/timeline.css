@@ -178,10 +178,16 @@
 }
 
 .track-info { display: flex; flex-direction: column; gap: 2px; }
+.track-summary { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.track-summary img, .album-placeholder { width: 52px; height: 52px; border-radius: 4px; flex-shrink: 0; object-fit: cover; }
+.album-placeholder { display: grid; place-items: center; background: #eef0f3; color: #606975; }
 .music-search { padding-bottom: 16px; border-bottom: 1px solid #dddddd; }
 .music-search [role="status"] { color: #606975; font-size: 14px; }
 .music-search .track-list { max-height: 360px; overflow-y: auto; }
 .music-search .track-list button { flex-shrink: 0; }
+.manual-fallback { margin-top: 16px; }
+.manual-fallback summary { cursor: pointer; color: #476a94; font-size: 14px; }
+.manual-fallback summary:focus-visible { outline: 3px solid #476a94; outline-offset: 2px; }
 .track-artist { color: #606975; font-size: 14px; }
 .track-delete { flex-shrink: 0; color: #963737; border-color: #dfbdbd; font-size: 14px; }
 .track-delete:hover { background-color: #fff3f3 !important; }

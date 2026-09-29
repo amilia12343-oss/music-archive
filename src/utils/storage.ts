@@ -1,5 +1,6 @@
 import type { Era } from '../types/era'
 import type { Track, EraTrack } from '../types/track'
+import { isImageUrl, isReleaseDate } from './track'
 
 export type UserProfile = { id: string; birthYear: number }
 
@@ -52,7 +53,13 @@ export function loadArchive(): ArchiveData {
     // JSON은 타입이 보장되지 않으므로 유효한 항목만 복원한다.
     const eras = Array.isArray(data.eras) ? data.eras.filter(isEra) : []
     const music = isObject(data.music) ? data.music : {}
-    const tracks = Array.isArray(music.tracks) ? music.tracks.filter(isTrack) : []
+    const tracks = Array.isArray(music.tracks) ? music.tracks.filter(isTrack).map((track) => ({
+      id: track.id,
+      title: track.title,
+      artist: track.artist,
+      ...(isImageUrl(track.albumImageUrl) ? { albumImageUrl: track.albumImageUrl } : {}),
+      ...(isReleaseDate(track.releaseDate) ? { releaseDate: track.releaseDate } : {}),
+    })) : []
     const eraTracks = Array.isArray(music.eraTracks)
       ? music.eraTracks.filter((value: unknown): value is EraTrack =>
         isObject(value) && typeof value.eraId === 'string' && typeof value.trackId === 'string'

@@ -3,8 +3,10 @@ import Onboarding from './components/Onboarding'
 import Timeline from './components/Timeline'
 import EraDetail from './components/EraDetail'
 import EraModal from './components/EraModal'
+import SeedSelection from './components/SeedSelection'
 import type { Era, EraFormValues } from './types/era'
-import type { Track, EraTrack } from './types/track'
+import type { Track, EraTrack, TrackInput } from './types/track'
+import { addTracksToEra } from './utils/track'
 import { formatMonth } from './utils/date'
 import { createSchoolEras } from './utils/era'
 import { loadArchive, saveArchive } from './utils/storage'
@@ -22,6 +24,8 @@ function App() {
   const [selectedEraId, setSelectedEraId] = useState<string | null>(null)
   const [editingEraId, setEditingEraId] = useState<string | null>(null)
   const [isEraModalOpen, setIsEraModalOpen] = useState(false)
+  const [isSelectingSeeds, setIsSelectingSeeds] = useState(false)
+  const [reconstructionSession, setReconstructionSession] = useState<{ eraId: string; trackIds: string[] } | null>(null)
 
   useEffect(() => {
     saveArchive({ userProfile, eras, music })
@@ -60,16 +64,25 @@ function App() {
     setIsEraModalOpen(true)
   }
 
-  function handleAddTrack(title: string, artist: string) {
-    if (selectedEraId === null || !title.trim() || !artist.trim()) return
-    const track: Track = { id: crypto.randomUUID(), title: title.trim(), artist: artist.trim() }
-    setMusic((previous) => ({
-      tracks: [...previous.tracks, track],
-      eraTracks: [...previous.eraTracks, { eraId: selectedEraId, trackId: track.id }],
-    }))
+  function handleAddTrack(input: TrackInput) {
+    const era = eras.find((item) => item.id === selectedEraId)
+    if (!era) return
+    const result = addTracksToEra(era, [input], music)
+    setMusic(result.music)
+  }
+
+  function handleCompleteSeeds(selected: TrackInput[]) {
+    const era = eras.find((item) => item.id === selectedEraId)
+    if (!era) return
+    const result = addTracksToEra(era, selected, music)
+    if (result.trackIds.length < 5) return
+    setMusic(result.music)
+    setReconstructionSession({ eraId: era.id, trackIds: result.trackIds })
+    setIsSelectingSeeds(false)
   }
 
   function handleRemoveTrack(trackId: string) {
+    setReconstructionSession((previous) => previous?.eraId === selectedEraId ? null : previous)
     setMusic((previous) => {
       const eraTracks = previous.eraTracks.filter(
         (relation) => !(relation.eraId === selectedEraId && relation.trackId === trackId),
@@ -110,6 +123,11 @@ function App() {
     music.eraTracks.some((relation) => relation.eraId === selectedEraId && relation.trackId === track.id),
   ).sort((a, b) => a.artist.localeCompare(b.artist, 'ko'))
 
+  if (isSelectingSeeds && selectedEra) {
+    return <SeedSelection key={selectedEra.id} era={selectedEra} tracks={selectedTracks}
+      onBack={() => setIsSelectingSeeds(false)} onComplete={handleCompleteSeeds} />
+  }
+
   return (
     <main className="archive">
       <header className="archive-header">
@@ -142,6 +160,8 @@ function App() {
 
       {selectedEra && (
         <EraDetail era={selectedEra} onEdit={openEditEraModal}
+          onStartReconstruction={() => setIsSelectingSeeds(true)}
+          confirmedSeedCount={reconstructionSession?.eraId === selectedEra.id ? reconstructionSession.trackIds.length : 0}
           tracks={selectedTracks} onAddTrack={handleAddTrack} onRemoveTrack={handleRemoveTrack} />
       )}
 

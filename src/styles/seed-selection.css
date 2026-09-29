@@ -1,0 +1,17 @@
+.seed-selection { max-width: 1000px; margin: 0 auto; padding: 32px; overflow-wrap: anywhere; }
+.seed-selection header { margin: 24px 0; }
+.seed-selection h1 { margin: 8px 0; }
+.seed-selection h2 { margin-top: 24px; }
+.seed-selected { background: #f6f7f9; border: 1px solid #dddddd; border-radius: 8px; padding: 16px; }
+.seed-selected h2 { margin-top: 0; }
+.seed-selected h2 span { color: #476a94; white-space: nowrap; }
+.seed-selection button[aria-pressed="true"] { background: #e4edf7; border-color: #476a94; }
+.seed-selection .track-list button { flex-shrink: 0; }
+.seed-completion { border-top: 1px solid #dddddd; margin-top: 24px; padding-top: 16px; }
+.seed-completion > button { background: #293c53; color: white; }
+.seed-completion > button:not(:disabled):hover { background: #3b526e; }
+@media (max-width: 600px) {
+  .seed-selection { padding: 16px; }
+  .seed-selection .track-list li { flex-wrap: wrap; }
+  .seed-selection .track-summary { flex: 1 1 180px; }
+}

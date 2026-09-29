@@ -1,5 +1,7 @@
 # Music Archive — Roadmap
 
+최신 Phase 4 구현: Seed Selection 완료(기존 곡·검색·직접 입력, 5곡 이상 확정). 당시 인기곡 공급과 Phase 5 추천은 미구현. 아래 날짜별 기록은 각 시점의 범위를 보존한다.
+
 최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리, localStorage 저장·복원, iTunes Search API 기반 검색·선택 추가 완료. Live Demo 배포 완료(사용자 확인 및 README 기준). 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
 
 코드 확인일: 2026-09-22. 기준은 `888ac47` (`feat: implement era timeline and management`) 이후의 현재 작업 폴더이며, 아래 리팩터링 변경은 아직 커밋되지 않았다.
@@ -32,7 +34,7 @@
 | 겹침 배치 | 시작 월 순으로 정렬한 복사본을 사용하고 겹치는 Era를 다른 lane에 배치 | `utils/era.ts`의 `assignEraLanes` |
 | 스크롤 | 가로·세로 스크롤과 상단에 유지되는 연도 행 | `timeline.css`의 `overflow: auto`, `position: sticky` |
 | 모달 | 생성·수정 공용 입력 화면, 취소와 저장 후 닫기·입력 초기화 | App의 조건부 렌더링, `EraModal.tsx`의 로컬 상태, `modal.css` |
-| 음악 검색 | iTunes Search API로 최대 10곡 검색, 선택한 곡을 기존 Track 추가 흐름으로 현재 Era에 저장. 직접 입력 유지 | `services/musicSearch.ts`, `types/musicSearch.ts`, `EraTracks.tsx`, App의 `handleAddTrack` |
+| 음악 검색 | iTunes 후보 50개를 한 번 조회, Era 발매월 필터 후 최대 10곡 표시. 검색 후 직접 입력 fallback, 공통 추가 흐름의 Era 내 중복 방지 | `services/musicSearch.ts`, `types/musicSearch.ts`, `MusicSearch.tsx`, `utils/track.ts`, App의 `handleAddTrack` |
 
 ### 날짜와 배치의 현재 규칙
 
@@ -62,7 +64,7 @@
 
 ### 아직 없는 기능
 
-Era 삭제, 출생연도 재설정 UI, Seed, 추천·피드백, Unassigned, Playlist, Spotify·Apple Music 정식 계정 연동, 서버·로그인·계정은 구현되지 않았다. 기본 곡 검색 API는 지원용 v0.1에서 선행 구현했다. 프로필·Era·곡은 localStorage로 복원한다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
+Era 삭제, 출생연도 재설정 UI, 역사적 인기곡 후보, 추천·피드백, Unassigned, Playlist, Spotify·Apple Music 정식 계정 연동, 서버·로그인·계정은 구현되지 않았다. 기본 곡 검색 API는 지원용 v0.1에서 선행 구현했다. 프로필·Era·곡은 localStorage로 복원한다. 학교 Era 수정에 따른 연쇄 기간 조정도 없다.
 
 RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모델이며 코드에는 아직 없다.** EraTrack은 v0.1에서 최소 관계 타입과 메모리 목록을 구현했다. localStorage 저장·복원을 구현했다.
 
@@ -90,7 +92,10 @@ music-archive/
 │  │  ├─ Timeline.tsx
 │  │  ├─ EraDetail.tsx
 │  │  ├─ EraModal.tsx
-│  │  └─ EraTracks.tsx
+│  │  ├─ EraTracks.tsx
+│  │  ├─ SeedSelection.tsx
+│  │  ├─ MusicSearch.tsx
+│  │  └─ TrackSummary.tsx
 │  ├─ services/
 │  │  └─ musicSearch.ts
 │  ├─ types/
@@ -99,11 +104,14 @@ music-archive/
 │  │  └─ musicSearch.ts
 │  ├─ utils/
 │  │  ├─ date.ts
-│  │  └─ era.ts
+│  │  ├─ era.ts
+│  │  ├─ storage.ts
+│  │  └─ track.ts
 │  ├─ styles/
 │  │  ├─ onboarding.css
 │  │  ├─ timeline.css
-│  │  └─ modal.css
+│  │  ├─ modal.css
+│  │  └─ seed-selection.css
 │  ├─ App.tsx
 │  ├─ index.css
 │  └─ main.tsx
@@ -128,7 +136,7 @@ music-archive/
 | `src/components/EraModal.tsx` | 생성·수정 임시 입력과 기존 검증을 담당하고 `onSave`로 입력값을 전달한다. |
 | `src/components/EraTracks.tsx` | 공통 검색 결과 표시·선택 추가, 직접 입력·곡 목록·삭제. 검색 상태는 임시 UI 상태. |
 | `src/services/musicSearch.ts` | iTunes HTTP GET 요청과 JSON 응답의 공통 검색 결과 변환. |
-| `src/types/musicSearch.ts` | `MusicSearchResult`: `externalId`, `title`, `artist`. |
+| `src/types/musicSearch.ts` | `MusicSearchResult`: externalId·title·artist, optional albumImageUrl·releaseDate. |
 | `src/types/era.ts` | `Era`, `EraFormValues` 공용 타입. |
 | `src/utils/date.ts` | `monthToIndex`, 로컬 날짜를 월 문자열로 만드는 `formatMonth`. |
 | `src/utils/era.ts` | `createSchoolEras`, `assignEraLanes`와 내부 결과 타입. |
@@ -221,7 +229,7 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 | Phase 1 — Era 기반 안정화 | 일부 완료 / 나머지 예정 | 생성·선택·수정·Timeline과 App 구조·타입·util 분리 완료. Era 삭제, 폼 검증 개선, 모바일·반응형 검증은 남아 있음. |
 | Phase 2 — 지속성 | 완료 | 프로필·Era·Track·관계를 단일 JSON으로 저장·복원. 누락/잘못된 값과 저장 예외 처리. 임시 UI 상태·migration·버전 관리는 제외. |
 | Phase 3 — 음악 Archive 기반 | 일부 완료 | v0.1 최소 Track·EraTrack, Era별 수동 곡 추가·목록·삭제 완료. 기존 Track을 여러 Era에 연결하는 UI는 미구현. 미사용 관계 metadata는 추가하지 않음. |
-| Phase 4 — Seed | 예정 | 당시 인기곡 후보·검색·개인 대표곡 선택, 곡 정보와 복원 중인 Era의 시절 라벨/맥락 표시, 최소 약 5곡 UX와 최대 제한 없음. 정확한 최소 기준·진행 제한·데이터 공급 방식은 먼저 결정. |
+| Phase 4 — Seed | 현재 범위 완료 | 기존 Era 곡·검색·직접 입력 후보, 선택·해제, 최소 정확히 5곡 확정, 최대 제한 없음. 완료 시 Era 내 중복 없이 Archive 저장 후 상세 복귀. 역사적 인기곡 공급은 미결정·미구현. |
 | Phase 5 — Memory Reconstruction | 예정 | 약 30곡을 함께 탐색하는 밀도 높은 목록/표, 아티스트 이름 오름차순·그룹화 없음. 평가 상태/아이콘과 범례, 선택 항목의 세 액션. `RecommendationFeedback { eraId, trackId, status }`로 Era별 반응 기록, 미평가에는 레코드 미생성. 추천 더 보기와 같은 Era의 평가곡 제외. 발매 시기만으로 후보를 제한하지 않음. |
 | Phase 6 — Unassigned | 예정 | 별도 UnassignedTrack 모델과 보관함, Era 선택·재배정과 여러 Era 저장. `sourceEraId`는 발견 맥락 Candidate이며 청취 Era가 아님. 중복·여러 출처·배정 후 잔류/삭제·저장 세부사항은 결정 후 구현. |
 | Phase 7 — Playlist / Archive 경험 | 예정 | 내부 Era Playlist, Life Timeline→음악 기록 탐색, 전체 기억 복원 경험 연결. |
@@ -296,3 +304,37 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - 검색 선택과 직접 입력 모두 기존 `onAdd(title, artist)` → App의 `handleAddTrack`을 사용한다. 내부 ID는 `crypto.randomUUID()`이며 externalId는 Track/localStorage에 저장하지 않는다. 검색어·결과·상태도 저장하지 않는다.
 - 기본 Timeline은 구현되어 있으며 Seed·추천·Unassigned·Life Timeline의 추가 확장과 정식 서비스 계정 연동은 향후 계획으로 유지한다. [Live Demo](https://music-archive-cyan.vercel.app/)는 사용자와 README의 배포 완료 정보를 반영했다.
 - 이번 작업은 관련 코드·README와 문서 상태를 대조한 문서 갱신이다. 배포 사이트 실행이나 앱 테스트는 재수행하지 않았다.
+
+### Phase 4 — Seed Selection 구현·검증
+
+- 기준: 원격 main과 로컬 `89cbf00` 일치, 작업 시작 시 변경 없음 확인.
+- SeedSelection은 Era 맥락·선택 목록·기존 곡·검색·직접 입력 후보를 제공한다. 최소 정확히 5곡, 최대 제한 없음. 선택 중에는 Archive를 변경하지 않으며 뒤로 가면 폐기한다.
+- App은 화면 상태와 임시 `{ eraId, trackIds }` 세션을 관리한다. Seed 완료 시 addTracksToEra로 Era 내 trim·대소문자 무시 title + artist 중복을 검사하고 기존 ID 재사용 또는 새 UUID 생성 후 상세로 돌아간다. 이 공통 함수는 일반 검색·직접 입력 추가에서도 사용한다. 다른 Era 곡은 자동 병합하지 않는다.
+- MusicSearch는 기존 검색을 재사용하도록 분리했다. TrackSummary는 optional 이미지·발매연도를 표시하며 이미지 없음/실패는 placeholder로 처리한다. TrackInput을 사용해 추가 콜백에 metadata를 전달한다. createTrack은 externalId를 복사하지 않는다.
+- storage는 metadata 없는 기존 Track도 복원한다. 유효한 optional metadata는 유지하고 잘못된 값은 생략한다. 기존 키·JSON 최상위 구조는 유지한다. 세션·초안·검색 결과는 저장하지 않는다.
+- lint와 타입 검사 포함 build 통과. 유틸리티 검사에서 같은 Era 중복 재사용, 전역 비병합, UUID, 입력 불변, externalId 미저장, metadata 변환·저장 왕복과 구형 Track 호환 확인.
+- 브라우저: 온보딩·학교 Era·Custom Era 생성/수정·기존 직접 입력·검색 추가/삭제 유지 확인. Seed 진입과 Era 맥락, 기존 곡 자동 미선택, 실제 BTS 검색·이미지·발매연도, 직접 입력 후보, 4/5곡 및 해제 경계, 취소 후 새로고침 미저장, 재진입·확정·중복 없이 재확정, 6곡 확정, 새로고침 후 곡·metadata 복원 및 세션 초기화 확인. 390px 화면 가로 넘침 없음 확인.
+- 한계: 모든 모바일 기기·브라우저, 실제 이미지 서버 실패·API 장애·저장 용량 초과는 이번 브라우저 검증에서 재현하지 않았다. 영구 Seed 모델·역사적 인기곡·추천·Feedback·Unassigned는 추가하지 않았다. commit/push 없음.
+
+### 2026-09-30 — Phase 4 마무리 검증과 문서 보완
+
+- 기존 미커밋 구현을 유지했다. EraTracks·SeedSelection의 검색 우선 UX, 검색 완료 후 직접 입력 fallback, 공통 addTracksToEra를 확인했다. 이번 재개 작업에서는 기능 코드를 추가 수정하지 않았다.
+- isTrackAvailableForEra는 유효한 원본 발매 YYYY-MM이 Era 종료 월 이후인 곡만 제외한다. 종료 월·시작 이전 곡·결측/판별 불가 날짜는 허용한다. 검색 결과와 기존 Seed 후보에 적용하고 저장 직전에도 검사한다. 기존 Archive를 소급 삭제하지 않는다. 추천 방향의 ‘발매 시기만으로 제한하지 않음’은 과거 곡을 허용한다는 뜻이며 알려진 미래 곡을 포함한다는 뜻이 아니다.
+- service에서 후보 50개를 한 번 조회하고 MusicSearch에서 필터 후 최대 10개를 표시한다. 필터 전 10개 제한으로 결과가 줄어드는 현상을 완화하되 충분한 후보가 없으면 10개 미만일 수 있다. pagination·자동 추가 요청 없음.
+- 브라우저: 두 화면의 검색 전 직접 입력 숨김, 실제 BTS 검색 결과가 있어도 fallback 펼치기, 빈 검색 결과의 fallback, 검색 반복 추가 및 공백·대소문자 차이 직접 입력 중복 방지, 발매연도 없는 직접 입력 곡과 검색 곡 새로고침 복원 확인. Era 시작 이전 곡 표시, Seed 기존 곡 자동 미선택, 4곡 완료 차단·5곡 확정·재확정 후 5곡 유지, 취소 후 선택 초기화를 확인했다.
+- 별도 유틸리티 실행 검사: 종료 월/다음 월 경계, 과거 곡, 날짜 결측·잘못된 날짜, 시차에 따른 월 변경 방지, 같은 Era 기존 ID 재사용, 다른 Era 비병합, 저장 단계 미래 곡 차단, 구형 Track·optional metadata·손상 JSON 복원 처리 통과.
+- 재개 작업 마지막에 npm run lint와 npm run build(TypeScript 검사 포함)를 다시 실행해 모두 통과했다. commit/push는 하지 않았다.
+- 검증 한계: 날짜 경계와 잘못된 metadata는 실제 API 브라우저 데이터로 강제 재현하지 않았다. API 장애·저장 용량 초과·모든 기기 검증은 하지 않았다. 기존 저장 중복을 정리하는 migration은 범위 밖이다.
+- 후속 UI 방향만 기록: 세로형 UI는 핵심 기능 검증용 임시 구조다. Seed·Memory Reconstruction 흐름 정착 후 데스크톱을 좌측 Era 탐색/내비게이션과 우측 음악 작업 영역으로 구조화한다. Phase 4 레이아웃 리팩터링은 하지 않는다.
+
+### 2026-09-30 — Phase 4 중복 안내 UX 보완
+
+- EraTracks가 sameSong으로 현재 Era 저장 여부를 계산해 MusicSearch의 optional isAdded로 전달한다. 검색 결과는 유지하고 “추가됨” 버튼만 비활성화한다. 직접 입력 중복 제출에는 작은 inline 메시지를 표시하며 입력 변경 시 해제한다.
+- SeedSelection은 기존 isSelected에 따른 “선택/선택됨”과 선택·해제를 유지한다. addTracksToEra·발매월 필터·저장 구조는 변경하지 않았다.
+- 브라우저에서 기존 곡 “추가됨” 비활성화, 공백·대소문자 차이 중복 입력 안내 및 수정 시 해제, 기존 Archive 곡의 Seed 선택·해제를 확인했다. 필터 후 4곡만 남는 실제 검색에서 목록 4개와 “검색 결과 4곡” 안내가 일치했다.
+- npm run lint와 npm run build(TypeScript 검사 포함) 통과. 이번에는 API 장애·전체 저장 복원 회귀 검증을 반복하지 않았다. commit/push 없음.
+
+### 2026-09-30 — EraTracks 검색 순서 보완
+
+- 기존 월 필터·최대 10곡 제한 후, 표시 대상 안에서 sameSong 기반 isAdded를 사용해 미추가 곡을 우선 배치한다. 그룹 내부 API 순서와 추가된 곡의 비활성 “추가됨” 표시는 유지한다. Seed 검색 순서는 변경하지 않는다.
+- 추가 검색 탐색/더 보기는 추후 개선 사항이며 요청 수·표시 개수를 확대하지 않았다. lint·TypeScript 포함 build 통과. 이번 작은 정렬 변경은 브라우저에서 재검증하지 않았다. commit/push 없음.
