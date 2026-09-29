@@ -2,6 +2,10 @@
 
 사용자의 삶의 시기(Era)와 그 시절의 음악을 함께 기록하는 웹 애플리케이션입니다.
 
+**[Live Demo](https://music-archive-cyan.vercel.app/)**
+
+![Music Archive Timeline](docs/images/timeline.png)
+
 ## 프로젝트 배경
 
 과거에 즐겨 듣던 음악도 기록이 없으면 언제, 어떤 시절에 들었는지 떠올리기 어렵습니다. Music Archive는 음악을 삶의 시기와 연결해 기록하는 데서 시작했습니다. React와 TypeScript를 직접 배우며 개발하는 개인 포트폴리오 프로젝트입니다.
@@ -77,8 +81,21 @@ v0.1은 **Era를 만들고 곡을 기록한 뒤 다시 확인하는 핵심 사�
 
 ## Live Demo
 
-TODO: 배포 후 데모 URL을 추가할 예정입니다.
+👉 [Music Archive v0.1](https://music-archive-cyan.vercel.app/)
 
 ## Screenshots
 
-TODO: 온보딩, Timeline, Era별 곡 관리 화면의 스크린샷을 추가할 예정입니다.
+### Timeline
+삶의 시기를 Era 단위로 확인하고 원하는 Era를 선택할 수 있습니다.
+
+![Music Archive Timeline](docs/images/timeline.png)
+
+### Era별 음악 기록
+선택한 Era에 기억나는 곡과 아티스트를 직접 기록하고 관리할 수 있습니다.
+
+![Era Track Management](docs/images/era-detail.png)
+
+### Era 생성
+사용자가 직접 이름, 기간, 설명을 입력해 새로운 Era를 만들 수 있습니다.
+
+![Create Era](docs/images/create-era.png)
