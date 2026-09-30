@@ -1,0 +1,226 @@
+{
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "experimentOnly": true,
+  "round1File": "hybrid-recommendation-2016-2018.json",
+  "statusValues": {
+    "1": "CONFIRMED_LISTENED",
+    "2": "KNOWN_NOT_LISTENED",
+    "3": "RECALLED_AFTER_PROMPT",
+    "4": "UNKNOWN"
+  },
+  "feedback": [
+    {
+      "rank": 1,
+      "title": "어디에도",
+      "artist": "엠씨더맥스 (M.C the MAX)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 2,
+      "title": "시간을 달려서 (Rough)",
+      "artist": "여자친구 (GFRIEND)",
+      "value": 4,
+      "status": "UNKNOWN"
+    },
+    {
+      "rank": 3,
+      "title": "너는 나 나는 너",
+      "artist": "지코 (ZICO)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 4,
+      "title": "널 사랑하지 않아",
+      "artist": "어반 자카파 (Urban Zakapa)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 5,
+      "title": "이 소설의 끝을 다시 써보려 해",
+      "artist": "한동근",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 6,
+      "title": "Day Day (Feat. 박재범) (Prod. by GRAY)",
+      "artist": "비와이(BewhY)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 7,
+      "title": "첫눈처럼 너에게 가겠다",
+      "artist": "에일리 (Ailee)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 8,
+      "title": "좋다고 말해",
+      "artist": "볼빨간사춘기",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 9,
+      "title": "오랜 날 오랜 밤",
+      "artist": "AKMU (악뮤)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 10,
+      "title": "좋니",
+      "artist": "윤종신",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 11,
+      "title": "비도 오고 그래서 (Feat. 신용재)",
+      "artist": "헤이즈 (Heize)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 12,
+      "title": "밤편지",
+      "artist": "아이유 (IU)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 13,
+      "title": "그날처럼",
+      "artist": "장덕철",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 14,
+      "title": "뿜뿜",
+      "artist": "모모랜드 (MOMOLAND)",
+      "value": 2,
+      "status": "KNOWN_NOT_LISTENED"
+    },
+    {
+      "rank": 15,
+      "title": "선물",
+      "artist": "멜로망스(Melomance)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 16,
+      "title": "모든 날, 모든 순간 (Every day, Every Moment)",
+      "artist": "폴킴",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 17,
+      "title": "뚜두뚜두 (DDU-DU DDU-DU)",
+      "artist": "BLACKPINK",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 18,
+      "title": "열애중",
+      "artist": "벤 (Ben)",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 19,
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 20,
+      "title": "봄날",
+      "artist": "방탄소년단",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 21,
+      "title": "DNA",
+      "artist": "방탄소년단",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 22,
+      "title": "우주를 줄게",
+      "artist": "볼빨간사춘기",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 23,
+      "title": "마지막처럼",
+      "artist": "BLACKPINK",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 24,
+      "title": "나만 안되는 연애",
+      "artist": "볼빨간사춘기",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 25,
+      "title": "하루하루",
+      "artist": "Bigbang",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 26,
+      "title": "TT",
+      "artist": "TWICE",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 27,
+      "title": "Energetic",
+      "artist": "Wanna One",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    },
+    {
+      "rank": 28,
+      "title": "Shine",
+      "artist": "Pentagon",
+      "value": 4,
+      "status": "UNKNOWN"
+    },
+    {
+      "rank": 29,
+      "title": "천국",
+      "artist": "Bigbang",
+      "value": 4,
+      "status": "UNKNOWN"
+    },
+    {
+      "rank": 30,
+      "title": "Like OOH-AHH",
+      "artist": "TWICE",
+      "value": 1,
+      "status": "CONFIRMED_LISTENED"
+    }
+  ]
+}

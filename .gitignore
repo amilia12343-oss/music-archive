@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Credentials and local diagnostic scratch files (experiment results stay tracked)
+.env
+.env.*
+!.env.example
+.tmp/
+tmp/
+*.tmp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

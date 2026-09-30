@@ -70,7 +70,7 @@ RecommendationFeedback, UnassignedTrack은 **문서상 Current Direction인 모�
 
 ## 3. 현재 폴더와 코드 구조
 
-아래는 문서 작성 후의 구조다. `node_modules/`와 `.git/` 내부는 생략한다.
+아래는 현재 주요 구조다. 앱의 과거 구현 기록은 유지하고, 저장소 정리로 추가된 실험 경계만 반영했다. `node_modules/`, `dist/`와 `.git/` 내부는 생략한다.
 
 ```text
 music-archive/
@@ -80,13 +80,21 @@ music-archive/
 │  ├─ ROADMAP.md
 │  └─ DECISIONS.md
 ├─ public/
-│  ├─ favicon.svg
-│  └─ icons.svg
+│  └─ favicon.svg
+├─ experiments/
+│  ├─ README.md
+│  ├─ scripts/
+│  ├─ data/
+│  │  ├─ circle/
+│  │  └─ hybrid/
+│  ├─ results/
+│  │  ├─ lastfm/
+│  │  ├─ listenbrainz/
+│  │  ├─ circle/
+│  │  ├─ hybrid/
+│  │  └─ cochart/
+│  └─ diagnostics/
 ├─ src/
-│  ├─ assets/
-│  │  ├─ hero.png
-│  │  ├─ react.svg
-│  │  └─ vite.svg
 │  ├─ components/
 │  │  ├─ Onboarding.tsx
 │  │  ├─ Timeline.tsx
@@ -149,7 +157,7 @@ music-archive/
 | `eslint.config.js` | TypeScript·Hooks·React Refresh 권장 규칙. |
 | `README.md` | v0.1 소개·실행 방법·검색 기능·Live Demo 안내. |
 
-`components/`, `types/`, `utils/` 분리를 완료했다. 테스트·서버 구조는 아직 없다. `src/assets/`의 파일들과 `public/icons.svg`는 현재 앱에서 참조하지 않는다. `public/favicon.svg`는 사용한다.
+`components/`, `types/`, `utils/` 분리를 완료했다. production 자동 테스트·서버 구조는 아직 없다. 참조가 없는 starter 이미지와 아이콘 모음은 저장소 정리에서 제거했으며, 사용 중인 `public/favicon.svg`와 문서 스크린샷은 유지했다. 추천 실험은 `experiments/`에 분리하고 앱 기능·제품 결정·추천 알고리즘은 변경하지 않았다. 분류·입출력 연결·실행 명령은 [실험 안내](../experiments/README.md)를 따른다.
 
 ## 4. 기술 스택과 실행 명령
 

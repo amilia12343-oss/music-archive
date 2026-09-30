@@ -1,0 +1,742 @@
+{
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "seedSummary": {
+    "total": 12,
+    "directSuccess": 4,
+    "fallbackSuccess": 0,
+    "finalSuccess": 4,
+    "reports": [
+      {
+        "originalSeed": "BIGBANG - 거짓말",
+        "directCount": 50,
+        "searchUsed": false,
+        "canonical": "-",
+        "retryCount": null,
+        "success": true,
+        "note": ""
+      },
+      {
+        "originalSeed": "리쌍 - 광대",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "리쌍 - 광대",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      },
+      {
+        "originalSeed": "TWICE - CHEER UP",
+        "directCount": 50,
+        "searchUsed": false,
+        "canonical": "-",
+        "retryCount": null,
+        "success": true,
+        "note": ""
+      },
+      {
+        "originalSeed": "볼빨간사춘기 - 심술",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "볼빨간사춘기 - 심술",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      },
+      {
+        "originalSeed": "박원 - 노력",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "박원 - 노력",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      },
+      {
+        "originalSeed": "WINNER - REALLY REALLY",
+        "directCount": 50,
+        "searchUsed": false,
+        "canonical": "-",
+        "retryCount": null,
+        "success": true,
+        "note": ""
+      },
+      {
+        "originalSeed": "IU - 가을 아침",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "IU - 가을 아침",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      },
+      {
+        "originalSeed": "넉살 - N분의1",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "-",
+        "retryCount": null,
+        "success": false,
+        "note": "No conservative title + artist match"
+      },
+      {
+        "originalSeed": "BTOB - 그리워하다",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "BTOB - 그리워하다",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      },
+      {
+        "originalSeed": "HAON(김하온) - 붕붕",
+        "directCount": null,
+        "searchUsed": false,
+        "canonical": "-",
+        "retryCount": null,
+        "success": false,
+        "note": "Last.fm error 6"
+      },
+      {
+        "originalSeed": "SHAUN - Way Back Home",
+        "directCount": 50,
+        "searchUsed": false,
+        "canonical": "-",
+        "retryCount": null,
+        "success": true,
+        "note": ""
+      },
+      {
+        "originalSeed": "iKON - 사랑을 했다",
+        "directCount": 0,
+        "searchUsed": true,
+        "canonical": "Ikon - 사랑을 했다",
+        "retryCount": 0,
+        "success": false,
+        "note": "Retry still returned 0"
+      }
+    ]
+  },
+  "failedSeeds": [
+    "리쌍 - 광대",
+    "볼빨간사춘기 - 심술",
+    "박원 - 노력",
+    "IU - 가을 아침",
+    "넉살 - N분의1",
+    "BTOB - 그리워하다",
+    "HAON(김하온) - 붕붕",
+    "iKON - 사랑을 했다"
+  ],
+  "counts": {
+    "Era-period": 29,
+    "Older": 9,
+    "Unknown": 3,
+    "Future": 19
+  },
+  "rawSimilar": [
+    {
+      "rank": 1,
+      "title": "하루하루",
+      "artist": "Bigbang",
+      "releaseDate": "Unknown",
+      "category": "Unknown",
+      "similarity": 1,
+      "recommendedBy": "BIGBANG - 거짓말 [1]",
+      "matching": "No exact title/artist match"
+    },
+    {
+      "rank": 2,
+      "title": "TT",
+      "artist": "TWICE",
+      "releaseDate": "2016-10-24",
+      "category": "Era-period",
+      "similarity": 1,
+      "recommendedBy": "TWICE - CHEER UP [1]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 3,
+      "title": "Energetic",
+      "artist": "Wanna One",
+      "releaseDate": "2017-08-08",
+      "category": "Era-period",
+      "similarity": 1,
+      "recommendedBy": "WINNER - REALLY REALLY [1] / SHAUN - Way Back Home [0.0509106]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 4,
+      "title": "All Eyes on Me",
+      "artist": "JISOO",
+      "releaseDate": "2023-03-31",
+      "category": "Future",
+      "similarity": 1,
+      "recommendedBy": "SHAUN - Way Back Home [1]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 5,
+      "title": "What You Waiting For",
+      "artist": "JEON SOMI",
+      "releaseDate": "2020-07-22",
+      "category": "Future",
+      "similarity": 0.977462,
+      "recommendedBy": "SHAUN - Way Back Home [0.977462]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 6,
+      "title": "Ko Ko Bop",
+      "artist": "Exo",
+      "releaseDate": "2017-07-18",
+      "category": "Era-period",
+      "similarity": 0.977201,
+      "recommendedBy": "WINNER - REALLY REALLY [0.977201]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 7,
+      "title": "LOVE SCENARIO",
+      "artist": "Ikon",
+      "releaseDate": "2018-01-25",
+      "category": "Era-period",
+      "similarity": 0.947914,
+      "recommendedBy": "WINNER - REALLY REALLY [0.947914] / SHAUN - Way Back Home [0.108907]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 8,
+      "title": "Like OOH-AHH",
+      "artist": "TWICE",
+      "releaseDate": "2015-10-20",
+      "category": "Older",
+      "similarity": 0.936473,
+      "recommendedBy": "TWICE - CHEER UP [0.936473]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 9,
+      "title": "Shine",
+      "artist": "Pentagon",
+      "releaseDate": "2018-04-02",
+      "category": "Era-period",
+      "similarity": 0.842304,
+      "recommendedBy": "WINNER - REALLY REALLY [0.842304] / SHAUN - Way Back Home [0.0756306]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 10,
+      "title": "Violeta",
+      "artist": "IZ*ONE",
+      "releaseDate": "2019-04-01",
+      "category": "Future",
+      "similarity": 0.842159,
+      "recommendedBy": "SHAUN - Way Back Home [0.842159]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 11,
+      "title": "FXXK IT",
+      "artist": "Bigbang",
+      "releaseDate": "2016-12-12",
+      "category": "Era-period",
+      "similarity": 0.824603,
+      "recommendedBy": "WINNER - REALLY REALLY [0.824603]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 12,
+      "title": "Monster",
+      "artist": "Exo",
+      "releaseDate": "2016-06-09",
+      "category": "Era-period",
+      "similarity": 0.818766,
+      "recommendedBy": "WINNER - REALLY REALLY [0.818766]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 13,
+      "title": "Don't Recall",
+      "artist": "KARD",
+      "releaseDate": "2017-02-16",
+      "category": "Era-period",
+      "similarity": 0.818345,
+      "recommendedBy": "WINNER - REALLY REALLY [0.818345] / SHAUN - Way Back Home [0.0506541]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 14,
+      "title": "Rollin'",
+      "artist": "Brave Girls",
+      "releaseDate": "2017-03-07",
+      "category": "Era-period",
+      "similarity": 0.705383,
+      "recommendedBy": "WINNER - REALLY REALLY [0.705383]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 15,
+      "title": "Don't Wanna Cry",
+      "artist": "Seventeen",
+      "releaseDate": "2017-05-22",
+      "category": "Era-period",
+      "similarity": 0.701838,
+      "recommendedBy": "WINNER - REALLY REALLY [0.701838] / SHAUN - Way Back Home [0.0504985]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 16,
+      "title": "천국",
+      "artist": "Bigbang",
+      "releaseDate": "Unknown",
+      "category": "Unknown",
+      "similarity": 0.684241,
+      "recommendedBy": "BIGBANG - 거짓말 [0.684241]",
+      "matching": "No exact title/artist match"
+    },
+    {
+      "rank": 17,
+      "title": "Never Ever",
+      "artist": "GOT7",
+      "releaseDate": "2017-03-13",
+      "category": "Era-period",
+      "similarity": 0.680192,
+      "recommendedBy": "WINNER - REALLY REALLY [0.680192]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 18,
+      "title": "Cherry Bomb",
+      "artist": "NCT 127",
+      "releaseDate": "2017-06-14",
+      "category": "Era-period",
+      "similarity": 0.672115,
+      "recommendedBy": "WINNER - REALLY REALLY [0.672115]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 19,
+      "title": "HELLO",
+      "artist": "Treasure",
+      "releaseDate": "2022-10-04",
+      "category": "Future",
+      "similarity": 0.669714,
+      "recommendedBy": "WINNER - REALLY REALLY [0.669714]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 20,
+      "title": "KILLING ME",
+      "artist": "Ikon",
+      "releaseDate": "2018-08-02",
+      "category": "Era-period",
+      "similarity": 0.664621,
+      "recommendedBy": "WINNER - REALLY REALLY [0.664621]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 21,
+      "title": "SOBER",
+      "artist": "Bigbang",
+      "releaseDate": "2015-07-01",
+      "category": "Older",
+      "similarity": 0.647249,
+      "recommendedBy": "WINNER - REALLY REALLY [0.647249]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 22,
+      "title": "Gotta Go",
+      "artist": "CHUNG HA",
+      "releaseDate": "2019-01-02",
+      "category": "Future",
+      "similarity": 0.637397,
+      "recommendedBy": "WINNER - REALLY REALLY [0.637397]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 23,
+      "title": "Gashina",
+      "artist": "SUNMI",
+      "releaseDate": "2017-08-22",
+      "category": "Era-period",
+      "similarity": 0.622827,
+      "recommendedBy": "WINNER - REALLY REALLY [0.622827]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 24,
+      "title": "Starry Night",
+      "artist": "MAMAMOO",
+      "releaseDate": "2018-03-07",
+      "category": "Era-period",
+      "similarity": 0.593786,
+      "recommendedBy": "WINNER - REALLY REALLY [0.593786] / SHAUN - Way Back Home [0.0700814]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 25,
+      "title": "Hola Hola",
+      "artist": "KARD",
+      "releaseDate": "2017-07-19",
+      "category": "Era-period",
+      "similarity": 0.591861,
+      "recommendedBy": "WINNER - REALLY REALLY [0.591861] / SHAUN - Way Back Home [0.0667742]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 26,
+      "title": "BOOM",
+      "artist": "NCT DREAM",
+      "releaseDate": "2019-07-26",
+      "category": "Future",
+      "similarity": 0.578736,
+      "recommendedBy": "WINNER - REALLY REALLY [0.578736]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 27,
+      "title": "ISLAND",
+      "artist": "Winner",
+      "releaseDate": "2017-08-04",
+      "category": "Era-period",
+      "similarity": 0.57655,
+      "recommendedBy": "WINNER - REALLY REALLY [0.57655]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 28,
+      "title": "If You Do",
+      "artist": "GOT7",
+      "releaseDate": "2015-09-29",
+      "category": "Older",
+      "similarity": 0.565302,
+      "recommendedBy": "WINNER - REALLY REALLY [0.565302]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 29,
+      "title": "FLASH",
+      "artist": "X1",
+      "releaseDate": "2019-08-27",
+      "category": "Future",
+      "similarity": 0.560414,
+      "recommendedBy": "WINNER - REALLY REALLY [0.560414]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 30,
+      "title": "Hollywood Action",
+      "artist": "BOYNEXTDOOR",
+      "releaseDate": "2025-10-20",
+      "category": "Future",
+      "similarity": 0.557548,
+      "recommendedBy": "WINNER - REALLY REALLY [0.557548]",
+      "matching": "Exact normalized match"
+    }
+  ],
+  "eraAware": [
+    {
+      "rank": 1,
+      "title": "TT",
+      "artist": "TWICE",
+      "releaseDate": "2016-10-24",
+      "category": "Era-period",
+      "similarity": 1,
+      "recommendedBy": "TWICE - CHEER UP [1]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 2,
+      "title": "Energetic",
+      "artist": "Wanna One",
+      "releaseDate": "2017-08-08",
+      "category": "Era-period",
+      "similarity": 1,
+      "recommendedBy": "WINNER - REALLY REALLY [1] / SHAUN - Way Back Home [0.0509106]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 3,
+      "title": "Ko Ko Bop",
+      "artist": "Exo",
+      "releaseDate": "2017-07-18",
+      "category": "Era-period",
+      "similarity": 0.977201,
+      "recommendedBy": "WINNER - REALLY REALLY [0.977201]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 4,
+      "title": "LOVE SCENARIO",
+      "artist": "Ikon",
+      "releaseDate": "2018-01-25",
+      "category": "Era-period",
+      "similarity": 0.947914,
+      "recommendedBy": "WINNER - REALLY REALLY [0.947914] / SHAUN - Way Back Home [0.108907]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 5,
+      "title": "Shine",
+      "artist": "Pentagon",
+      "releaseDate": "2018-04-02",
+      "category": "Era-period",
+      "similarity": 0.842304,
+      "recommendedBy": "WINNER - REALLY REALLY [0.842304] / SHAUN - Way Back Home [0.0756306]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 6,
+      "title": "FXXK IT",
+      "artist": "Bigbang",
+      "releaseDate": "2016-12-12",
+      "category": "Era-period",
+      "similarity": 0.824603,
+      "recommendedBy": "WINNER - REALLY REALLY [0.824603]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 7,
+      "title": "Monster",
+      "artist": "Exo",
+      "releaseDate": "2016-06-09",
+      "category": "Era-period",
+      "similarity": 0.818766,
+      "recommendedBy": "WINNER - REALLY REALLY [0.818766]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 8,
+      "title": "Don't Recall",
+      "artist": "KARD",
+      "releaseDate": "2017-02-16",
+      "category": "Era-period",
+      "similarity": 0.818345,
+      "recommendedBy": "WINNER - REALLY REALLY [0.818345] / SHAUN - Way Back Home [0.0506541]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 9,
+      "title": "Rollin'",
+      "artist": "Brave Girls",
+      "releaseDate": "2017-03-07",
+      "category": "Era-period",
+      "similarity": 0.705383,
+      "recommendedBy": "WINNER - REALLY REALLY [0.705383]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 10,
+      "title": "Don't Wanna Cry",
+      "artist": "Seventeen",
+      "releaseDate": "2017-05-22",
+      "category": "Era-period",
+      "similarity": 0.701838,
+      "recommendedBy": "WINNER - REALLY REALLY [0.701838] / SHAUN - Way Back Home [0.0504985]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 11,
+      "title": "Never Ever",
+      "artist": "GOT7",
+      "releaseDate": "2017-03-13",
+      "category": "Era-period",
+      "similarity": 0.680192,
+      "recommendedBy": "WINNER - REALLY REALLY [0.680192]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 12,
+      "title": "Cherry Bomb",
+      "artist": "NCT 127",
+      "releaseDate": "2017-06-14",
+      "category": "Era-period",
+      "similarity": 0.672115,
+      "recommendedBy": "WINNER - REALLY REALLY [0.672115]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 13,
+      "title": "KILLING ME",
+      "artist": "Ikon",
+      "releaseDate": "2018-08-02",
+      "category": "Era-period",
+      "similarity": 0.664621,
+      "recommendedBy": "WINNER - REALLY REALLY [0.664621]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 14,
+      "title": "Gashina",
+      "artist": "SUNMI",
+      "releaseDate": "2017-08-22",
+      "category": "Era-period",
+      "similarity": 0.622827,
+      "recommendedBy": "WINNER - REALLY REALLY [0.622827]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 15,
+      "title": "Starry Night",
+      "artist": "MAMAMOO",
+      "releaseDate": "2018-03-07",
+      "category": "Era-period",
+      "similarity": 0.593786,
+      "recommendedBy": "WINNER - REALLY REALLY [0.593786] / SHAUN - Way Back Home [0.0700814]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 16,
+      "title": "Hola Hola",
+      "artist": "KARD",
+      "releaseDate": "2017-07-19",
+      "category": "Era-period",
+      "similarity": 0.591861,
+      "recommendedBy": "WINNER - REALLY REALLY [0.591861] / SHAUN - Way Back Home [0.0667742]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 17,
+      "title": "ISLAND",
+      "artist": "Winner",
+      "releaseDate": "2017-08-04",
+      "category": "Era-period",
+      "similarity": 0.57655,
+      "recommendedBy": "WINNER - REALLY REALLY [0.57655]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 18,
+      "title": "Rumor",
+      "artist": "H.I.N.P (Hot Issue of Ntl. Producers)",
+      "releaseDate": "2018-08-18",
+      "category": "Era-period",
+      "similarity": 0.556429,
+      "recommendedBy": "WINNER - REALLY REALLY [0.556429]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 19,
+      "title": "DDD",
+      "artist": "EXID",
+      "releaseDate": "2017-11-08",
+      "category": "Era-period",
+      "similarity": 0.550934,
+      "recommendedBy": "WINNER - REALLY REALLY [0.550934]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 20,
+      "title": "BBoom BBoom",
+      "artist": "MOMOLAND",
+      "releaseDate": "2018-01-03",
+      "category": "Era-period",
+      "similarity": 0.548523,
+      "recommendedBy": "TWICE - CHEER UP [0.244435] / WINNER - REALLY REALLY [0.548523] / SHAUN - Way Back Home [0.053904]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 21,
+      "title": "Excuse Me",
+      "artist": "AOA",
+      "releaseDate": "2017-01-02",
+      "category": "Era-period",
+      "similarity": 0.545492,
+      "recommendedBy": "WINNER - REALLY REALLY [0.545492]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 22,
+      "title": "I Love You",
+      "artist": "EXID",
+      "releaseDate": "2018-11-21",
+      "category": "Era-period",
+      "similarity": 0.526201,
+      "recommendedBy": "WINNER - REALLY REALLY [0.526201]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 23,
+      "title": "Beautiful",
+      "artist": "Wanna One",
+      "releaseDate": "2017-11-13",
+      "category": "Era-period",
+      "similarity": 0.521958,
+      "recommendedBy": "WINNER - REALLY REALLY [0.521958]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 24,
+      "title": "WEE WOO",
+      "artist": "PRISTIN",
+      "releaseDate": "2017-03-21",
+      "category": "Era-period",
+      "similarity": 0.518963,
+      "recommendedBy": "WINNER - REALLY REALLY [0.518963]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 25,
+      "title": "MOVE",
+      "artist": "TAEMIN",
+      "releaseDate": "2017-10-16",
+      "category": "Era-period",
+      "similarity": 0.51662,
+      "recommendedBy": "WINNER - REALLY REALLY [0.51662]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 26,
+      "title": "Get It",
+      "artist": "PRISTIN V",
+      "releaseDate": "2018-05-28",
+      "category": "Era-period",
+      "similarity": 0.511386,
+      "recommendedBy": "WINNER - REALLY REALLY [0.511386]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 27,
+      "title": "Very Very Very",
+      "artist": "I.O.I",
+      "releaseDate": "2016-10-17",
+      "category": "Era-period",
+      "similarity": 0.493372,
+      "recommendedBy": "TWICE - CHEER UP [0.201818] / WINNER - REALLY REALLY [0.493372]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 28,
+      "title": "Black Suit",
+      "artist": "SUPER JUNIOR",
+      "releaseDate": "2017-11-06",
+      "category": "Era-period",
+      "similarity": 0.470266,
+      "recommendedBy": "WINNER - REALLY REALLY [0.470266]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 29,
+      "title": "러시안 룰렛 Russian Roulette",
+      "artist": "Red Velvet",
+      "releaseDate": "2016-09-07",
+      "category": "Era-period",
+      "similarity": 0.441305,
+      "recommendedBy": "TWICE - CHEER UP [0.441305]",
+      "matching": "Exact normalized match"
+    },
+    {
+      "rank": 30,
+      "title": "하루하루",
+      "artist": "Bigbang",
+      "releaseDate": "Unknown",
+      "category": "Unknown",
+      "similarity": 1,
+      "recommendedBy": "BIGBANG - 거짓말 [1]",
+      "matching": "No exact title/artist match"
+    }
+  ]
+}

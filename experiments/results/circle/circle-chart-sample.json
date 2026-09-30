@@ -1,0 +1,2141 @@
+{
+  "source": "circle",
+  "chart": "digital",
+  "scope": "종합",
+  "frequency": "monthly",
+  "months": [
+    {
+      "period": "2016-06",
+      "success": true,
+      "count": 100,
+      "tracks": [
+        {
+          "rank": 1,
+          "title": "널 사랑하지 않아",
+          "artist": "어반 자카파 (Urban Zakapa)",
+          "album": "스틸",
+          "sourceTrackId": "1031576"
+        },
+        {
+          "rank": 2,
+          "title": "CHEER UP",
+          "artist": "TWICE",
+          "album": "PAGE TWO",
+          "sourceTrackId": "1014711"
+        },
+        {
+          "rank": 3,
+          "title": "쏘쏘",
+          "artist": "백아연",
+          "album": "쏘쏘",
+          "sourceTrackId": "1031077"
+        },
+        {
+          "rank": 4,
+          "title": "Monster",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039111"
+        },
+        {
+          "rank": 5,
+          "title": "니가 알던 내가 아냐 (Prod. by GRAY)",
+          "artist": "사이먼 도미닉 (Simon Dominic), 원(ONE), 지투(G2), BewhY",
+          "album": "쇼미더머니 5 Episode 1",
+          "sourceTrackId": "1043004"
+        },
+        {
+          "rank": 6,
+          "title": "L.I.E",
+          "artist": "EXID",
+          "album": "STREET",
+          "sourceTrackId": "1034616"
+        },
+        {
+          "rank": 7,
+          "title": "꿈처럼",
+          "artist": "벤 (Ben)",
+          "album": "또 오해영 OST Part 2",
+          "sourceTrackId": "1023455"
+        },
+        {
+          "rank": 8,
+          "title": "자격지심 (Feat. 은하 of 여자친구)",
+          "artist": "박경",
+          "album": "자격지심",
+          "sourceTrackId": "1031040"
+        },
+        {
+          "rank": 9,
+          "title": "I Like That",
+          "artist": "씨스타 (Sistar)",
+          "album": "沒我愛(몰아애)",
+          "sourceTrackId": "1047402"
+        },
+        {
+          "rank": 10,
+          "title": "너였다면",
+          "artist": "정승환",
+          "album": "또 오해영 OST Part 5",
+          "sourceTrackId": "1034544"
+        },
+        {
+          "rank": 11,
+          "title": "신사 ($insa)",
+          "artist": "자이언티(Zion.T), 씨잼(Cjamm), 레디(Reddy), 서출구",
+          "album": "쇼미더머니 5 Episode 1",
+          "sourceTrackId": "1043002"
+        },
+        {
+          "rank": 12,
+          "title": "사랑이 뭔데",
+          "artist": "서현진, 유승우",
+          "album": "또 오해영 OST Part 3",
+          "sourceTrackId": "1026906"
+        },
+        {
+          "rank": 13,
+          "title": "공중도덕 (Air DoTheQ)",
+          "artist": "The Quiett, 수퍼비 (SUPERBEE), myunDo, Flowsik, 도끼 (Dok2)",
+          "album": "쇼미더머니 5 Episode 1",
+          "sourceTrackId": "1043003"
+        },
+        {
+          "rank": 14,
+          "title": "하늘바라기 (Feat. 하림)",
+          "artist": "정은지",
+          "album": "Dream",
+          "sourceTrackId": "1010393"
+        },
+        {
+          "rank": 15,
+          "title": "GOOD (Feat. ELO)",
+          "artist": "로꼬 (LOCO), GRAY (그레이)",
+          "album": "GOOD",
+          "sourceTrackId": "1043099"
+        },
+        {
+          "rank": 16,
+          "title": "달고나",
+          "artist": "산이 (San E), 레이나",
+          "album": "달고나",
+          "sourceTrackId": "1043038"
+        },
+        {
+          "rank": 17,
+          "title": "Lucky One",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039112"
+        },
+        {
+          "rank": 18,
+          "title": "D (half moon) (Feat. 개코)",
+          "artist": "DEAN",
+          "album": "130 mood  TRBL",
+          "sourceTrackId": "994545"
+        },
+        {
+          "rank": 19,
+          "title": "Good Luck",
+          "artist": "AOA",
+          "album": "Good Luck",
+          "sourceTrackId": "1026751"
+        },
+        {
+          "rank": 20,
+          "title": "맘 편히 (Comfortable)",
+          "artist": "사이먼 도미닉 (Simon Dominic), GRAY (그레이), 원 (ONE)",
+          "album": "쇼미더머니 5 Episode 2",
+          "sourceTrackId": "1047585"
+        },
+        {
+          "rank": 21,
+          "title": "Bye bye my blue",
+          "artist": "백예린",
+          "album": "Bye bye my blue",
+          "sourceTrackId": "1047088"
+        },
+        {
+          "rank": 22,
+          "title": "RE-BYE",
+          "artist": "AKMU (악뮤)",
+          "album": "사춘기 상 (思春記 上)",
+          "sourceTrackId": "1019876"
+        },
+        {
+          "rank": 23,
+          "title": "오늘 모해 (#WYD)",
+          "artist": "iKON",
+          "album": "오늘 모해 (#WYD)",
+          "sourceTrackId": "1034434"
+        },
+        {
+          "rank": 24,
+          "title": "1llusion",
+          "artist": "도끼 (Dok2)",
+          "album": "1llusion",
+          "sourceTrackId": "1027148"
+        },
+        {
+          "rank": 25,
+          "title": "No Matter What",
+          "artist": "보아(BoA), 빈지노(Beenzino)",
+          "album": "No Matter What",
+          "sourceTrackId": "1043037"
+        },
+        {
+          "rank": 26,
+          "title": "어디에도",
+          "artist": "엠씨더맥스 (M.C the MAX)",
+          "album": "pathos",
+          "sourceTrackId": "965615"
+        },
+        {
+          "rank": 27,
+          "title": "Starlight (Feat. DEAN)",
+          "artist": "태연 (TAEYEON)",
+          "album": "Why- The 2nd Mini Album",
+          "sourceTrackId": "1047589"
+        },
+        {
+          "rank": 28,
+          "title": "어쩌면 나",
+          "artist": "로이킴",
+          "album": "또 오해영 OST Part 4",
+          "sourceTrackId": "1031052"
+        },
+        {
+          "rank": 29,
+          "title": "내 입술 따뜻한 커피처럼 (Feat. 이성경)",
+          "artist": "에디킴",
+          "album": "내 입술 따뜻한 커피처럼",
+          "sourceTrackId": "1015742"
+        },
+        {
+          "rank": 30,
+          "title": "The Time Goes On",
+          "artist": "비와이(BewhY)",
+          "album": "Time Travel",
+          "sourceTrackId": "830231"
+        },
+        {
+          "rank": 31,
+          "title": "비행소년 (Going Home)",
+          "artist": "매드 클라운 (Mad Clown), 샵건 (#Gun)",
+          "album": "쇼미더머니 5 Episode 2",
+          "sourceTrackId": "1047586"
+        },
+        {
+          "rank": 32,
+          "title": "맥주 두 잔",
+          "artist": "키썸 (Kisum)",
+          "album": "맥주 두 잔",
+          "sourceTrackId": "1034527"
+        },
+        {
+          "rank": 33,
+          "title": "봄이 좋냐??",
+          "artist": "10CM",
+          "album": "3.2",
+          "sourceTrackId": "999225"
+        },
+        {
+          "rank": 34,
+          "title": "이 사랑",
+          "artist": "다비치",
+          "album": "태양의 후예 OST Part.3",
+          "sourceTrackId": "983234"
+        },
+        {
+          "rank": 35,
+          "title": "You Are My Everything",
+          "artist": "거미",
+          "album": "태양의 후예 OST Part 4",
+          "sourceTrackId": "986737"
+        },
+        {
+          "rank": 36,
+          "title": "Shut Up & Groove (Feat. DEAN)",
+          "artist": "헤이즈 (Heize)",
+          "album": "And July",
+          "sourceTrackId": "1034665"
+        },
+        {
+          "rank": 37,
+          "title": "뚝뚝뚝 (with 예슬)",
+          "artist": "스탠딩 에그(Standing Egg)",
+          "album": "뚝뚝뚝",
+          "sourceTrackId": "1038426"
+        },
+        {
+          "rank": 38,
+          "title": "무궁화",
+          "artist": "매드 클라운 (Mad Clown), 도넛맨 (Donutman), 보이비 (Boi B), 샵건 (#Gun)",
+          "album": "쇼미더머니 5 Episode 1",
+          "sourceTrackId": "1043001"
+        },
+        {
+          "rank": 39,
+          "title": "토요일의 끝에서 (Feat. Blacknut)",
+          "artist": "빈지노 (Beenzino)",
+          "album": "12",
+          "sourceTrackId": "1034571"
+        },
+        {
+          "rank": 40,
+          "title": "우아해 (woo ah)",
+          "artist": "크러쉬 (CRUSH)",
+          "album": "Interlude",
+          "sourceTrackId": "1019853"
+        },
+        {
+          "rank": 41,
+          "title": "Heaven",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039108"
+        },
+        {
+          "rank": 42,
+          "title": "사람들이 움직이는 게",
+          "artist": "AKMU (악뮤)",
+          "album": "사춘기 상 (思春記 上)",
+          "sourceTrackId": "1019875"
+        },
+        {
+          "rank": 43,
+          "title": "시간을 달려서 (Rough)",
+          "artist": "여자친구 (GFRIEND)",
+          "album": "3rd Mini Album `SNOWFLAKE`",
+          "sourceTrackId": "965321"
+        },
+        {
+          "rank": 44,
+          "title": "Dream Girls",
+          "artist": "아이오아이 (I.O.I)",
+          "album": "아이오아이 (I.O.I) 1st Mini Album `Chrysalis`",
+          "sourceTrackId": "1019869"
+        },
+        {
+          "rank": 45,
+          "title": "말해! 뭐해?",
+          "artist": "케이윌 (K.Will)",
+          "album": "태양의 후예 OST Part.6",
+          "sourceTrackId": "990481"
+        },
+        {
+          "rank": 46,
+          "title": "아주 오래된 연인들 (우리 동네 음악대장)",
+          "artist": "하현우",
+          "album": "복면가왕 62회",
+          "sourceTrackId": "1038358"
+        },
+        {
+          "rank": 47,
+          "title": "걱정말아요 그대",
+          "artist": "이적",
+          "album": "응답하라 1988 OST Part 2",
+          "sourceTrackId": "921876"
+        },
+        {
+          "rank": 48,
+          "title": "일상으로의 초대 (우리 동네 음악대장) (Bonus Track)",
+          "artist": "하현우",
+          "album": "복면가왕 62회",
+          "sourceTrackId": "1038361"
+        },
+        {
+          "rank": 49,
+          "title": "Toy",
+          "artist": "블락비 (Block B)",
+          "album": "Blooming Period",
+          "sourceTrackId": "1006507"
+        },
+        {
+          "rank": 50,
+          "title": "Lazenca, Save Us (우리 동네 음악대장) (Bonus Track)",
+          "artist": "하현우",
+          "album": "복면가왕 62회",
+          "sourceTrackId": "1038360"
+        },
+        {
+          "rank": 51,
+          "title": "바라지 않아 (feat.소정 of 레이디스 코드)",
+          "artist": "정키 (Jung Key)",
+          "album": "LISH",
+          "sourceTrackId": "1039125"
+        },
+        {
+          "rank": 52,
+          "title": "OOH-AHH하게",
+          "artist": "TWICE",
+          "album": "THE STORY BEGINS",
+          "sourceTrackId": "911871"
+        },
+        {
+          "rank": 53,
+          "title": "안아줘",
+          "artist": "정준일",
+          "album": "Lo9ve3r4s",
+          "sourceTrackId": "188998"
+        },
+        {
+          "rank": 54,
+          "title": "너는 나 나는 너",
+          "artist": "지코 (ZICO)",
+          "album": "Break Up 2 Make Up",
+          "sourceTrackId": "965317"
+        },
+        {
+          "rank": 55,
+          "title": "넌 is 뭔들",
+          "artist": "마마무 (Mamamoo)",
+          "album": "Melting",
+          "sourceTrackId": "979610"
+        },
+        {
+          "rank": 56,
+          "title": "Don`t Cry (우리동네 음악대장)",
+          "artist": "우리 동네 음악대장",
+          "album": "복면가왕 50회",
+          "sourceTrackId": "990032"
+        },
+        {
+          "rank": 57,
+          "title": "쿵 (Knock)",
+          "artist": "자이언티(Zion.T)",
+          "album": "쇼미더머니 5 Special",
+          "sourceTrackId": "1051880"
+        },
+        {
+          "rank": 58,
+          "title": "Boys And Girls (Feat. Babylon)",
+          "artist": "지코 (ZICO)",
+          "album": "Boys And Girls",
+          "sourceTrackId": "921362"
+        },
+        {
+          "rank": 59,
+          "title": "Artificial Love",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039110"
+        },
+        {
+          "rank": 60,
+          "title": "사랑하자",
+          "artist": "SG 워너비",
+          "album": "태양의 후예 OST Part.8",
+          "sourceTrackId": "998446"
+        },
+        {
+          "rank": 61,
+          "title": "니가 참 좋아",
+          "artist": "10CM",
+          "album": "니가 참 좋아",
+          "sourceTrackId": "1043091"
+        },
+        {
+          "rank": 62,
+          "title": "불타오르네 (FIRE)",
+          "artist": "방탄소년단",
+          "album": "화양연화 Young Forever",
+          "sourceTrackId": "1019522"
+        },
+        {
+          "rank": 63,
+          "title": "ALWAYS",
+          "artist": "윤미래",
+          "album": "태양의 후예 OST Part 1",
+          "sourceTrackId": "975717"
+        },
+        {
+          "rank": 64,
+          "title": "매일 매일 기다려 (우리동네 음악대장)",
+          "artist": "우리 동네 음악대장",
+          "album": "복면가왕 58회",
+          "sourceTrackId": "1023384"
+        },
+        {
+          "rank": 65,
+          "title": "잊어버리지마 (Feat.태연)",
+          "artist": "크러쉬 (CRUSH)",
+          "album": "잊어버리지마",
+          "sourceTrackId": "961876"
+        },
+        {
+          "rank": 66,
+          "title": "한숨",
+          "artist": "이하이",
+          "album": "SEOULITE",
+          "sourceTrackId": "986431"
+        },
+        {
+          "rank": 67,
+          "title": "기다린 만큼, 더",
+          "artist": "검정치마 (The Black Skirts)",
+          "album": "또 오해영 OST Part 7",
+          "sourceTrackId": "1043178"
+        },
+        {
+          "rank": 68,
+          "title": "백색소음(White Noise)",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039107"
+        },
+        {
+          "rank": 69,
+          "title": "오늘부터 우리는 (Me gustas tu)",
+          "artist": "여자친구 (GFRIEND)",
+          "album": "2nd Mini Album `Flower Bud`",
+          "sourceTrackId": "889575"
+        },
+        {
+          "rank": 70,
+          "title": "녹턴 (Nocturn) (하면 된다 백수탈출)",
+          "artist": "하면 된다 백수탈출",
+          "album": "복면가왕 62회",
+          "sourceTrackId": "1038357"
+        },
+        {
+          "rank": 71,
+          "title": "Cloud 9",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039109"
+        },
+        {
+          "rank": 72,
+          "title": "Stronger",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039104"
+        },
+        {
+          "rank": 73,
+          "title": "Butterfly",
+          "artist": "비스트 (Beast)",
+          "album": "Butterfly",
+          "sourceTrackId": "1051734"
+        },
+        {
+          "rank": 74,
+          "title": "스토커",
+          "artist": "10CM",
+          "album": "3.0",
+          "sourceTrackId": "780079"
+        },
+        {
+          "rank": 75,
+          "title": "벚꽃이 지면",
+          "artist": "아이오아이 (I.O.I)",
+          "album": "아이오아이 (I.O.I) 1st Mini Album `Chrysalis`",
+          "sourceTrackId": "1019865"
+        },
+        {
+          "rank": 76,
+          "title": "다시 너를",
+          "artist": "매드 클라운 (Mad Clown), 김나영",
+          "album": "태양의 후예 OST Part 5",
+          "sourceTrackId": "990498"
+        },
+        {
+          "rank": 77,
+          "title": "유리어항(One and Only)",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039106"
+        },
+        {
+          "rank": 78,
+          "title": "또 다시 사랑",
+          "artist": "임창정",
+          "album": "또 다시 사랑",
+          "sourceTrackId": "904204"
+        },
+        {
+          "rank": 79,
+          "title": "내게 말해줘",
+          "artist": "소유 (SOYOU)",
+          "album": "운빨로맨스 OST Part.3",
+          "sourceTrackId": "1034754"
+        },
+        {
+          "rank": 80,
+          "title": "They Never Know",
+          "artist": "EXO",
+          "album": "EX’ACT - The 3rd Album",
+          "sourceTrackId": "1039105"
+        },
+        {
+          "rank": 81,
+          "title": "제주도의 푸른 밤",
+          "artist": "태연 (TAEYEON)",
+          "album": "밴드 고맙삼다",
+          "sourceTrackId": "1006814"
+        },
+        {
+          "rank": 82,
+          "title": "Love Yourself",
+          "artist": "Justin Bieber",
+          "album": "Purpose (Deluxe Edition)",
+          "sourceTrackId": "925372"
+        },
+        {
+          "rank": 83,
+          "title": "Rain",
+          "artist": "태연 (TAEYEON)",
+          "album": "Rain - SM STATION",
+          "sourceTrackId": "969294"
+        },
+        {
+          "rank": 84,
+          "title": "Why",
+          "artist": "태연 (TAEYEON)",
+          "album": "Why- The 2nd Mini Album",
+          "sourceTrackId": "1051877"
+        },
+        {
+          "rank": 85,
+          "title": "Everytime",
+          "artist": "첸 (CHEN), 펀치 (Punch)",
+          "album": "태양의 후예 OST Part.2",
+          "sourceTrackId": "979628"
+        },
+        {
+          "rank": 86,
+          "title": "백만송이 장미 (우리 동네 음악대장)",
+          "artist": "우리동네 음악대장",
+          "album": "복면가왕 60회",
+          "sourceTrackId": "1030965"
+        },
+        {
+          "rank": 87,
+          "title": "같은 곳에서",
+          "artist": "소녀온탑",
+          "album": "PRODUCE 101 - 35 Girls 5 Concepts",
+          "sourceTrackId": "990476"
+        },
+        {
+          "rank": 88,
+          "title": "그대, 바람이 되어",
+          "artist": "엠씨더맥스 (M.C The Max)",
+          "album": "태양의 후예 OST Part.9",
+          "sourceTrackId": "1002706"
+        },
+        {
+          "rank": 89,
+          "title": "PICK ME",
+          "artist": "PRODUCE 101",
+          "album": "PRODUCE 101 - PICK ME",
+          "sourceTrackId": "943828"
+        },
+        {
+          "rank": 90,
+          "title": "How Can I Love You",
+          "artist": "XIA(준수)",
+          "album": "태양의 후예 OST Part 10",
+          "sourceTrackId": "1006810"
+        },
+        {
+          "rank": 91,
+          "title": "돌아오지마 (Feat. 용준형 of 비스트)",
+          "artist": "헤이즈 (Heize)",
+          "album": "돌아오지마",
+          "sourceTrackId": "1006809"
+        },
+        {
+          "rank": 92,
+          "title": "마치 비행기 (Feat. 개리)",
+          "artist": "산이 (San E)",
+          "album": "마치 비행기",
+          "sourceTrackId": "1024242"
+        },
+        {
+          "rank": 93,
+          "title": "21",
+          "artist": "DEAN",
+          "album": "130 mood  TRBL",
+          "sourceTrackId": "994548"
+        },
+        {
+          "rank": 94,
+          "title": "민물 장어의 꿈 (우리 동네 음악대장) (Bonus Track)",
+          "artist": "하현우",
+          "album": "복면가왕 62회",
+          "sourceTrackId": "1038359"
+        },
+        {
+          "rank": 95,
+          "title": "하기나 해 (Feat. Loco)",
+          "artist": "GRAY (그레이)",
+          "album": "grayground. 01",
+          "sourceTrackId": "842309"
+        },
+        {
+          "rank": 96,
+          "title": "Machine Gun (Feat. MINO)",
+          "artist": "KUSH, 자이언티(Zion.T)",
+          "album": "쇼미더머니 5 Special",
+          "sourceTrackId": "1051879"
+        },
+        {
+          "rank": 97,
+          "title": "ㅋ",
+          "artist": "장기하와 얼굴들",
+          "album": "내 사랑에 노련한 사람이 어딨나요",
+          "sourceTrackId": "1043085"
+        },
+        {
+          "rank": 98,
+          "title": "I`m Not The Only One",
+          "artist": "Sam Smith",
+          "album": "In The Lonely Hour",
+          "sourceTrackId": "698175"
+        },
+        {
+          "rank": 99,
+          "title": "유레카 (Feat. Zion.T)",
+          "artist": "지코 (ZICO)",
+          "album": "GALLERY",
+          "sourceTrackId": "938916"
+        },
+        {
+          "rank": 100,
+          "title": "너도 (Feat. Cha Cha Malone)",
+          "artist": "로꼬 (LOCO)",
+          "album": "너도",
+          "sourceTrackId": "1002764"
+        }
+      ],
+      "statusCode": 200,
+      "reason": null
+    },
+    {
+      "period": "2017-06",
+      "success": true,
+      "count": 100,
+      "tracks": [
+        {
+          "rank": 1,
+          "title": "무제(無題) (Untitled, 2014)",
+          "artist": "G-Dragon",
+          "album": "권지용",
+          "sourceTrackId": "1266879"
+        },
+        {
+          "rank": 2,
+          "title": "남이 될 수 있을까",
+          "artist": "볼빨간 사춘기, 스무살",
+          "album": "남이 될 수 있을까",
+          "sourceTrackId": "1271341"
+        },
+        {
+          "rank": 3,
+          "title": "NEVER",
+          "artist": "국민의 아들",
+          "album": "PRODUCE 101 - 35 Boys 5 Concepts",
+          "sourceTrackId": "1262385"
+        },
+        {
+          "rank": 4,
+          "title": "LONELY",
+          "artist": "씨스타 (Sistar)",
+          "album": "LONELY",
+          "sourceTrackId": "1262344"
+        },
+        {
+          "rank": 5,
+          "title": "SIGNAL",
+          "artist": "TWICE",
+          "album": "SIGNAL",
+          "sourceTrackId": "1251158"
+        },
+        {
+          "rank": 6,
+          "title": "처음부터 너와 나",
+          "artist": "볼빨간사춘기",
+          "album": "군주 - 가면의 주인 OST Part 2",
+          "sourceTrackId": "1251542"
+        },
+        {
+          "rank": 7,
+          "title": "New Face",
+          "artist": "싸이 (Psy)",
+          "album": "PSY 8th 4X2=8",
+          "sourceTrackId": "1246733"
+        },
+        {
+          "rank": 8,
+          "title": "Shape of You",
+          "artist": "Ed Sheeran",
+          "album": "÷ (Deluxe)",
+          "sourceTrackId": "1166326"
+        },
+        {
+          "rank": 9,
+          "title": "I LUV IT",
+          "artist": "싸이 (Psy)",
+          "album": "PSY 8th 4X2=8",
+          "sourceTrackId": "1246734"
+        },
+        {
+          "rank": 10,
+          "title": "나로 말할 것 같으면 (Yes I am)",
+          "artist": "마마무 (Mamamoo)",
+          "album": "Purple",
+          "sourceTrackId": "1275963"
+        },
+        {
+          "rank": 11,
+          "title": "오늘 취하면 (Feat.창모) (Prod. SUGA)",
+          "artist": "수란 (SURAN)",
+          "album": "WINE",
+          "sourceTrackId": "1237656"
+        },
+        {
+          "rank": 12,
+          "title": "마지막처럼",
+          "artist": "BLACKPINK",
+          "album": "마지막처럼",
+          "sourceTrackId": "1275971"
+        },
+        {
+          "rank": 13,
+          "title": "팔레트 (Feat. G-DRAGON)",
+          "artist": "아이유 (IU)",
+          "album": "Palette",
+          "sourceTrackId": "1233546"
+        },
+        {
+          "rank": 14,
+          "title": "Oh Little Girl",
+          "artist": "슬레이트",
+          "album": "PRODUCE 101 - 35 Boys 5 Concepts",
+          "sourceTrackId": "1262386"
+        },
+        {
+          "rank": 15,
+          "title": "REALLY REALLY",
+          "artist": "위너(WINNER)",
+          "album": "FATE NUMBER FOR",
+          "sourceTrackId": "1222909"
+        },
+        {
+          "rank": 16,
+          "title": "맞지?",
+          "artist": "언니쓰",
+          "album": "언니들의 슬램덩크 시즌 2",
+          "sourceTrackId": "1246664"
+        },
+        {
+          "rank": 17,
+          "title": "SUPER STAR",
+          "artist": "G-Dragon",
+          "album": "권지용",
+          "sourceTrackId": "1266880"
+        },
+        {
+          "rank": 18,
+          "title": "열어줘",
+          "artist": "Knock",
+          "album": "PRODUCE 101 - 35 Boys 5 Concepts",
+          "sourceTrackId": "1262387"
+        },
+        {
+          "rank": 19,
+          "title": "개소리 (BULLSHIT)",
+          "artist": "G-Dragon",
+          "album": "권지용",
+          "sourceTrackId": "1266881"
+        },
+        {
+          "rank": 20,
+          "title": "매일 듣는 노래 (A Daily Song)",
+          "artist": "황치열",
+          "album": "Be ordinary",
+          "sourceTrackId": "1271335"
+        },
+        {
+          "rank": 21,
+          "title": "Why Don`t You Know (Feat. 넉살)",
+          "artist": "청하",
+          "album": "Hands on Me",
+          "sourceTrackId": "1266921"
+        },
+        {
+          "rank": 22,
+          "title": "미치고 싶다",
+          "artist": "한동근",
+          "album": "한동근 1ST ALBUM ‘Your Diary’",
+          "sourceTrackId": "1241959"
+        },
+        {
+          "rank": 23,
+          "title": "CALLING YOU",
+          "artist": "하이라이트(Highlight)",
+          "album": "CALLING YOU",
+          "sourceTrackId": "1262205"
+        },
+        {
+          "rank": 24,
+          "title": "BLUE MOON (Prod. GroovyRoom)",
+          "artist": "효린, 창모 (CHANGMO)",
+          "album": "BLUE MOON",
+          "sourceTrackId": "1227663"
+        },
+        {
+          "rank": 25,
+          "title": "밤편지",
+          "artist": "아이유 (IU)",
+          "album": "밤편지",
+          "sourceTrackId": "1214938"
+        },
+        {
+          "rank": 26,
+          "title": "널 너무 모르고",
+          "artist": "헤이즈 (Heize)",
+          "album": "/// (너 먹구름 비)",
+          "sourceTrackId": "1281127"
+        },
+        {
+          "rank": 27,
+          "title": "첫눈처럼 너에게 가겠다",
+          "artist": "에일리 (Ailee)",
+          "album": "도깨비 OST Part 9",
+          "sourceTrackId": "1166003"
+        },
+        {
+          "rank": 28,
+          "title": "달콤한 빈말 (Feat. 바버렛츠)",
+          "artist": "백아연",
+          "album": "Bittersweet",
+          "sourceTrackId": "1262225"
+        },
+        {
+          "rank": 29,
+          "title": "사랑앓이 (With 김나영)",
+          "artist": "FTISLAND (FT아일랜드)",
+          "album": "FTISLAND 10th Anniversary Special Digital Single",
+          "sourceTrackId": "1262154"
+        },
+        {
+          "rank": 30,
+          "title": "TOMBOY",
+          "artist": "혁오 (hyukoh)",
+          "album": "23",
+          "sourceTrackId": "1237385"
+        },
+        {
+          "rank": 31,
+          "title": "사랑이 잘 (With 오혁)",
+          "artist": "아이유 (IU)",
+          "album": "사랑이 잘",
+          "sourceTrackId": "1223137"
+        },
+        {
+          "rank": 32,
+          "title": "Marry Me",
+          "artist": "마크툽 (MAKTUB), 구윤회",
+          "album": "마크툽 프로젝트 Vol.03",
+          "sourceTrackId": "738641"
+        },
+        {
+          "rank": 33,
+          "title": "지나쳐 (FEAT. DEAN)",
+          "artist": "로꼬 (LOCO)",
+          "album": "BLEACHED",
+          "sourceTrackId": "1256849"
+        },
+        {
+          "rank": 34,
+          "title": "KNOCK KNOCK",
+          "artist": "TWICE",
+          "album": "TWICEcoaster : LANE 2",
+          "sourceTrackId": "1195944"
+        },
+        {
+          "rank": 35,
+          "title": "I Know You Know",
+          "artist": "월하소년 (月下少年)",
+          "album": "PRODUCE 101 - 35 Boys 5 Concepts",
+          "sourceTrackId": "1262388"
+        },
+        {
+          "rank": 36,
+          "title": "좋다고 말해",
+          "artist": "볼빨간사춘기",
+          "album": "Full Album RED PLANET (Hidden Track)",
+          "sourceTrackId": "1158301"
+        },
+        {
+          "rank": 37,
+          "title": "오빠야",
+          "artist": "신현희와김루트",
+          "album": "신현희와김루트",
+          "sourceTrackId": "824661"
+        },
+        {
+          "rank": 38,
+          "title": "Show Time",
+          "artist": "It`s",
+          "album": "PRODUCE 101 - 35 Boys 5 Concepts",
+          "sourceTrackId": "1262389"
+        },
+        {
+          "rank": 39,
+          "title": "INTRO. 권지용 (Middle Fingers-Up)",
+          "artist": "G-Dragon",
+          "album": "권지용",
+          "sourceTrackId": "1266877"
+        },
+        {
+          "rank": 40,
+          "title": "FIVE",
+          "artist": "에이핑크 (Apink)",
+          "album": "Pink UP",
+          "sourceTrackId": "1281143"
+        },
+        {
+          "rank": 41,
+          "title": "아름다워",
+          "artist": "창모 (CHANGMO)",
+          "album": "돈 벌 시간 2",
+          "sourceTrackId": "1065157"
+        },
+        {
+          "rank": 42,
+          "title": "OUTRO. 신곡(神曲) (Divina Commedia)",
+          "artist": "G-Dragon",
+          "album": "권지용",
+          "sourceTrackId": "1266878"
+        },
+        {
+          "rank": 43,
+          "title": "Hands on me",
+          "artist": "PRODUCE 101",
+          "album": "PRODUCE 101 - FINAL",
+          "sourceTrackId": "1271385"
+        },
+        {
+          "rank": 44,
+          "title": "좋아한다 안 한다 (Duet 세정 of 구구단) (Prod. 박경)",
+          "artist": "태일",
+          "album": "태일X세정 Single `좋아한다 안 한다`",
+          "sourceTrackId": "1271120"
+        },
+        {
+          "rank": 45,
+          "title": "울고 싶지 않아",
+          "artist": "세븐틴",
+          "album": "4th Mini Album `Al1`",
+          "sourceTrackId": "1256762"
+        },
+        {
+          "rank": 46,
+          "title": "나야 나 (PICK ME)",
+          "artist": "PRODUCE 101",
+          "album": "PRODUCE 101 - 나야 나 (PICK ME)",
+          "sourceTrackId": "1205076"
+        },
+        {
+          "rank": 47,
+          "title": "우주를 줄게",
+          "artist": "볼빨간사춘기",
+          "album": "Full Album RED PLANET",
+          "sourceTrackId": "1090464"
+        },
+        {
+          "rank": 48,
+          "title": "1+1=0 (Feat. DEAN)",
+          "artist": "수란 (SURAN)",
+          "album": "Walkin`",
+          "sourceTrackId": "1262438"
+        },
+        {
+          "rank": 49,
+          "title": "봄날",
+          "artist": "방탄소년단",
+          "album": "YOU NEVER WALK ALONE",
+          "sourceTrackId": "1192402"
+        },
+        {
+          "rank": 50,
+          "title": "어땠을까 (Feat. 박정현)",
+          "artist": "싸이 (Psy)",
+          "album": "6집 싸이6甲 Part 1",
+          "sourceTrackId": "297195"
+        },
+        {
+          "rank": 51,
+          "title": "이 자리에 (Always)",
+          "artist": "PRODUCE 101",
+          "album": "PRODUCE 101 - FINAL",
+          "sourceTrackId": "1271383"
+        },
+        {
+          "rank": 52,
+          "title": "혼자",
+          "artist": "어반 자카파 (Urban Zakapa)",
+          "album": "혼자",
+          "sourceTrackId": "1251480"
+        },
+        {
+          "rank": 53,
+          "title": "나만 안되는 연애",
+          "artist": "볼빨간사춘기",
+          "album": "Full Album RED PLANET",
+          "sourceTrackId": "1090468"
+        },
+        {
+          "rank": 54,
+          "title": "얼굴 찌푸리지 말아요",
+          "artist": "하이라이트(Highlight)",
+          "album": "CAN YOU FEEL IT?",
+          "sourceTrackId": "1214794"
+        },
+        {
+          "rank": 55,
+          "title": "오랜 날 오랜 밤",
+          "artist": "AKMU (악뮤)",
+          "album": "사춘기 하 (思春記 下)",
+          "sourceTrackId": "1166146"
+        },
+        {
+          "rank": 56,
+          "title": "All I Wanna Do (K) (Feat. Hoody, Loco)",
+          "artist": "박재범",
+          "album": "EVERYTHING YOU WANTED",
+          "sourceTrackId": "1119935"
+        },
+        {
+          "rank": 57,
+          "title": "너였다면",
+          "artist": "정승환",
+          "album": "또 오해영 OST Part 5",
+          "sourceTrackId": "1034544"
+        },
+        {
+          "rank": 58,
+          "title": "Closer (Feat. Halsey)",
+          "artist": "The Chainsmokers",
+          "album": "Collage",
+          "sourceTrackId": "1070131"
+        },
+        {
+          "rank": 59,
+          "title": "모해(mohae) (Feat. 볼빨간사춘기)",
+          "artist": "산이 (San E)",
+          "album": "모해(mohae)",
+          "sourceTrackId": "1256964"
+        },
+        {
+          "rank": 60,
+          "title": "불장난",
+          "artist": "BLACKPINK",
+          "album": "SQUARE TWO",
+          "sourceTrackId": "1128404"
+        },
+        {
+          "rank": 61,
+          "title": "Something Just Like This",
+          "artist": "The Chainsmokers, Coldplay",
+          "album": "Memories...Do Not Open",
+          "sourceTrackId": "1196866"
+        },
+        {
+          "rank": 62,
+          "title": "Super Hot",
+          "artist": "PRODUCE 101",
+          "album": "PRODUCE 101 - FINAL",
+          "sourceTrackId": "1271384"
+        },
+        {
+          "rank": 63,
+          "title": "Beautiful",
+          "artist": "크러쉬 (CRUSH)",
+          "album": "도깨비 OST Part 4",
+          "sourceTrackId": "1154043"
+        },
+        {
+          "rank": 64,
+          "title": "이 지금",
+          "artist": "아이유 (IU)",
+          "album": "Palette",
+          "sourceTrackId": "1233547"
+        },
+        {
+          "rank": 65,
+          "title": "이런 엔딩",
+          "artist": "아이유 (IU)",
+          "album": "Palette",
+          "sourceTrackId": "1233545"
+        },
+        {
+          "rank": 66,
+          "title": "TT",
+          "artist": "TWICE",
+          "album": "TWICEcoaster : LANE 1",
+          "sourceTrackId": "1124075"
+        },
+        {
+          "rank": 67,
+          "title": "그대라는 사치",
+          "artist": "한동근",
+          "album": "The 3rd Digital Single `그대라는 사치`",
+          "sourceTrackId": "1087028"
+        },
+        {
+          "rank": 68,
+          "title": "부담이 돼 (Feat. 휘인 of 마마무)",
+          "artist": "정키 (Jung Key)",
+          "album": "EMPTY",
+          "sourceTrackId": "1205098"
+        },
+        {
+          "rank": 69,
+          "title": "She`s a Baby",
+          "artist": "지코 (ZICO)",
+          "album": "She`s a Baby",
+          "sourceTrackId": "1227669"
+        },
+        {
+          "rank": 70,
+          "title": "여보세요",
+          "artist": "뉴이스트 (NU`EST)",
+          "album": "여보세요",
+          "sourceTrackId": "408468"
+        },
+        {
+          "rank": 71,
+          "title": "소나기",
+          "artist": "아이오아이 (I.O.I)",
+          "album": "소나기",
+          "sourceTrackId": "1173509"
+        },
+        {
+          "rank": 72,
+          "title": "마에스트로 (Maestro)",
+          "artist": "창모 (CHANGMO)",
+          "album": "돈 벌 시간 2",
+          "sourceTrackId": "1065156"
+        },
+        {
+          "rank": 73,
+          "title": "Love Yourself",
+          "artist": "Justin Bieber",
+          "album": "Purpose (Deluxe Edition)",
+          "sourceTrackId": "925372"
+        },
+        {
+          "rank": 74,
+          "title": "Decalcomanie (데칼코마니)",
+          "artist": "마마무 (Mamamoo)",
+          "album": "MEMORY",
+          "sourceTrackId": "1132388"
+        },
+        {
+          "rank": 75,
+          "title": "비도 오고 그래서 (Feat. 신용재)",
+          "artist": "헤이즈 (Heize)",
+          "album": "/// (너 먹구름 비)",
+          "sourceTrackId": "1281331"
+        },
+        {
+          "rank": 76,
+          "title": "Rookie",
+          "artist": "레드벨벳(Red Velvet)",
+          "album": "Rookie - The 4th Mini Album",
+          "sourceTrackId": "1183459"
+        },
+        {
+          "rank": 77,
+          "title": "이 소설의 끝을 다시 써보려 해",
+          "artist": "한동근",
+          "album": "이 소설의 끝을 다시 써보려 해",
+          "sourceTrackId": "760036"
+        },
+        {
+          "rank": 78,
+          "title": "아재개그 (Narr. 김대희, 김준호)",
+          "artist": "마마무 (Mamamoo)",
+          "album": "Purple",
+          "sourceTrackId": "1275960"
+        },
+        {
+          "rank": 79,
+          "title": "You(=I)",
+          "artist": "볼빨간사춘기",
+          "album": "Full Album RED PLANET",
+          "sourceTrackId": "1090466"
+        },
+        {
+          "rank": 80,
+          "title": "어디에도",
+          "artist": "엠씨더맥스 (M.C the MAX)",
+          "album": "pathos",
+          "sourceTrackId": "965615"
+        },
+        {
+          "rank": 81,
+          "title": "에라 모르겠다",
+          "artist": "BIGBANG (빅뱅)",
+          "album": "MADE",
+          "sourceTrackId": "1154207"
+        },
+        {
+          "rank": 82,
+          "title": "Fine",
+          "artist": "태연 (TAEYEON)",
+          "album": "My Voice - The 1st Album",
+          "sourceTrackId": "1200824"
+        },
+        {
+          "rank": 83,
+          "title": "CHEER UP",
+          "artist": "TWICE",
+          "album": "PAGE TWO",
+          "sourceTrackId": "1014711"
+        },
+        {
+          "rank": 84,
+          "title": "알듯 말듯해",
+          "artist": "서은광, 임현식, 육성재",
+          "album": "쌈, 마이웨이 OST Part 4",
+          "sourceTrackId": "1271117"
+        },
+        {
+          "rank": 85,
+          "title": "다시 만나는 날 (Goodbye for now)",
+          "artist": "규현 (KYUHYUN)",
+          "album": "다시 만나는 날 (Goodbye for now)",
+          "sourceTrackId": "1256906"
+        },
+        {
+          "rank": 86,
+          "title": "널 사랑하지 않아",
+          "artist": "어반 자카파 (Urban Zakapa)",
+          "album": "스틸",
+          "sourceTrackId": "1031576"
+        },
+        {
+          "rank": 87,
+          "title": "마지막 장면 (Feat. 이성경)",
+          "artist": "싸이 (Psy)",
+          "album": "PSY 8th 4X2=8",
+          "sourceTrackId": "1246732"
+        },
+        {
+          "rank": 88,
+          "title": "돌아오지마 (Feat. 용준형 of 비스트)",
+          "artist": "헤이즈 (Heize)",
+          "album": "돌아오지마",
+          "sourceTrackId": "1006809"
+        },
+        {
+          "rank": 89,
+          "title": "D (half moon) (Feat. 개코)",
+          "artist": "DEAN",
+          "album": "130 mood  TRBL",
+          "sourceTrackId": "994545"
+        },
+        {
+          "rank": 90,
+          "title": "잼잼",
+          "artist": "아이유 (IU)",
+          "album": "Palette",
+          "sourceTrackId": "1233544"
+        },
+        {
+          "rank": 91,
+          "title": "이름에게",
+          "artist": "아이유 (IU)",
+          "album": "Palette",
+          "sourceTrackId": "1233548"
+        },
+        {
+          "rank": 92,
+          "title": "I I YO (Prod. 길 of Magic Mansion)",
+          "artist": "거미",
+          "album": "STROKE",
+          "sourceTrackId": "1266708"
+        },
+        {
+          "rank": 93,
+          "title": "내가 저지른 사랑",
+          "artist": "임창정",
+          "album": "I`M",
+          "sourceTrackId": "1094614"
+        },
+        {
+          "rank": 94,
+          "title": "우리집을 못 찾겠군요 (Feat. 볼빨간사춘기)",
+          "artist": "매드 클라운 (Mad Clown)",
+          "album": "우리집을 못 찾겠군요",
+          "sourceTrackId": "1183556"
+        },
+        {
+          "rank": 95,
+          "title": "YESTERDAY",
+          "artist": "블락비 (Block B)",
+          "album": "YESTERDAY",
+          "sourceTrackId": "1187742"
+        },
+        {
+          "rank": 96,
+          "title": "숨",
+          "artist": "박효신",
+          "album": "I am A Dreamer",
+          "sourceTrackId": "1107906"
+        },
+        {
+          "rank": 97,
+          "title": "See You Again",
+          "artist": "Charlie Puth, Wiz Khalifa",
+          "album": "분노의 질주: 더 세븐 (Fast & Furious 7) OST",
+          "sourceTrackId": "833278"
+        },
+        {
+          "rank": 98,
+          "title": "Stay With Me",
+          "artist": "찬열 (CHANYEOL), 펀치 (Punch)",
+          "album": "도깨비 OST Part.1",
+          "sourceTrackId": "1145131"
+        },
+        {
+          "rank": 99,
+          "title": "MOVIE",
+          "artist": "비투비 (BTOB)",
+          "album": "Feel`eM",
+          "sourceTrackId": "1204755"
+        },
+        {
+          "rank": 100,
+          "title": "심술",
+          "artist": "볼빨간사춘기",
+          "album": "Half Album RED ICKLE",
+          "sourceTrackId": "1011301"
+        }
+      ],
+      "statusCode": 200,
+      "reason": null
+    },
+    {
+      "period": "2018-06",
+      "success": true,
+      "count": 100,
+      "tracks": [
+        {
+          "rank": 1,
+          "title": "여행",
+          "artist": "볼빨간사춘기",
+          "album": "Red Diary Page.2",
+          "sourceTrackId": "1542928"
+        },
+        {
+          "rank": 2,
+          "title": "뚜두뚜두 (DDU-DU DDU-DU)",
+          "artist": "BLACKPINK",
+          "album": "SQUARE UP",
+          "sourceTrackId": "1560847"
+        },
+        {
+          "rank": 3,
+          "title": "FAKE LOVE",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536360"
+        },
+        {
+          "rank": 4,
+          "title": "빙글뱅글 (Bingle Bangle)",
+          "artist": "AOA",
+          "album": "BINGLE BANGLE",
+          "sourceTrackId": "1549881"
+        },
+        {
+          "rank": 5,
+          "title": "지나오다",
+          "artist": "닐로 (Nilo)",
+          "album": "About You",
+          "sourceTrackId": "1360326"
+        },
+        {
+          "rank": 6,
+          "title": "밤 (Time for the moon night)",
+          "artist": "여자친구 (GFRIEND)",
+          "album": "여자친구 The 6th Mini Album `Time for the moon night`",
+          "sourceTrackId": "1524672"
+        },
+        {
+          "rank": 7,
+          "title": "주지마",
+          "artist": "로꼬 (LOCO), 화사 (HWASA)",
+          "album": "건반 위의 하이에나 Part.4",
+          "sourceTrackId": "1512224"
+        },
+        {
+          "rank": 8,
+          "title": "Forever Young",
+          "artist": "BLACKPINK",
+          "album": "SQUARE UP",
+          "sourceTrackId": "1560846"
+        },
+        {
+          "rank": 9,
+          "title": "켜줘 (Light)",
+          "artist": "Wanna One (워너원)",
+          "album": "1÷χ=1 (UNDIVIDED)",
+          "sourceTrackId": "1556078"
+        },
+        {
+          "rank": 10,
+          "title": "You",
+          "artist": "멜로망스(Melomance)",
+          "album": "투유 프로젝트 - 슈가맨2 Part.2",
+          "sourceTrackId": "1436481"
+        },
+        {
+          "rank": 11,
+          "title": "모든 날, 모든 순간 (Every day, Every Moment)",
+          "artist": "폴킴",
+          "album": "`키스 먼저 할까요?` OST Part 3",
+          "sourceTrackId": "1488659"
+        },
+        {
+          "rank": 12,
+          "title": "사랑을 했다 (LOVE SCENARIO)",
+          "artist": "iKON",
+          "album": "Return",
+          "sourceTrackId": "1436717"
+        },
+        {
+          "rank": 13,
+          "title": "LATATA",
+          "artist": "i-dle (아이들)",
+          "album": "I am",
+          "sourceTrackId": "1524868"
+        },
+        {
+          "rank": 14,
+          "title": "What is Love?",
+          "artist": "TWICE",
+          "album": "What is Love?",
+          "sourceTrackId": "1506661"
+        },
+        {
+          "rank": 15,
+          "title": "캥거루 (Kangaroo) (Prod. ZICO)",
+          "artist": "Wanna One (워너원) - 트리플포지션",
+          "album": "1÷χ=1 (UNDIVIDED)",
+          "sourceTrackId": "1556079"
+        },
+        {
+          "rank": 16,
+          "title": "너 없인 안 된다",
+          "artist": "비투비 (BTOB)",
+          "album": "THIS IS US",
+          "sourceTrackId": "1568311"
+        },
+        {
+          "rank": 17,
+          "title": "뿜뿜",
+          "artist": "모모랜드 (MOMOLAND)",
+          "album": "GREAT!",
+          "sourceTrackId": "1422062"
+        },
+        {
+          "rank": 18,
+          "title": "별이 빛나는 밤",
+          "artist": "마마무 (Mamamoo)",
+          "album": "Yellow Flower",
+          "sourceTrackId": "1477451"
+        },
+        {
+          "rank": 19,
+          "title": "붕붕 (Feat. Sik-K) (Prod. GroovyRoom)",
+          "artist": "김하온 (HAON)",
+          "album": "고등래퍼2 Final",
+          "sourceTrackId": "1506718"
+        },
+        {
+          "rank": 20,
+          "title": "그날처럼",
+          "artist": "장덕철",
+          "album": "그날처럼",
+          "sourceTrackId": "1387907"
+        },
+        {
+          "rank": 21,
+          "title": "My Way",
+          "artist": "이수",
+          "album": "돈꽃 OST Part 1",
+          "sourceTrackId": "1365815"
+        },
+        {
+          "rank": 22,
+          "title": "그때 헤어지면 돼",
+          "artist": "로이킴",
+          "album": "그때 헤어지면 돼",
+          "sourceTrackId": "1453609"
+        },
+        {
+          "rank": 23,
+          "title": "HandClap",
+          "artist": "Fitz & The Tantrums",
+          "album": "Fitz and The Tantrums (Deluxe)",
+          "sourceTrackId": "1000788"
+        },
+        {
+          "rank": 24,
+          "title": "전하지 못한 진심 (Feat. Steve Aoki)",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536361"
+        },
+        {
+          "rank": 25,
+          "title": "소나기 (Feat. 10cm)",
+          "artist": "용준형",
+          "album": "소나기",
+          "sourceTrackId": "1488619"
+        },
+        {
+          "rank": 26,
+          "title": "DNA",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 承 `Her`",
+          "sourceTrackId": "1333188"
+        },
+        {
+          "rank": 27,
+          "title": "모래시계 (Prod. 헤이즈)",
+          "artist": "Wanna One (워너원) - 더힐",
+          "album": "1÷χ=1 (UNDIVIDED)",
+          "sourceTrackId": "1556081"
+        },
+        {
+          "rank": 28,
+          "title": "Roller Coaster",
+          "artist": "청하",
+          "album": "Offset",
+          "sourceTrackId": "1434423"
+        },
+        {
+          "rank": 29,
+          "title": "Havana (Feat. Young Thug)",
+          "artist": "Camila Cabello",
+          "album": "Camila",
+          "sourceTrackId": "1308041"
+        },
+        {
+          "rank": 30,
+          "title": "선물",
+          "artist": "멜로망스(Melomance)",
+          "album": "Moonlight",
+          "sourceTrackId": "1289342"
+        },
+        {
+          "rank": 31,
+          "title": "Shape of You",
+          "artist": "Ed Sheeran",
+          "album": "÷ (Deluxe)",
+          "sourceTrackId": "1166326"
+        },
+        {
+          "rank": 32,
+          "title": "꽃 길",
+          "artist": "BIGBANG (빅뱅)",
+          "album": "꽃 길",
+          "sourceTrackId": "1482894"
+        },
+        {
+          "rank": 33,
+          "title": "봄날",
+          "artist": "방탄소년단",
+          "album": "YOU NEVER WALK ALONE",
+          "sourceTrackId": "1192402"
+        },
+        {
+          "rank": 34,
+          "title": "잊을만하면",
+          "artist": "크러쉬 (CRUSH)",
+          "album": "잊을만하면",
+          "sourceTrackId": "1524802"
+        },
+        {
+          "rank": 35,
+          "title": "EVERYDAY",
+          "artist": "위너(WINNER)",
+          "album": "EVERYD4Y",
+          "sourceTrackId": "1501021"
+        },
+        {
+          "rank": 36,
+          "title": "넋두리",
+          "artist": "닐로 (Nilo)",
+          "album": "넋두리",
+          "sourceTrackId": "1098547"
+        },
+        {
+          "rank": 37,
+          "title": "Anpanman",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536367"
+        },
+        {
+          "rank": 38,
+          "title": "이 밤의 끝",
+          "artist": "펀치 (Punch)",
+          "album": "이 밤의 끝",
+          "sourceTrackId": "1550113"
+        },
+        {
+          "rank": 39,
+          "title": "욕심",
+          "artist": "멜로망스(Melomance)",
+          "album": "욕심",
+          "sourceTrackId": "1518378"
+        },
+        {
+          "rank": 40,
+          "title": "열애중",
+          "artist": "벤 (Ben)",
+          "album": "RECIPE",
+          "sourceTrackId": "1530585"
+        },
+        {
+          "rank": 41,
+          "title": "데리러 가 (Good Evening)",
+          "artist": "샤이니 (SHINee)",
+          "album": "`The Story of Light` EP.1 - The 6th Album",
+          "sourceTrackId": "1549875"
+        },
+        {
+          "rank": 42,
+          "title": "영원+1 (Prod. NELL)",
+          "artist": "Wanna One (워너원) - 린온미",
+          "album": "1÷χ=1 (UNDIVIDED)",
+          "sourceTrackId": "1556080"
+        },
+        {
+          "rank": 43,
+          "title": "가을 안부",
+          "artist": "먼데이 키즈 (Monday Kiz)",
+          "album": "가을 안부",
+          "sourceTrackId": "1346353"
+        },
+        {
+          "rank": 44,
+          "title": "BOOMERANG (부메랑)",
+          "artist": "Wanna One (워너원)",
+          "album": "0+1=1 (I PROMISE YOU)",
+          "sourceTrackId": "1488412"
+        },
+        {
+          "rank": 45,
+          "title": "밤편지",
+          "artist": "아이유 (IU)",
+          "album": "밤편지",
+          "sourceTrackId": "1214938"
+        },
+        {
+          "rank": 46,
+          "title": "빛나리",
+          "artist": "펜타곤 (PENTAGON)",
+          "album": "Positive",
+          "sourceTrackId": "1500091"
+        },
+        {
+          "rank": 47,
+          "title": "이 별",
+          "artist": "길구봉구",
+          "album": "Star",
+          "sourceTrackId": "1333169"
+        },
+        {
+          "rank": 48,
+          "title": "바코드 (Prod. GroovyRoom)",
+          "artist": "김하온 (HAON), 이병재 (Vinxen)",
+          "album": "고등래퍼2 팀대항전 Part 3",
+          "sourceTrackId": "1493558"
+        },
+        {
+          "rank": 49,
+          "title": "비도 오고 그래서 (Feat. 신용재)",
+          "artist": "헤이즈 (Heize)",
+          "album": "/// (너 먹구름 비)",
+          "sourceTrackId": "1281331"
+        },
+        {
+          "rank": 50,
+          "title": "미안해",
+          "artist": "양다일",
+          "album": "inside",
+          "sourceTrackId": "1416292"
+        },
+        {
+          "rank": 51,
+          "title": "밤이 되니까",
+          "artist": "펀치 (Punch)",
+          "album": "밤이 되니까",
+          "sourceTrackId": "1336414"
+        },
+        {
+          "rank": 52,
+          "title": "에너제틱 (Energetic)",
+          "artist": "Wanna One (워너원)",
+          "album": "1X1=1(TO BE ONE)",
+          "sourceTrackId": "1307243"
+        },
+        {
+          "rank": 53,
+          "title": "11 (Prod. 다이나믹듀오)",
+          "artist": "Wanna One (워너원) - 남바완",
+          "album": "1÷χ=1 (UNDIVIDED)",
+          "sourceTrackId": "1556082"
+        },
+        {
+          "rank": 54,
+          "title": "Airplane pt.2",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536366"
+        },
+        {
+          "rank": 55,
+          "title": "Thunder",
+          "artist": "Imagine Dragons",
+          "album": "Evolve",
+          "sourceTrackId": "1238214"
+        },
+        {
+          "rank": 56,
+          "title": "좋니",
+          "artist": "윤종신",
+          "album": "LISTEN 010 좋니",
+          "sourceTrackId": "1275968"
+        },
+        {
+          "rank": 57,
+          "title": "그리워하다",
+          "artist": "비투비 (BTOB)",
+          "album": "Brother Act.",
+          "sourceTrackId": "1350726"
+        },
+        {
+          "rank": 58,
+          "title": "Bad Boy",
+          "artist": "레드벨벳(Red Velvet)",
+          "album": "The Perfect Red Velvet - The 2nd Album Repackage",
+          "sourceTrackId": "1443155"
+        },
+        {
+          "rank": 59,
+          "title": "The Feeling",
+          "artist": "비투비 (BTOB)",
+          "album": "The Feeling",
+          "sourceTrackId": "1560724"
+        },
+        {
+          "rank": 60,
+          "title": "Jenga (Feat. Gaeko)",
+          "artist": "헤이즈 (Heize)",
+          "album": "바람",
+          "sourceTrackId": "1477396"
+        },
+        {
+          "rank": 61,
+          "title": "Lonely",
+          "artist": "볼빨간사춘기",
+          "album": "Red Diary Page.2",
+          "sourceTrackId": "1542924"
+        },
+        {
+          "rank": 62,
+          "title": "마지막처럼",
+          "artist": "BLACKPINK",
+          "album": "마지막처럼",
+          "sourceTrackId": "1275971"
+        },
+        {
+          "rank": 63,
+          "title": "빨간 맛 (Red Flavor)",
+          "artist": "레드벨벳(Red Velvet)",
+          "album": "The Red Summer - Summer Mini Album",
+          "sourceTrackId": "1289279"
+        },
+        {
+          "rank": 64,
+          "title": "REALLY REALLY",
+          "artist": "위너(WINNER)",
+          "album": "FATE NUMBER FOR",
+          "sourceTrackId": "1222909"
+        },
+        {
+          "rank": 65,
+          "title": "우리 둘만 아는",
+          "artist": "윤건",
+          "album": "우리 둘만 아는",
+          "sourceTrackId": "1360367"
+        },
+        {
+          "rank": 66,
+          "title": "Beautiful",
+          "artist": "Wanna One (워너원)",
+          "album": "1-1=0 (NOTHING WITHOUT YOU)",
+          "sourceTrackId": "1373234"
+        },
+        {
+          "rank": 67,
+          "title": "낙원",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536363"
+        },
+        {
+          "rank": 68,
+          "title": "all of my life",
+          "artist": "박원",
+          "album": "0M",
+          "sourceTrackId": "1299097"
+        },
+        {
+          "rank": 69,
+          "title": "눈사람",
+          "artist": "정승환",
+          "album": "눈사람",
+          "sourceTrackId": "1448300"
+        },
+        {
+          "rank": 70,
+          "title": "Really",
+          "artist": "BLACKPINK",
+          "album": "SQUARE UP",
+          "sourceTrackId": "1560845"
+        },
+        {
+          "rank": 71,
+          "title": "Love Maze",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536364"
+        },
+        {
+          "rank": 72,
+          "title": "Magic Shop",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536365"
+        },
+        {
+          "rank": 73,
+          "title": "시차 (We Are) (Feat. 로꼬 & GRAY)",
+          "artist": "우원재",
+          "album": "시차 (We Are)",
+          "sourceTrackId": "1325154"
+        },
+        {
+          "rank": 74,
+          "title": "instagram",
+          "artist": "DEAN",
+          "album": "instagram",
+          "sourceTrackId": "1416402"
+        },
+        {
+          "rank": 75,
+          "title": "바람사람",
+          "artist": "볼빨간사춘기",
+          "album": "Red Diary Page.2",
+          "sourceTrackId": "1542925"
+        },
+        {
+          "rank": 76,
+          "title": "Heart Shaker",
+          "artist": "TWICE",
+          "album": "Merry & Happy",
+          "sourceTrackId": "1403354"
+        },
+        {
+          "rank": 77,
+          "title": "눈 떠보니 이별이더라",
+          "artist": "포맨 (4Men)",
+          "album": "REMEMBER ME",
+          "sourceTrackId": "1356239"
+        },
+        {
+          "rank": 78,
+          "title": "134340",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536362"
+        },
+        {
+          "rank": 79,
+          "title": "There`s Nothing Holdin` Me Back",
+          "artist": "Shawn Mendes",
+          "album": "Illuminate (New Deluxe Ver.)",
+          "sourceTrackId": "1233751"
+        },
+        {
+          "rank": 80,
+          "title": "어른",
+          "artist": "Sondia",
+          "album": "나의 아저씨 OST Part 2",
+          "sourceTrackId": "1493651"
+        },
+        {
+          "rank": 81,
+          "title": "Youth",
+          "artist": "Troye Sivan",
+          "album": "Blue Neighbourhood (Deluxe)",
+          "sourceTrackId": "925488"
+        },
+        {
+          "rank": 82,
+          "title": "북 (Prod.SLO)",
+          "artist": "배연서 (WEBSTER B), 오담률 (CHIN CHILLA)",
+          "album": "고등래퍼2 팀대항전 Part 1",
+          "sourceTrackId": "1482766"
+        },
+        {
+          "rank": 83,
+          "title": "비행운",
+          "artist": "문문 (MoonMoon)",
+          "album": "LIFE IS BEAUTY FULL",
+          "sourceTrackId": "1150192"
+        },
+        {
+          "rank": 84,
+          "title": "I Want You",
+          "artist": "샤이니 (SHINee)",
+          "album": "`The Story of Light` EP.2 - The 6th Album",
+          "sourceTrackId": "1560725"
+        },
+        {
+          "rank": 85,
+          "title": "약속해요 (I.P.U.)",
+          "artist": "Wanna One (워너원)",
+          "album": "약속해요 (I.P.U.) - Special Theme Track",
+          "sourceTrackId": "1477287"
+        },
+        {
+          "rank": 86,
+          "title": "LOVE YA!",
+          "artist": "혁오 (hyukoh)",
+          "album": "24 : How to find true love and happiness",
+          "sourceTrackId": "1550109"
+        },
+        {
+          "rank": 87,
+          "title": "See U Later",
+          "artist": "BLACKPINK",
+          "album": "SQUARE UP",
+          "sourceTrackId": "1560844"
+        },
+        {
+          "rank": 88,
+          "title": "LIKEY",
+          "artist": "TWICE",
+          "album": "twicetagram",
+          "sourceTrackId": "1359981"
+        },
+        {
+          "rank": 89,
+          "title": "So What",
+          "artist": "방탄소년단",
+          "album": "LOVE YOURSELF 轉 `Tear`",
+          "sourceTrackId": "1536368"
+        },
+        {
+          "rank": 90,
+          "title": "Dejavu",
+          "artist": "뉴이스트 W",
+          "album": "WHO, YOU",
+          "sourceTrackId": "1575490"
+        },
+        {
+          "rank": 91,
+          "title": "어린 왕자 (Prod. Godic)",
+          "artist": "김하온(HAON), 박준호(PULLIK)",
+          "album": "고등래퍼2 팀대항전 Part 2",
+          "sourceTrackId": "1488530"
+        },
+        {
+          "rank": 92,
+          "title": "전혀 (Feat. 우원재) (Prod. GroovyRoom)",
+          "artist": "이병재 (Vinxen)",
+          "album": "고등래퍼2 Final",
+          "sourceTrackId": "1506723"
+        },
+        {
+          "rank": 93,
+          "title": "花요일 (Blooming Day)",
+          "artist": "EXO-CBX (첸백시)",
+          "album": "Blooming Days - The 2nd Mini Album",
+          "sourceTrackId": "1506877"
+        },
+        {
+          "rank": 94,
+          "title": "첫눈처럼 너에게 가겠다",
+          "artist": "에일리 (Ailee)",
+          "album": "도깨비 OST Part 9",
+          "sourceTrackId": "1166003"
+        },
+        {
+          "rank": 95,
+          "title": "비",
+          "artist": "폴킴",
+          "album": "비",
+          "sourceTrackId": "1047413"
+        },
+        {
+          "rank": 96,
+          "title": "#첫사랑",
+          "artist": "볼빨간사춘기",
+          "album": "#첫사랑",
+          "sourceTrackId": "1427673"
+        },
+        {
+          "rank": 97,
+          "title": "야경",
+          "artist": "볼빨간사춘기",
+          "album": "Red Diary Page.2",
+          "sourceTrackId": "1542926"
+        },
+        {
+          "rank": 98,
+          "title": "썸 탈꺼야",
+          "artist": "볼빨간사춘기",
+          "album": "Red Diary Page.1",
+          "sourceTrackId": "1336456"
+        },
+        {
+          "rank": 99,
+          "title": "Love Yourself",
+          "artist": "Justin Bieber",
+          "album": "Purpose (Deluxe Edition)",
+          "sourceTrackId": "925372"
+        },
+        {
+          "rank": 100,
+          "title": "Something New",
+          "artist": "태연 (TAEYEON)",
+          "album": "Something New - The 3rd Mini Album",
+          "sourceTrackId": "1568297"
+        }
+      ],
+      "statusCode": 200,
+      "reason": null
+    }
+  ],
+  "summary": {
+    "successfulMonths": 3,
+    "failedMonths": 0,
+    "totalEntries": 300,
+    "uniqueTracks": 285
+  }
+}

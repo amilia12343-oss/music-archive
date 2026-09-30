@@ -75,8 +75,10 @@ v0.1은 **Era를 만들고 곡을 기록한 뒤 다시 확인하는 핵심 사�
 | `src/services/` | 외부 음악 검색 API 요청 및 응답 변환 |
 | `src/styles/`, `src/index.css` | 화면별 스타일과 공통 스타일 |
 | `docs/` | 제품 방향, 구현 현황과 결정 기록 |
+| `experiments/` | 앱과 분리한 추천·기억 복원 실험 코드, 입력 데이터와 결과 |
 
 상세 내용은 [제품 사양](docs/PRODUCT_SPEC.md), [로드맵](docs/ROADMAP.md), [결정 기록](docs/DECISIONS.md)에서 확인할 수 있습니다.
+실험 구조와 실행 방법은 [실험 안내](experiments/README.md)를 참고하세요. 실험 결과가 앱 추천 기능의 구현 완료를 뜻하지는 않습니다.
 
 ## 향후 계획 · 미구현
 

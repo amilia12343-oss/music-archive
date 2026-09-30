@@ -1,0 +1,594 @@
+{
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "datePolicy": "Earliest exact-match iTunes listing, not verified original release; absent/failed date match allowed as Unknown.",
+  "feedbackSeedReports": [
+    {
+      "originalSeed": "엠씨더맥스 (M.C the MAX) - 어디에도",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "엠씨더맥스 (M.C The Max) - 어디에도",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "지코 (ZICO) - 너는 나 나는 너",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "지코 (Zico) - 너는 나 나는 너",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "어반 자카파 (Urban Zakapa) - 널 사랑하지 않아",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "어반 자카파 (Urban Zakapa) - 널 사랑하지 않아",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "한동근 - 이 소설의 끝을 다시 써보려 해",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "한동근 - 이 소설의 끝을 다시 써보려 해",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "비와이(BewhY) - Day Day (Feat. 박재범) (Prod. by GRAY)",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "비와이(BewhY) - Day Day (Feat. 박재범) (Prod. by GRAY)",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "에일리 (Ailee) - 첫눈처럼 너에게 가겠다",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "에일리 (Ailee) - 첫눈처럼 너에게 가겠다",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "볼빨간사춘기 - 좋다고 말해",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "볼빨간사춘기 - 좋다고 말해",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "AKMU (악뮤) - 오랜 날 오랜 밤",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "AKMU (악뮤) - 오랜 날 오랜 밤",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "윤종신 - 좋니",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "윤종신 - 좋니",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "헤이즈 (Heize) - 비도 오고 그래서 (Feat. 신용재)",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "헤이즈 (Heize) - 비도 오고 그래서 (Feat. 신용재)",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "아이유 (IU) - 밤편지",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "아이유 (IU) - 밤편지",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "장덕철 - 그날처럼",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "장덕철 - 그날처럼",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "멜로망스(Melomance) - 선물",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "멜로망스(Melomance) - 선물",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "폴킴 - 모든 날, 모든 순간 (Every day, Every Moment)",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "폴킴 - 모든 날, 모든 순간 (Every day, Every Moment)",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "BLACKPINK - 뚜두뚜두 (DDU-DU DDU-DU)",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "BLACKPINK - 뚜두뚜두 (DDU-DU DDU-DU)",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "벤 (Ben) - 열애중",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "벤 (Ben) - 열애중",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "Ed Sheeran - Shape of You",
+      "directCount": 50,
+      "searchUsed": false,
+      "canonical": "-",
+      "retryCount": null,
+      "success": true,
+      "note": ""
+    },
+    {
+      "originalSeed": "방탄소년단 - 봄날",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "방탄소년단 - 봄날",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "방탄소년단 - DNA",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "방탄소년단 - DNA",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "볼빨간사춘기 - 우주를 줄게",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "볼빨간사춘기 - 우주를 줄게",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "BLACKPINK - 마지막처럼",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "BLACKPINK - 마지막처럼",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "볼빨간사춘기 - 나만 안되는 연애",
+      "directCount": 0,
+      "searchUsed": true,
+      "canonical": "볼빨간사춘기 - 나만 안되는 연애",
+      "retryCount": 0,
+      "success": false,
+      "note": "Retry still returned 0"
+    },
+    {
+      "originalSeed": "Bigbang - 하루하루",
+      "directCount": 50,
+      "searchUsed": false,
+      "canonical": "-",
+      "retryCount": null,
+      "success": true,
+      "note": ""
+    },
+    {
+      "originalSeed": "TWICE - TT",
+      "directCount": 50,
+      "searchUsed": false,
+      "canonical": "-",
+      "retryCount": null,
+      "success": true,
+      "note": ""
+    },
+    {
+      "originalSeed": "Wanna One - Energetic",
+      "directCount": 50,
+      "searchUsed": false,
+      "canonical": "-",
+      "retryCount": null,
+      "success": true,
+      "note": ""
+    },
+    {
+      "originalSeed": "TWICE - Like OOH-AHH",
+      "directCount": 50,
+      "searchUsed": false,
+      "canonical": "-",
+      "retryCount": null,
+      "success": true,
+      "note": ""
+    }
+  ],
+  "summary": {
+    "totalCandidates": 30,
+    "sourceCounts": {
+      "ERA_CHART_BALANCED": 18,
+      "ERA_CHART_GLOBAL": 6,
+      "FEEDBACK_SIMILAR": 6,
+      "ERA_CHART_GLOBAL_FALLBACK": 0
+    },
+    "originalSeedIdentityCount": 12,
+    "round1ShownCount": 30,
+    "round1PositiveCount": 26,
+    "round1KnownNotListenedCount": 1,
+    "round1UnknownCount": 3,
+    "feedbackSeedsTried": 26,
+    "feedbackSeedsWithSimilar": 5,
+    "similarCandidateCount": 30,
+    "similarShortfall": 0,
+    "duplicateSkipCount": 4
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "title": "잊어버리지마 (Feat.태연)",
+      "artist": "크러쉬 (CRUSH)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 479,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 426
+    },
+    {
+      "rank": 2,
+      "title": "걱정말아요 그대",
+      "artist": "이적",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 508,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 412
+    },
+    {
+      "rank": 3,
+      "title": "Boys And Girls (Feat. Babylon)",
+      "artist": "지코 (ZICO)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 446,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 390
+    },
+    {
+      "rank": 4,
+      "title": "너 그리고 나 (NAVILLERA)",
+      "artist": "여자친구 (GFRIEND)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 404,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 397
+    },
+    {
+      "rank": 5,
+      "title": "휘파람",
+      "artist": "BLACKPINK",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 456,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 386
+    },
+    {
+      "rank": 6,
+      "title": "그대라는 사치",
+      "artist": "한동근",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 784,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 377
+    },
+    {
+      "rank": 7,
+      "title": "Beautiful",
+      "artist": "크러쉬 (CRUSH)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 590,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 444
+    },
+    {
+      "rank": 8,
+      "title": "오빠야",
+      "artist": "신현희와김루트",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 515,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 439
+    },
+    {
+      "rank": 9,
+      "title": "KNOCK KNOCK",
+      "artist": "TWICE",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 527,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 438
+    },
+    {
+      "rank": 10,
+      "title": "빨간 맛 (Red Flavor)",
+      "artist": "레드벨벳(Red Velvet)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 876,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 477
+    },
+    {
+      "rank": 11,
+      "title": "매일 듣는 노래 (A Daily Song)",
+      "artist": "황치열",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 635,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 464
+    },
+    {
+      "rank": 12,
+      "title": "남이 될 수 있을까",
+      "artist": "볼빨간 사춘기, 스무살",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 594,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 429
+    },
+    {
+      "rank": 13,
+      "title": "Havana (Feat. Young Thug)",
+      "artist": "Camila Cabello",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 864,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 501
+    },
+    {
+      "rank": 14,
+      "title": "Roller Coaster",
+      "artist": "청하",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 696,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 490
+    },
+    {
+      "rank": 15,
+      "title": "비행운",
+      "artist": "문문 (MoonMoon)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 594,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 443
+    },
+    {
+      "rank": 16,
+      "title": "Dance The Night Away",
+      "artist": "TWICE",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 494,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 494
+    },
+    {
+      "rank": 17,
+      "title": "지나오다",
+      "artist": "닐로 (Nilo)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 776,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 481
+    },
+    {
+      "rank": 18,
+      "title": "여행",
+      "artist": "볼빨간사춘기",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 641,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 459
+    },
+    {
+      "rank": 19,
+      "title": "너였다면",
+      "artist": "정승환",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 838
+    },
+    {
+      "rank": 20,
+      "title": "D (half moon) (Feat. 개코)",
+      "artist": "DEAN",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 834
+    },
+    {
+      "rank": 21,
+      "title": "그때 헤어지면 돼",
+      "artist": "로이킴",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 827
+    },
+    {
+      "rank": 22,
+      "title": "all of my life",
+      "artist": "박원",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 803
+    },
+    {
+      "rank": 23,
+      "title": "가을 안부",
+      "artist": "먼데이 키즈 (Monday Kiz)",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 773
+    },
+    {
+      "rank": 24,
+      "title": "돌아오지마 (Feat. 용준형 of 비스트)",
+      "artist": "헤이즈 (Heize)",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 769
+    },
+    {
+      "rank": 25,
+      "title": "There's Nothing Holdin' Me Back",
+      "artist": "Shawn Mendes",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "Ed Sheeran - Shape of You",
+      "similarity": 1,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "2016-09-23",
+      "matching": "Exact normalized match; earliest observed iTunes listing"
+    },
+    {
+      "rank": 26,
+      "title": "LIKEY",
+      "artist": "TWICE",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": 550,
+      "sourceSeed": "TWICE - TT",
+      "similarity": 1,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "2017-10-30",
+      "matching": "Exact normalized match; earliest observed iTunes listing"
+    },
+    {
+      "rank": 27,
+      "title": "Beautiful",
+      "artist": "Wanna One",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "Wanna One - Energetic",
+      "similarity": 1,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "2017-11-13",
+      "matching": "Exact normalized match; earliest observed iTunes listing"
+    },
+    {
+      "rank": 28,
+      "title": "맨정신",
+      "artist": "Bigbang",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "Bigbang - 하루하루",
+      "similarity": 0.969149,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "Unknown",
+      "matching": "Unknown: no exact dated match"
+    },
+    {
+      "rank": 29,
+      "title": "러시안 룰렛 Russian Roulette",
+      "artist": "Red Velvet",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "TWICE - Like OOH-AHH",
+      "similarity": 0.446673,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "2016-09-07",
+      "matching": "Exact normalized match; earliest observed iTunes listing"
+    },
+    {
+      "rank": 30,
+      "title": "Castle on the Hill",
+      "artist": "Ed Sheeran",
+      "primarySource": "FEEDBACK_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "Ed Sheeran - Shape of You",
+      "similarity": 0.914294,
+      "seedOrigin": "ROUND1_CONFIRMED",
+      "releaseDate": "2017-01-06",
+      "matching": "Exact normalized match; earliest observed iTunes listing"
+    }
+  ]
+}

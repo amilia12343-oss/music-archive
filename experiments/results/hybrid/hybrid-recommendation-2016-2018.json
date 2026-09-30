@@ -1,0 +1,338 @@
+{
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "inputs": {
+    "circle": "circle-chart-2016-2018.json",
+    "lastfm": "recommendation-fallback-output.json"
+  },
+  "policy": "Balanced segments first, then global chart, then round-robin similar Seeds (max 2 each); missing similar slots filled by global chart. Explicit experiment aliases only. Circle eraScore uses highest existing same-identity ID score; segment histories merge monthly best ranks.",
+  "summary": {
+    "totalCandidates": 30,
+    "sourceCounts": {
+      "ERA_CHART_BALANCED": 18,
+      "ERA_CHART_GLOBAL": 6,
+      "SEED_SIMILAR": 6
+    },
+    "seedIdentityCount": 12,
+    "excludedSeedCount": 4,
+    "excludedSeedCountMeaning": "Distinct Seed identities encountered and excluded during candidate selection; not excluded row count or total configured Seeds.",
+    "duplicateSkipCount": 8,
+    "lastfmSuccessfulSeedCount": 4
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "title": "어디에도",
+      "artist": "엠씨더맥스 (M.C the MAX)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1133,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 497
+    },
+    {
+      "rank": 2,
+      "title": "시간을 달려서 (Rough)",
+      "artist": "여자친구 (GFRIEND)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 631,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 496
+    },
+    {
+      "rank": 3,
+      "title": "너는 나 나는 너",
+      "artist": "지코 (ZICO)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 536,
+      "segment": {
+        "startMonth": "2016-01",
+        "endMonth": "2016-06"
+      },
+      "segmentScore": 463
+    },
+    {
+      "rank": 4,
+      "title": "널 사랑하지 않아",
+      "artist": "어반 자카파 (Urban Zakapa)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 885,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 485
+    },
+    {
+      "rank": 5,
+      "title": "이 소설의 끝을 다시 써보려 해",
+      "artist": "한동근",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 765,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 454
+    },
+    {
+      "rank": 6,
+      "title": "Day Day (Feat. 박재범) (Prod. by GRAY)",
+      "artist": "비와이(BewhY)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 470,
+      "segment": {
+        "startMonth": "2016-07",
+        "endMonth": "2016-12"
+      },
+      "segmentScore": 428
+    },
+    {
+      "rank": 7,
+      "title": "첫눈처럼 너에게 가겠다",
+      "artist": "에일리 (Ailee)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1281,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 549
+    },
+    {
+      "rank": 8,
+      "title": "좋다고 말해",
+      "artist": "볼빨간사춘기",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 788,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 502
+    },
+    {
+      "rank": 9,
+      "title": "오랜 날 오랜 밤",
+      "artist": "AKMU (악뮤)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 555,
+      "segment": {
+        "startMonth": "2017-01",
+        "endMonth": "2017-06"
+      },
+      "segmentScore": 479
+    },
+    {
+      "rank": 10,
+      "title": "좋니",
+      "artist": "윤종신",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1033,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 558
+    },
+    {
+      "rank": 11,
+      "title": "비도 오고 그래서 (Feat. 신용재)",
+      "artist": "헤이즈 (Heize)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1026,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 516
+    },
+    {
+      "rank": 12,
+      "title": "밤편지",
+      "artist": "아이유 (IU)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1595,
+      "segment": {
+        "startMonth": "2017-07",
+        "endMonth": "2017-12"
+      },
+      "segmentScore": 484
+    },
+    {
+      "rank": 13,
+      "title": "그날처럼",
+      "artist": "장덕철",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 948,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 552
+    },
+    {
+      "rank": 14,
+      "title": "뿜뿜",
+      "artist": "모모랜드 (MOMOLAND)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 747,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 514
+    },
+    {
+      "rank": 15,
+      "title": "선물",
+      "artist": "멜로망스(Melomance)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 1137,
+      "segment": {
+        "startMonth": "2018-01",
+        "endMonth": "2018-06"
+      },
+      "segmentScore": 510
+    },
+    {
+      "rank": 16,
+      "title": "모든 날, 모든 순간 (Every day, Every Moment)",
+      "artist": "폴킴",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 801,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 558
+    },
+    {
+      "rank": 17,
+      "title": "뚜두뚜두 (DDU-DU DDU-DU)",
+      "artist": "BLACKPINK",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 617,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 518
+    },
+    {
+      "rank": 18,
+      "title": "열애중",
+      "artist": "벤 (Ben)",
+      "primarySource": "ERA_CHART_BALANCED",
+      "eraScore": 567,
+      "segment": {
+        "startMonth": "2018-07",
+        "endMonth": "2018-12"
+      },
+      "segmentScore": 501
+    },
+    {
+      "rank": 19,
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 1458
+    },
+    {
+      "rank": 20,
+      "title": "봄날",
+      "artist": "방탄소년단",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 1325
+    },
+    {
+      "rank": 21,
+      "title": "DNA",
+      "artist": "방탄소년단",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 1041
+    },
+    {
+      "rank": 22,
+      "title": "우주를 줄게",
+      "artist": "볼빨간사춘기",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 960
+    },
+    {
+      "rank": 23,
+      "title": "마지막처럼",
+      "artist": "BLACKPINK",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 894
+    },
+    {
+      "rank": 24,
+      "title": "나만 안되는 연애",
+      "artist": "볼빨간사춘기",
+      "primarySource": "ERA_CHART_GLOBAL",
+      "eraScore": 882
+    },
+    {
+      "rank": 25,
+      "title": "하루하루",
+      "artist": "Bigbang",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "BIGBANG - 거짓말",
+      "similarity": 1
+    },
+    {
+      "rank": 26,
+      "title": "TT",
+      "artist": "TWICE",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": 704,
+      "sourceSeed": "TWICE - CHEER UP",
+      "similarity": 1
+    },
+    {
+      "rank": 27,
+      "title": "Energetic",
+      "artist": "Wanna One",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "WINNER - REALLY REALLY",
+      "similarity": 1
+    },
+    {
+      "rank": 28,
+      "title": "Shine",
+      "artist": "Pentagon",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "SHAUN - Way Back Home",
+      "similarity": 0.0756306
+    },
+    {
+      "rank": 29,
+      "title": "천국",
+      "artist": "Bigbang",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": null,
+      "sourceSeed": "BIGBANG - 거짓말",
+      "similarity": 0.684241
+    },
+    {
+      "rank": 30,
+      "title": "Like OOH-AHH",
+      "artist": "TWICE",
+      "primarySource": "SEED_SIMILAR",
+      "eraScore": 539,
+      "sourceSeed": "TWICE - CHEER UP",
+      "similarity": 0.936473
+    }
+  ]
+}
