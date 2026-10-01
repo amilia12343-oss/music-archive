@@ -1,0 +1,166 @@
+{
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "sourceResult": "experiments/results/personal-recall/personal-recall-v1_2_1-2016-2018.json",
+  "recordedAt": "2026-10-01",
+  "purpose": "User-reported experiment evaluation; not permanent app Seed or RecommendationFeedback data",
+  "ratingDefinitions": {
+    "1": "그 시절 실제로 들었음",
+    "2": "곡은 알지만 그 시절 듣지는 않았음",
+    "3": "잊고 있었는데 보고 청취 기억이 떠오름",
+    "4": "거의 모르거나 듣지 않음"
+  },
+  "excludedFromEvaluation": [
+    {
+      "title": "eight",
+      "artist": "IU",
+      "reason": "Known Future according to user-reported external metadata check; not re-queried in this documentation task"
+    },
+    {
+      "title": "Steal The Show",
+      "artist": "SHAUN",
+      "reason": "Known Future according to user-reported external metadata check; not re-queried in this documentation task"
+    },
+    {
+      "title": "BOOM",
+      "artist": "LEE MINHYUK(HUTA)",
+      "reason": "Known Future according to user-reported external metadata check; not re-queried in this documentation task"
+    },
+    {
+      "title": "BTBT",
+      "artist": "B.I",
+      "reason": "Known Future according to user-reported external metadata check; not re-queried in this documentation task"
+    }
+  ],
+  "evaluations": [
+    {
+      "presentationOrder": 1,
+      "title": "Fine",
+      "artist": "태연",
+      "rating": 2
+    },
+    {
+      "presentationOrder": 2,
+      "title": "CROOKED",
+      "artist": "G-DRAGON",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 3,
+      "title": "EVERYDAY",
+      "artist": "WINNER",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 4,
+      "title": "나의 사춘기에게",
+      "artist": "볼빨간사춘기",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 5,
+      "title": "WOW",
+      "artist": "BTOB",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 6,
+      "title": "이럴거면 헤어지지 말았어야지",
+      "artist": "박원",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 7,
+      "title": "말해 Yes Or No",
+      "artist": "지코",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 8,
+      "title": "청춘",
+      "artist": "김필",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 9,
+      "title": "INSOMNIA",
+      "artist": "휘성",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 10,
+      "title": "비밀번호 486",
+      "artist": "윤하",
+      "rating": 2
+    },
+    {
+      "presentationOrder": 11,
+      "title": "Some",
+      "artist": "볼빨간사춘기",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 12,
+      "title": "나란 놈은 답은 너다",
+      "artist": "리쌍",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 13,
+      "title": "Nuckle Flow",
+      "artist": "넉살",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 14,
+      "title": "Wild And Young",
+      "artist": "강승윤",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 15,
+      "title": "BANG BANG BANG",
+      "artist": "BIGBANG",
+      "rating": 1
+    },
+    {
+      "presentationOrder": 16,
+      "title": "비행",
+      "artist": "이센스",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 17,
+      "title": "KILLING ME",
+      "artist": "iKON",
+      "rating": 4
+    },
+    {
+      "presentationOrder": 18,
+      "title": "NOAH",
+      "artist": "HAON",
+      "rating": 1
+    }
+  ],
+  "summary": {
+    "rawCandidateCount": 22,
+    "evaluatedCount": 18,
+    "excludedCount": 4,
+    "ratingCounts": {
+      "1": 9,
+      "2": 2,
+      "3": 0,
+      "4": 7
+    },
+    "confirmedListenedRate": 0.5,
+    "participantCount": 1
+  },
+  "limitations": [
+    "Some candidates were previously exposed in Personal Recall v1/v1.1/v1.2; this is not a strict blind recall test.",
+    "Rating 3 was not observed in this evaluation; this does not establish inability to recall forgotten music.",
+    "Fresh/unseen candidates need evaluation in the Phase 5 product flow.",
+    "Provider metadata verification is limited by matching/coverage; original experiment output remains unchanged."
+  ]
+}

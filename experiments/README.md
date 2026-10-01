@@ -9,13 +9,15 @@ experiments/
 ├─ scripts/                 실행 가능한 .mjs 실험
 ├─ data/
 │  ├─ circle/               여러 실험이 사용하는 2016–2018 기준 차트
-│  └─ hybrid/               사용자가 수정·확인한 Round 1 실험 feedback
+│  ├─ hybrid/               사용자가 수정·확인한 Round 1 실험 feedback
+│  └─ personal-recall/      사용자 평가·제외 사유 기록
 ├─ results/
 │  ├─ lastfm/
 │  ├─ listenbrainz/
 │  ├─ circle/               과거 3개월 샘플 수집 결과 보존
 │  ├─ hybrid/               Round 1, Round 2 결과
-│  └─ cochart/              co-chart v1, v2 결과
+│  ├─ cochart/              co-chart v1, v2, time-balanced v3 결과
+│  └─ personal-recall/      Personal Recall v1.x 결과
 └─ diagnostics/             과거 검색 오류 확인용 HTML 보존
 ```
 
@@ -34,6 +36,8 @@ Circle 전체 JSON도 수집 스크립트의 출력이지만, 여러 후속 실�
 | `hybrid-round2-test.mjs` | 확인된 Round 1 곡으로 feedback similarity 비교 | Circle dataset, Hybrid Round 1, `data/hybrid/hybrid-round1-feedback.json`, Last.fm·iTunes API | `results/hybrid/hybrid-round2-2016-2018.json` |
 | `cochart-recommendation-test.mjs` | confirmed listening 곡과 같은 월의 차트로 historical-context personalization | Circle dataset, Hybrid Round 1·Round 2, Round 1 feedback | `results/cochart/cochart-round3-2016-2018.json` |
 | `cochart-v2-test.mjs` | candidate chart duration·pair Jaccard로 co-chart bias correction 비교 | v1 입력 전부와 co-chart v1 결과 | `results/cochart/cochart-v2-2016-2018.json` |
+
+Personal Recall series의 실제 파일은 `scripts/personal-recall-v1-test.mjs`, `personal-recall-v1_1-test.mjs`, `personal-recall-v1_2-test.mjs`, `personal-recall-v1_2_1-test.mjs`입니다. 출력은 `results/personal-recall/personal-recall-<version>-2016-2018.json`이며 version은 `v1`, `v1_1`, `v1_2`, `v1_2_1`입니다. 기존 Circle/Hybrid/co-chart 결과와 원본 Seed를 입력으로 쓰며 SAME_ARTIST / RELATED_ARTIST 후보를 비교합니다. 최신 v1.2.1은 metadata 부재와 transport 조회 실패를 분리한 검증 refinement입니다.
 
 의존 흐름: Circle dataset + Last.fm 결과 → Hybrid Round 1 → 수동 Round 1 feedback → Hybrid Round 2 → co-chart v1 → co-chart v2. ListenBrainz는 별도 비교 실험입니다. co-chart 두 실험의 Seed는 Round 1 positive feedback만 사용합니다.
 
@@ -63,3 +67,13 @@ API key는 환경변수로만 전달하며 파일이나 문서에 기록하지 �
 - production은 experiments를 import하지 않고, 새 실험도 기본적으로 `src/` 구현에 의존하지 않습니다. 기존 diagnostic fixture는 역사적 예외로 보존했습니다.
 - 제품에 적용할 가치가 검증된 로직은 별도 제품 작업에서 검토합니다. 이 정리는 scoring·alias·Jaccard·제품 요구의 변경이 아닙니다.
 - 이동 후 `node --check`로 모든 스크립트를 검사하고, offline 실험은 저장된 데이터로 실행해 기존 결과와 비교합니다. 경로 검증만을 위해 외부 API를 호출하지 않습니다.
+
+## Personal Recall v1.x — 현재 standalone series concluded
+
+- 최신 기록은 v1.2.1: SAME_ARTIST 11/12, RELATED_ARTIST 11/12, 총 22곡; Older 6 / Era-period 6 / Unknown 10, metadata retry 3. transport failure → Unknown final 0, media artifact final 0, same-recording variant final 0입니다. API 성공 및 matching coverage만으로 실제 발매시기 정확성을 완전히 보장할 수는 없습니다.
+- 사용자 외부 metadata 확인 보고에서 IU — eight, SHAUN — Steal The Show, LEE MINHYUK(HUTA) — BOOM, B.I — BTBT는 알려진 Future로 평가 제외했습니다. 원본 결과는 변경하지 않았으며 이번 문서 작업에서 외부 조회를 재실행하지 않았습니다. 추천 source 품질과 metadata/matching coverage 문제는 분리합니다.
+- [별도 평가 기록](data/personal-recall/personal-recall-v1_2_1-evaluation.json): 나머지 18곡, rating 1=9 / 2=2 / 3=0 / 4=7, 청취 확인 50%, 사용자 1명. rating은 실험용이며 앱 영구 Feedback가 아닙니다.
+- 이번 평가에서는 rating 3이 관찰되지 않았습니다. v1/v1.1/v1.2를 거치며 일부 후보를 이미 본 repeated exposure 때문에 strict blind recall test가 아닙니다. Personal Recall이 잊었던 곡을 떠올리지 못한다고 결론 내리지 않고 fresh/unseen 후보로 실제 Phase 5 사용자 흐름에서 재평가합니다.
+- 현재 v1.3 등을 계속 튜닝하지 않고 결과를 Phase 5 source-mix 설계에 통합합니다. 영구 종료가 아니며 제품 평가에서 필요성이 확인되면 후속 연구가 가능합니다. Personal은 단일 generator가 아니라 Strong Seed·Confirmed LISTENED 및 HISTORICAL_CHART / CO_CHART / SAME_ARTIST / RELATED_ARTIST 관계로 개인화하는 상위 개념입니다.
+
+최신 실험을 재실행하려면 repository root에서 `node experiments/scripts/personal-recall-v1_2_1-test.mjs`를 사용합니다. `LASTFM_API_KEY`가 필요하며 Last.fm·MusicBrainz·iTunes 네트워크 요청과 결과 파일 갱신이 발생합니다. 이번 작업에서는 실행하지 않았습니다. 제품 target·현재 구현 차이는 [PRODUCT_SPEC](../docs/PRODUCT_SPEC.md), 단계별 예정 작업은 [ROADMAP](../docs/ROADMAP.md), 결정 이유와 superseded 조건은 [DECISIONS](../docs/DECISIONS.md)의 D-25를 따릅니다.

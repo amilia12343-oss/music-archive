@@ -1,0 +1,4414 @@
+{
+  "experiment": "Personal Recall v1.1",
+  "executionStatus": "completed",
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "anchors": [
+    {
+      "artist": "BIGBANG",
+      "title": "거짓말"
+    },
+    {
+      "artist": "리쌍",
+      "title": "광대"
+    },
+    {
+      "artist": "TWICE",
+      "title": "CHEER UP"
+    },
+    {
+      "artist": "볼빨간사춘기",
+      "title": "심술"
+    },
+    {
+      "artist": "박원",
+      "title": "노력"
+    },
+    {
+      "artist": "WINNER",
+      "title": "REALLY REALLY"
+    },
+    {
+      "artist": "IU",
+      "title": "가을 아침"
+    },
+    {
+      "artist": "넉살",
+      "title": "N분의1"
+    },
+    {
+      "artist": "BTOB",
+      "title": "그리워하다"
+    },
+    {
+      "artist": "HAON(김하온)",
+      "title": "붕붕"
+    },
+    {
+      "artist": "SHAUN",
+      "title": "Way Back Home"
+    },
+    {
+      "artist": "iKON",
+      "title": "사랑을 했다"
+    }
+  ],
+  "policy": "Original 12 high-intent Seeds only. SAME_ARTIST top-track rank; RELATED_ARTIST match DESC then top-track rank ASC. No weighted score, chart ranking, feedback Anchors or quota refill.",
+  "budget": {
+    "topTracksPerArtist": 30,
+    "relatedArtistsPerSeed": 3,
+    "metadataPerSeedPerChannel": 5,
+    "lastfmStartIntervalMs": 300,
+    "itunesStartIntervalMs": 3100,
+    "musicBrainzStartIntervalMs": 1100,
+    "musicBrainzSearchLimit": 5
+  },
+  "requestCounts": {
+    "lastfm": 36,
+    "itunes": 35,
+    "musicBrainz": 29
+  },
+  "comparison": {
+    "overlapWithV1": 19,
+    "replacedFromV1": 4,
+    "newComparedToV1": 3,
+    "v1UnknownCount": 17,
+    "v1_1UnknownCount": 11,
+    "v1UnknownResolvedByMusicBrainz": 7,
+    "unknownResolvedByMusicBrainz": 8,
+    "futureCaughtByMusicBrainz": 3,
+    "rescuedFromItunesFuture": 0,
+    "stillUnknown": 11,
+    "mediaArtifactsSkipped": 1,
+    "sameRecordingVariantsSkipped": 1,
+    "countMeaning": "Metadata improvement counts are distinct evaluated semantic tracks, including rejected tracks; stillUnknown is final candidates. v1 Unknown tracks not encountered are reported separately, never assumed resolved.",
+    "v1UnknownDiagnostics": [
+      {
+        "title": "나란 놈은 답은 너다 (Feat. 하림)",
+        "artist": "리쌍",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "나의 사춘기에게",
+        "artist": "볼빨간사춘기",
+        "status": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2017-09-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2017-09-28",
+          "musicBrainzRecordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+              "title": "나의 사춘기에게",
+              "firstReleaseDate": "2017-09-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2017-09-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Era",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "이럴거면 헤어지지 말았어야지",
+        "artist": "박원",
+        "status": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2015-11-12",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2015-11-12",
+          "musicBrainzRecordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+              "title": "이럴거면 헤어지지 말았어야지",
+              "firstReleaseDate": "2015-11-12",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2015-11-12",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "eight(Prod.&Feat. SUGA of BTS)",
+        "artist": "IU",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "Nuckle Flow",
+        "artist": "넉살",
+        "status": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2017-06-25",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2017-06-25",
+          "musicBrainzRecordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+              "title": "Nuckle Flow",
+              "firstReleaseDate": "2017-06-25",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2017-06-25",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Era",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "꽃(FLOWER) (Prod. AVIN) MV (SUB KOR/ENG)",
+        "artist": "HAON(김하온)",
+        "status": "MEDIA_ARTIFACT",
+        "metadata": null
+      },
+      {
+        "title": "Way Back Home (feat. Conor Maynard) - Sam Feldt Edit",
+        "artist": "Shaun",
+        "status": "SAME_RECORDING_VARIANT",
+        "metadata": null
+      },
+      {
+        "title": "INSOMNIA (불면증)",
+        "artist": "휘성",
+        "status": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2009-02-18",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2009-02-18",
+          "musicBrainzRecordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+              "title": "Insomnia (불면증)",
+              "firstReleaseDate": "2009-02-18",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "51548813-39ec-4bba-8c71-ccfa2e01a105",
+              "title": "insomnia (불면증)",
+              "firstReleaseDate": "2018-09-29",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2009-02-18",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "Identity",
+        "artist": "MISAMO",
+        "status": "FUTURE_CAUGHT_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2024-10-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2024-10-28",
+          "musicBrainzRecordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+              "title": "Identity",
+              "firstReleaseDate": "2024-10-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2024-10-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "비밀번호 486",
+        "artist": "윤하",
+        "status": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2007-03-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2007-03-15",
+          "musicBrainzRecordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+              "title": "비밀번호 486",
+              "firstReleaseDate": "2007-03-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2007-03-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "그때 그 아인",
+        "artist": "김필",
+        "status": "FUTURE_CAUGHT_BY_MUSICBRAINZ",
+        "metadata": {
+          "releaseDate": "2020-02-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2020-02-15",
+          "musicBrainzRecordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+              "title": "그때 그 아인",
+              "firstReleaseDate": "2020-02-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2020-02-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        }
+      },
+      {
+        "title": "Wild And Young",
+        "artist": "강승윤",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "Fine",
+        "artist": "태연",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "비행",
+        "artist": "이센스",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "BOOM",
+        "artist": "LEE MINHYUK (HUTA)",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+        "artist": "지코 (Zico)",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      },
+      {
+        "title": "BTBT",
+        "artist": "B.I",
+        "status": "STILL_UNKNOWN",
+        "metadata": {
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      }
+    ],
+    "changes": [
+      {
+        "v1Candidate": {
+          "rank": 9,
+          "title": "꽃(FLOWER) (Prod. AVIN) MV (SUB KOR/ENG)",
+          "artist": "HAON(김하온)",
+          "source": "SAME_ARTIST",
+          "sourceSeedTitle": "붕붕",
+          "sourceSeedArtist": "HAON(김하온)",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "category": "Unknown",
+          "artistTopTrackRank": 1,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "reason": "MEDIA_ARTIFACT",
+        "releaseDiagnostic": null,
+        "replacement": {
+          "rank": 9,
+          "title": "붕붕 (Feat. 식케이) (Prod. GroovyRoom)",
+          "artist": "HAON(김하온)",
+          "source": "SAME_ARTIST",
+          "sourceSeedTitle": "붕붕",
+          "sourceSeedArtist": "HAON(김하온)",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN",
+          "artistTopTrackRank": 2,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "channelFailureReason": null
+      },
+      {
+        "v1Candidate": {
+          "rank": 10,
+          "title": "Way Back Home (feat. Conor Maynard) - Sam Feldt Edit",
+          "artist": "Shaun",
+          "source": "SAME_ARTIST",
+          "sourceSeedTitle": "Way Back Home",
+          "sourceSeedArtist": "SHAUN",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "category": "Unknown",
+          "artistTopTrackRank": 2,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "reason": "SAME_RECORDING_VARIANT",
+        "releaseDiagnostic": null,
+        "replacement": {
+          "rank": 10,
+          "title": "Steal The Show",
+          "artist": "Shaun",
+          "source": "SAME_ARTIST",
+          "sourceSeedTitle": "Way Back Home",
+          "sourceSeedArtist": "SHAUN",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN",
+          "artistTopTrackRank": 4,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "channelFailureReason": null
+      },
+      {
+        "v1Candidate": {
+          "rank": 14,
+          "title": "Identity",
+          "artist": "MISAMO",
+          "source": "RELATED_ARTIST",
+          "sourceSeedTitle": "CHEER UP",
+          "sourceSeedArtist": "TWICE",
+          "relatedArtist": "MISAMO",
+          "relatedArtistMatch": 1,
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "category": "Unknown",
+          "relatedArtistTopTrackRank": 4,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "reason": "FUTURE_RELEASE",
+        "releaseDiagnostic": {
+          "releaseDate": "2024-10-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2024-10-28",
+          "musicBrainzRecordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+              "title": "Identity",
+              "firstReleaseDate": "2024-10-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2024-10-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        "replacement": null,
+        "channelFailureReason": "Metadata lookup budget reached; coverage not exhaustively searched"
+      },
+      {
+        "v1Candidate": {
+          "rank": 16,
+          "title": "그때 그 아인",
+          "artist": "김필",
+          "source": "RELATED_ARTIST",
+          "sourceSeedTitle": "노력",
+          "sourceSeedArtist": "박원",
+          "relatedArtist": "김필",
+          "relatedArtistMatch": 1,
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "category": "Unknown",
+          "relatedArtistTopTrackRank": 1,
+          "circleMonthsOnChart": 0,
+          "inEraCircleChart": false
+        },
+        "reason": "FUTURE_RELEASE",
+        "releaseDiagnostic": {
+          "releaseDate": "2020-02-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2020-02-15",
+          "musicBrainzRecordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+              "title": "그때 그 아인",
+              "firstReleaseDate": "2020-02-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2020-02-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        "replacement": {
+          "rank": 15,
+          "title": "청춘 (feat. 김창완)",
+          "artist": "김필",
+          "source": "RELATED_ARTIST",
+          "sourceSeedTitle": "노력",
+          "sourceSeedArtist": "박원",
+          "relatedArtist": "김필",
+          "relatedArtistMatch": 1,
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN",
+          "relatedArtistTopTrackRank": 2,
+          "circleMonthsOnChart": 4,
+          "inEraCircleChart": true
+        },
+        "channelFailureReason": null
+      }
+    ],
+    "metadataEvidence": [
+      {
+        "identity": "[\"bang bang bang\",\"bigbang\"]",
+        "releaseDate": "2015-06-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2015-06-01",
+        "effectiveReleaseDate": "2015-06-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"나란 놈은 답은 너다 (feat. 하림)\",\"리쌍\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"fancy\",\"twice\"]",
+        "releaseDate": "2019-04-22",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2019-04-22",
+        "musicBrainzRecordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+            "title": "FANCY",
+            "firstReleaseDate": "2019-04-22",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "55407857-babb-4f04-9915-4884f6acdc63",
+            "title": "FANCY",
+            "firstReleaseDate": "2019-04-22",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2019-04-22",
+        "effectiveReleaseDate": "2019-04-22",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"the feels\",\"twice\"]",
+        "releaseDate": "2021-10-01",
+        "itunesMatches": 3,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2021-10-01",
+        "musicBrainzRecordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+            "title": "The Feels",
+            "firstReleaseDate": "2021-10-01",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "acb7d2e6-4efc-435f-9962-648beb4689e0",
+            "title": "The Feels",
+            "firstReleaseDate": "2021-10-01",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2021-10-01",
+        "effectiveReleaseDate": "2021-10-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"i can't stop me\",\"twice\"]",
+        "releaseDate": "2020-10-26",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": "2020-10-26",
+        "effectiveReleaseDate": "2020-10-26",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Future",
+        "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+      },
+      {
+        "identity": "[\"feel special\",\"twice\"]",
+        "releaseDate": "2019-09-23",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2019-09-23",
+        "musicBrainzRecordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+            "title": "Feel Special",
+            "firstReleaseDate": "2019-09-23",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "39bdfa1d-b92d-40d0-ba04-8297e63d77a2",
+            "title": "Feel Special",
+            "firstReleaseDate": "2019-09-23",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2019-09-23",
+        "effectiveReleaseDate": "2019-09-23",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"talk that talk\",\"twice\"]",
+        "releaseDate": "2022-08-26",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2022-08-26",
+        "musicBrainzRecordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+            "title": "Talk That Talk",
+            "firstReleaseDate": "2022-08-26",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "3b1092ab-82d8-4c07-a745-8c30043bb13f",
+            "title": "Talk That Talk",
+            "firstReleaseDate": "2022-08-26",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "e76cb50a-614e-4047-8ec6-9a7b2d87ed92",
+            "title": "Talk That Talk",
+            "firstReleaseDate": "2022-08-26",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2022-08-26",
+        "effectiveReleaseDate": "2022-08-26",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"나의 사춘기에게\",\"볼빨간사춘기\"]",
+        "releaseDate": "2017-09-28",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2017-09-28",
+        "musicBrainzRecordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+            "title": "나의 사춘기에게",
+            "firstReleaseDate": "2017-09-28",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2017-09-28",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Era",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"이럴거면 헤어지지 말았어야지\",\"박원\"]",
+        "releaseDate": "2015-11-12",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2015-11-12",
+        "musicBrainzRecordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+            "title": "이럴거면 헤어지지 말았어야지",
+            "firstReleaseDate": "2015-11-12",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2015-11-12",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"everyday\",\"winner\"]",
+        "releaseDate": "2018-04-04",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2018-04-04",
+        "effectiveReleaseDate": "2018-04-04",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"lilac\",\"iu\"]",
+        "releaseDate": "2021-03-25",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": "2021-03-25",
+        "effectiveReleaseDate": "2021-03-25",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Future",
+        "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+      },
+      {
+        "identity": "[\"eight(prod.&feat. suga of bts)\",\"iu\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"nuckle flow\",\"넉살\"]",
+        "releaseDate": "2017-06-25",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2017-06-25",
+        "musicBrainzRecordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+            "title": "Nuckle Flow",
+            "firstReleaseDate": "2017-06-25",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2017-06-25",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Era",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"wow\",\"btob\"]",
+        "releaseDate": "2012-01-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2012-01-01",
+        "effectiveReleaseDate": "2012-01-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"붕붕 (feat. 식케이) (prod. groovyroom)\",\"haon(김하온)\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"bad habits\",\"shaun\"]",
+        "releaseDate": "2019-01-01",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2019-01-01",
+        "musicBrainzRecordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+            "title": "Bad Habits",
+            "firstReleaseDate": "2019-01-01",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2019-01-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"steal the show\",\"shaun\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"죽겠다 (killing me)\",\"ikon\"]",
+        "releaseDate": "2018-08-02",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2018-08-02",
+        "effectiveReleaseDate": "2018-08-02",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"crooked\",\"g-dragon\"]",
+        "releaseDate": "2013-09-05",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2013-09-05",
+        "effectiveReleaseDate": "2013-09-05",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"insomnia (불면증)\",\"휘성\"]",
+        "releaseDate": "2009-02-18",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2009-02-18",
+        "musicBrainzRecordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+            "title": "Insomnia (불면증)",
+            "firstReleaseDate": "2009-02-18",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "51548813-39ec-4bba-8c71-ccfa2e01a105",
+            "title": "insomnia (불면증)",
+            "firstReleaseDate": "2018-09-29",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2009-02-18",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"do not touch\",\"misamo\"]",
+        "releaseDate": "2023-07-14",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2023-07-14",
+        "musicBrainzRecordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "9ed59ae3-7a2b-4d62-9680-bc7b69ef801d",
+            "title": "Do not touch",
+            "firstReleaseDate": "2023-12-20",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+            "title": "Do not touch",
+            "firstReleaseDate": "2023-07-14",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "ac28baf3-118e-469c-a907-62c1a2607e86",
+            "title": "Do not touch",
+            "firstReleaseDate": "2023-08-18",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "8b885a1b-da0d-4656-8f43-01d603cd150c",
+            "title": "Do Not Touch",
+            "firstReleaseDate": "2023-07-14",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2023-07-14",
+        "effectiveReleaseDate": "2023-07-14",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"marshmallow\",\"misamo\"]",
+        "releaseDate": "2023-06-17",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2023-06-16",
+        "musicBrainzRecordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+            "title": "Marshmallow",
+            "firstReleaseDate": "2023-06-16",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "bbfdb453-ef3c-4c64-8e12-ad677533a9df",
+            "title": "Marshmallow",
+            "firstReleaseDate": "2023-06-16",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "8b1ca900-fdad-4d3a-a379-839cd5f047a3",
+            "title": "Marshmallow",
+            "firstReleaseDate": "2023-06-30",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "15facb94-adb8-48b1-997c-6916754361f4",
+            "title": "Marshmallow",
+            "firstReleaseDate": "2023-12-20",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2023-06-17",
+        "effectiveReleaseDate": "2023-06-17",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"funny valentine\",\"misamo\"]",
+        "releaseDate": "2023-07-26",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2023-07-25",
+        "musicBrainzRecordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "ff791292-99da-4e03-8662-09665e194387",
+            "title": "Funny Valentine",
+            "firstReleaseDate": "2023-12-20",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "835690ed-ab3c-47ce-b2e0-71cf6a9ddba9",
+            "title": "Funny Valentine",
+            "firstReleaseDate": "2023-07-26",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+            "title": "Funny Valentine",
+            "firstReleaseDate": "2023-07-25",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2023-07-26",
+        "effectiveReleaseDate": "2023-07-26",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"identity\",\"misamo\"]",
+        "releaseDate": "2024-10-28",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2024-10-28",
+        "musicBrainzRecordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+            "title": "Identity",
+            "firstReleaseDate": "2024-10-28",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2024-10-28",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"bouquet\",\"misamo\"]",
+        "releaseDate": "2023-06-17",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": "2023-01-25",
+        "musicBrainzRecordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+            "title": "Bouquet",
+            "firstReleaseDate": "2023-01-25",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "0da1f29c-4b31-4c99-b993-40687eec9c67",
+            "title": "Bouquet",
+            "firstReleaseDate": "2023-12-20",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "764a4641-2d74-436e-8105-a14b3047c32f",
+            "title": "Bouquet",
+            "firstReleaseDate": "2023-02-09",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": "2023-06-17",
+        "effectiveReleaseDate": "2023-06-17",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "BOTH",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"비밀번호 486\",\"윤하\"]",
+        "releaseDate": "2007-03-15",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2007-03-15",
+        "musicBrainzRecordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+            "title": "비밀번호 486",
+            "firstReleaseDate": "2007-03-15",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2007-03-15",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"그때 그 아인\",\"김필\"]",
+        "releaseDate": "2020-02-15",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2020-02-15",
+        "musicBrainzRecordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+            "title": "그때 그 아인",
+            "firstReleaseDate": "2020-02-15",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2020-02-15",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Future",
+        "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+      },
+      {
+        "identity": "[\"청춘 (feat. 김창완)\",\"김필\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"wild and young\",\"강승윤\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"fine\",\"태연\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"비행\",\"이센스\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"boom\",\"lee minhyuk (huta)\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"말해 yes or no (feat. penomeco, the quiett)\",\"지코 (zico)\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      },
+      {
+        "identity": "[\"some\",\"볼빨간사춘기\"]",
+        "releaseDate": "2017-09-28",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2017-09-28",
+        "effectiveReleaseDate": "2017-09-28",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE"
+      },
+      {
+        "identity": "[\"btbt\",\"b.i\"]",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN"
+      }
+    ],
+    "blindEvaluationCaveat": "Unknown dates and conservative exact-match gaps remain unverified. Inspect diagnostics before treating the set as Era-valid; metadata validation alone does not establish personal listening."
+  },
+  "shownInputFiles": [
+    "results/hybrid/hybrid-recommendation-2016-2018.json",
+    "results/hybrid/hybrid-round2-2016-2018.json",
+    "results/cochart/cochart-round3-2016-2018.json",
+    "results/cochart/cochart-v2-2016-2018.json",
+    "results/cochart/cochart-v3-time-balanced-2016-2018.json"
+  ],
+  "diagnostics": {
+    "releaseCaveat": "iTunes dates are earliest observed exact-match catalog listings, not original-release ground truth. MusicBrainz exact matching can rescue catalog-date conflicts or resolve Unknown; dates remain evidence, not guaranteed original releases. Partial MB dates retain precision. Title/credit mismatches remain Unknown.",
+    "countMeaning": "Exclusion counters count attempted candidate rows across channels, not distinct identities.",
+    "coverageCaveat": "Bounded lookup windows, metadata availability and previous-shown exclusions affect success; this is not a full-catalog coverage measure."
+  },
+  "summary": {
+    "totalSeeds": 12,
+    "sameArtistSeedSuccess": 11,
+    "sameArtistSeedFailure": 1,
+    "relatedArtistSeedSuccess": 11,
+    "relatedArtistSeedFailure": 1,
+    "sameArtistCandidateCount": 11,
+    "relatedArtistCandidateCount": 11,
+    "finalCandidateCount": 22,
+    "shortfall": 2,
+    "olderCount": 6,
+    "eraCount": 5,
+    "unknownCount": 11,
+    "inEraCircleCount": 5,
+    "offEraCircleCount": 17,
+    "olderAndOffCircleCount": 6,
+    "futureExcludedCount": 13,
+    "originalSeedExcluded": 5,
+    "previouslyShownExcluded": 7,
+    "semanticDuplicateSkipped": 0,
+    "mediaArtifactsSkipped": 1,
+    "sameRecordingVariantsSkipped": 1,
+    "coverageComparison": {
+      "previousTrackGetSimilarSuccess": 4,
+      "artistLevelEitherChannelSuccess": 11,
+      "previousFailedSeedsNowSuccessful": [
+        "리쌍 - 광대",
+        "볼빨간사춘기 - 심술",
+        "박원 - 노력",
+        "IU - 가을 아침",
+        "넉살 - N분의1",
+        "BTOB - 그리워하다",
+        "HAON(김하온) - 붕붕",
+        "iKON - 사랑을 했다"
+      ],
+      "caveat": "Saved track-level baseline vs current artist-level eligible-candidate coverage; API availability, time and exclusions differ."
+    }
+  },
+  "validation": {
+    "onlyOriginalSeeds": true,
+    "feedbackAnchorsUsed": 0,
+    "originalSeedReappearances": 0,
+    "previouslyShownReappearances": 0,
+    "finalSemanticDuplicates": 0,
+    "knownFutureCandidates": 0,
+    "maximumOnePerSeedPerChannel": true,
+    "circleUsedOnlyAfterSelection": true,
+    "musicBrainzUsedOnlyForVerification": true,
+    "finalMediaArtifacts": 0,
+    "finalSameRecordingVariants": 0
+  },
+  "sameArtistReports": [
+    {
+      "seed": {
+        "artist": "BIGBANG",
+        "title": "거짓말"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 1,
+        "title": "BANG BANG BANG",
+        "artist": "Bigbang",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "거짓말",
+        "sourceSeedArtist": "BIGBANG",
+        "releaseDate": "2015-06-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2015-06-01",
+        "effectiveReleaseDate": "2015-06-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "BANG BANG BANG",
+          "artist": "Bigbang",
+          "releaseDate": "2015-06-01",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2015-06-01",
+          "effectiveReleaseDate": "2015-06-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Older",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Bigbang",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "리쌍",
+        "title": "광대"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 2,
+        "title": "나란 놈은 답은 너다 (Feat. 하림)",
+        "artist": "리쌍",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "광대",
+        "sourceSeedArtist": "리쌍",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "나란 놈은 답은 너다 (Feat. 하림)",
+          "artist": "리쌍",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "리쌍",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "TWICE",
+        "title": "CHEER UP"
+      },
+      "success": false,
+      "candidate": null,
+      "failureReason": "Metadata lookup budget reached; coverage not exhaustively searched",
+      "metadataRequests": 5,
+      "metadataBudgetReached": true,
+      "skipped": [
+        {
+          "title": "FANCY",
+          "artist": "TWICE",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2019-04-22",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2019-04-22",
+          "musicBrainzRecordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+              "title": "FANCY",
+              "firstReleaseDate": "2019-04-22",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "55407857-babb-4f04-9915-4884f6acdc63",
+              "title": "FANCY",
+              "firstReleaseDate": "2019-04-22",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2019-04-22",
+          "effectiveReleaseDate": "2019-04-22",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "The Feels",
+          "artist": "TWICE",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2021-10-01",
+          "itunesMatches": 3,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2021-10-01",
+          "musicBrainzRecordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+              "title": "The Feels",
+              "firstReleaseDate": "2021-10-01",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "acb7d2e6-4efc-435f-9962-648beb4689e0",
+              "title": "The Feels",
+              "firstReleaseDate": "2021-10-01",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2021-10-01",
+          "effectiveReleaseDate": "2021-10-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "I CAN'T STOP ME",
+          "artist": "TWICE",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2020-10-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": "2020-10-26",
+          "effectiveReleaseDate": "2020-10-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Future",
+          "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+        },
+        {
+          "title": "Feel Special",
+          "artist": "TWICE",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2019-09-23",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2019-09-23",
+          "musicBrainzRecordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+              "title": "Feel Special",
+              "firstReleaseDate": "2019-09-23",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "39bdfa1d-b92d-40d0-ba04-8297e63d77a2",
+              "title": "Feel Special",
+              "firstReleaseDate": "2019-09-23",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2019-09-23",
+          "effectiveReleaseDate": "2019-09-23",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "What is Love?",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "TT",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "LIKEY",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "Talk that Talk",
+          "artist": "TWICE",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2022-08-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2022-08-26",
+          "musicBrainzRecordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "3b1092ab-82d8-4c07-a745-8c30043bb13f",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "e76cb50a-614e-4047-8ec6-9a7b2d87ed92",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2022-08-26",
+          "effectiveReleaseDate": "2022-08-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "FANCY",
+          "artist": "TWICE",
+          "releaseDate": "2019-04-22",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2019-04-22",
+          "musicBrainzRecordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "28cda89c-f2a5-425c-8211-2593c964d962",
+              "title": "FANCY",
+              "firstReleaseDate": "2019-04-22",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "55407857-babb-4f04-9915-4884f6acdc63",
+              "title": "FANCY",
+              "firstReleaseDate": "2019-04-22",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2019-04-22",
+          "effectiveReleaseDate": "2019-04-22",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "The Feels",
+          "artist": "TWICE",
+          "releaseDate": "2021-10-01",
+          "itunesMatches": 3,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2021-10-01",
+          "musicBrainzRecordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "048de85d-5d29-45d8-a655-f4a4a48d39d5",
+              "title": "The Feels",
+              "firstReleaseDate": "2021-10-01",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "acb7d2e6-4efc-435f-9962-648beb4689e0",
+              "title": "The Feels",
+              "firstReleaseDate": "2021-10-01",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2021-10-01",
+          "effectiveReleaseDate": "2021-10-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "I CAN'T STOP ME",
+          "artist": "TWICE",
+          "releaseDate": "2020-10-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": "2020-10-26",
+          "effectiveReleaseDate": "2020-10-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Future",
+          "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+        },
+        {
+          "title": "Feel Special",
+          "artist": "TWICE",
+          "releaseDate": "2019-09-23",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2019-09-23",
+          "musicBrainzRecordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3ad48c12-7a9b-404d-87bf-777f238417ae",
+              "title": "Feel Special",
+              "firstReleaseDate": "2019-09-23",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "39bdfa1d-b92d-40d0-ba04-8297e63d77a2",
+              "title": "Feel Special",
+              "firstReleaseDate": "2019-09-23",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2019-09-23",
+          "effectiveReleaseDate": "2019-09-23",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Talk that Talk",
+          "artist": "TWICE",
+          "releaseDate": "2022-08-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2022-08-26",
+          "musicBrainzRecordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "340a89b5-d790-4058-a978-a9bf6b8909ed",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "3b1092ab-82d8-4c07-a745-8c30043bb13f",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "e76cb50a-614e-4047-8ec6-9a7b2d87ed92",
+              "title": "Talk That Talk",
+              "firstReleaseDate": "2022-08-26",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2022-08-26",
+          "effectiveReleaseDate": "2022-08-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "TWICE",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "볼빨간사춘기",
+        "title": "심술"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 3,
+        "title": "나의 사춘기에게",
+        "artist": "볼빨간사춘기",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "심술",
+        "sourceSeedArtist": "볼빨간사춘기",
+        "releaseDate": "2017-09-28",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2017-09-28",
+        "musicBrainzRecordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+            "title": "나의 사춘기에게",
+            "firstReleaseDate": "2017-09-28",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2017-09-28",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Era",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "artistTopTrackRank": 3,
+        "circleMonthsOnChart": 8,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "썸 탈꺼야",
+          "artist": "볼빨간사춘기",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "우주를 줄게",
+          "artist": "볼빨간사춘기",
+          "reason": "Previously shown"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "나의 사춘기에게",
+          "artist": "볼빨간사춘기",
+          "releaseDate": "2017-09-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2017-09-28",
+          "musicBrainzRecordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+              "title": "나의 사춘기에게",
+              "firstReleaseDate": "2017-09-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2017-09-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Era",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "볼빨간사춘기",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "박원",
+        "title": "노력"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 4,
+        "title": "이럴거면 헤어지지 말았어야지",
+        "artist": "박원",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "노력",
+        "sourceSeedArtist": "박원",
+        "releaseDate": "2015-11-12",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2015-11-12",
+        "musicBrainzRecordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+            "title": "이럴거면 헤어지지 말았어야지",
+            "firstReleaseDate": "2015-11-12",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2015-11-12",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "artistTopTrackRank": 3,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "all of my life",
+          "artist": "박원",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "노력",
+          "artist": "박원",
+          "reason": "Original Seed"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "이럴거면 헤어지지 말았어야지",
+          "artist": "박원",
+          "releaseDate": "2015-11-12",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2015-11-12",
+          "musicBrainzRecordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+              "title": "이럴거면 헤어지지 말았어야지",
+              "firstReleaseDate": "2015-11-12",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2015-11-12",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "박원",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "WINNER",
+        "title": "REALLY REALLY"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 5,
+        "title": "EVERYDAY",
+        "artist": "Winner",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "REALLY REALLY",
+        "sourceSeedArtist": "WINNER",
+        "releaseDate": "2018-04-04",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2018-04-04",
+        "effectiveReleaseDate": "2018-04-04",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 5,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "REALLY REALLY",
+          "artist": "Winner",
+          "reason": "Original Seed"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "EVERYDAY",
+          "artist": "Winner",
+          "releaseDate": "2018-04-04",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2018-04-04",
+          "effectiveReleaseDate": "2018-04-04",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Era",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Winner",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "IU",
+        "title": "가을 아침"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 6,
+        "title": "eight(Prod.&Feat. SUGA of BTS)",
+        "artist": "IU",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "가을 아침",
+        "sourceSeedArtist": "IU",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 2,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "LILAC",
+          "artist": "IU",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2021-03-25",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": "2021-03-25",
+          "effectiveReleaseDate": "2021-03-25",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Future",
+          "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "LILAC",
+          "artist": "IU",
+          "releaseDate": "2021-03-25",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": "2021-03-25",
+          "effectiveReleaseDate": "2021-03-25",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Future",
+          "releaseDecision": "ITUNES_FUTURE_UNCONFIRMED_BY_MB"
+        },
+        {
+          "title": "eight(Prod.&Feat. SUGA of BTS)",
+          "artist": "IU",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "IU",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "넉살",
+        "title": "N분의1"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 7,
+        "title": "Nuckle Flow",
+        "artist": "넉살",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "N분의1",
+        "sourceSeedArtist": "넉살",
+        "releaseDate": "2017-06-25",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2017-06-25",
+        "musicBrainzRecordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+            "title": "Nuckle Flow",
+            "firstReleaseDate": "2017-06-25",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2017-06-25",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Era",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "Nuckle Flow",
+          "artist": "넉살",
+          "releaseDate": "2017-06-25",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2017-06-25",
+          "musicBrainzRecordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+              "title": "Nuckle Flow",
+              "firstReleaseDate": "2017-06-25",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2017-06-25",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Era",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "넉살",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "BTOB",
+        "title": "그리워하다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 8,
+        "title": "WOW",
+        "artist": "BTOB",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "그리워하다",
+        "sourceSeedArtist": "BTOB",
+        "releaseDate": "2012-01-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2012-01-01",
+        "effectiveReleaseDate": "2012-01-01",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "Missing You",
+          "artist": "BTOB",
+          "reason": "Original Seed"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "WOW",
+          "artist": "BTOB",
+          "releaseDate": "2012-01-01",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2012-01-01",
+          "effectiveReleaseDate": "2012-01-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Older",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "BTOB",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "HAON(김하온)",
+        "title": "붕붕"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 9,
+        "title": "붕붕 (Feat. 식케이) (Prod. GroovyRoom)",
+        "artist": "HAON(김하온)",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "붕붕",
+        "sourceSeedArtist": "HAON(김하온)",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "꽃(FLOWER) (Prod. AVIN) MV (SUB KOR/ENG)",
+          "artist": "HAON(김하온)",
+          "reason": "MEDIA_ARTIFACT"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "붕붕 (Feat. 식케이) (Prod. GroovyRoom)",
+          "artist": "HAON(김하온)",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "HAON(김하온)",
+      "rawTrackCount": 20
+    },
+    {
+      "seed": {
+        "artist": "SHAUN",
+        "title": "Way Back Home"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 10,
+        "title": "Steal The Show",
+        "artist": "Shaun",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "Way Back Home",
+        "sourceSeedArtist": "SHAUN",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "artistTopTrackRank": 4,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 2,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "Way Back Home",
+          "artist": "Shaun",
+          "reason": "Original Seed"
+        },
+        {
+          "title": "Way Back Home (feat. Conor Maynard) - Sam Feldt Edit",
+          "artist": "Shaun",
+          "reason": "SAME_RECORDING_VARIANT"
+        },
+        {
+          "title": "Bad Habits",
+          "artist": "Shaun",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2019-01-01",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2019-01-01",
+          "musicBrainzRecordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+              "title": "Bad Habits",
+              "firstReleaseDate": "2019-01-01",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2019-01-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "Bad Habits",
+          "artist": "Shaun",
+          "releaseDate": "2019-01-01",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2019-01-01",
+          "musicBrainzRecordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "9d168cea-3732-410a-ba5b-1f6fa16563c7",
+              "title": "Bad Habits",
+              "firstReleaseDate": "2019-01-01",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2019-01-01",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Steal The Show",
+          "artist": "Shaun",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Shaun",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "iKON",
+        "title": "사랑을 했다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 11,
+        "title": "KILLING ME",
+        "artist": "Ikon",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "사랑을 했다",
+        "sourceSeedArtist": "iKON",
+        "releaseDate": "2018-08-02",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2018-08-02",
+        "effectiveReleaseDate": "2018-08-02",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 3,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "LOVE SCENARIO",
+          "artist": "Ikon",
+          "reason": "Original Seed"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "KILLING ME",
+          "artist": "Ikon",
+          "releaseDate": "2018-08-02",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2018-08-02",
+          "effectiveReleaseDate": "2018-08-02",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Era",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Ikon",
+      "rawTrackCount": 30
+    }
+  ],
+  "relatedArtistReports": [
+    {
+      "seed": {
+        "artist": "BIGBANG",
+        "title": "거짓말"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 12,
+        "title": "CROOKED",
+        "artist": "G-DRAGON",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "거짓말",
+        "sourceSeedArtist": "BIGBANG",
+        "relatedArtist": "G-DRAGON",
+        "relatedArtistMatch": 1,
+        "releaseDate": "2013-09-05",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2013-09-05",
+        "effectiveReleaseDate": "2013-09-05",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Older",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "CROOKED",
+          "artist": "G-DRAGON",
+          "releaseDate": "2013-09-05",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2013-09-05",
+          "effectiveReleaseDate": "2013-09-05",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Older",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "G-DRAGON",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Bigbang"
+    },
+    {
+      "seed": {
+        "artist": "리쌍",
+        "title": "광대"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 13,
+        "title": "INSOMNIA (불면증)",
+        "artist": "휘성",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "광대",
+        "sourceSeedArtist": "리쌍",
+        "relatedArtist": "휘성",
+        "relatedArtistMatch": 1,
+        "releaseDate": "2009-02-18",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2009-02-18",
+        "musicBrainzRecordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+            "title": "Insomnia (불면증)",
+            "firstReleaseDate": "2009-02-18",
+            "datePrecision": "day"
+          },
+          {
+            "recordingMbid": "51548813-39ec-4bba-8c71-ccfa2e01a105",
+            "title": "insomnia (불면증)",
+            "firstReleaseDate": "2018-09-29",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2009-02-18",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "INSOMNIA (불면증)",
+          "artist": "휘성",
+          "releaseDate": "2009-02-18",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2009-02-18",
+          "musicBrainzRecordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+              "title": "Insomnia (불면증)",
+              "firstReleaseDate": "2009-02-18",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "51548813-39ec-4bba-8c71-ccfa2e01a105",
+              "title": "insomnia (불면증)",
+              "firstReleaseDate": "2018-09-29",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2009-02-18",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "휘성",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "리쌍"
+    },
+    {
+      "seed": {
+        "artist": "TWICE",
+        "title": "CHEER UP"
+      },
+      "success": false,
+      "candidate": null,
+      "failureReason": "Metadata lookup budget reached; coverage not exhaustively searched",
+      "metadataRequests": 5,
+      "metadataBudgetReached": true,
+      "skipped": [
+        {
+          "title": "Do not touch",
+          "artist": "MISAMO",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2023-07-14",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-07-14",
+          "musicBrainzRecordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "9ed59ae3-7a2b-4d62-9680-bc7b69ef801d",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-07-14",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "ac28baf3-118e-469c-a907-62c1a2607e86",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-08-18",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "8b885a1b-da0d-4656-8f43-01d603cd150c",
+              "title": "Do Not Touch",
+              "firstReleaseDate": "2023-07-14",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-07-14",
+          "effectiveReleaseDate": "2023-07-14",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Marshmallow",
+          "artist": "MISAMO",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2023-06-17",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-06-16",
+          "musicBrainzRecordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-16",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "bbfdb453-ef3c-4c64-8e12-ad677533a9df",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-16",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "8b1ca900-fdad-4d3a-a379-839cd5f047a3",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-30",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "15facb94-adb8-48b1-997c-6916754361f4",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-06-17",
+          "effectiveReleaseDate": "2023-06-17",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Funny Valentine",
+          "artist": "MISAMO",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2023-07-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-07-25",
+          "musicBrainzRecordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "ff791292-99da-4e03-8662-09665e194387",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "835690ed-ab3c-47ce-b2e0-71cf6a9ddba9",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-07-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-07-25",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-07-26",
+          "effectiveReleaseDate": "2023-07-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Identity",
+          "artist": "MISAMO",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2024-10-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2024-10-28",
+          "musicBrainzRecordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+              "title": "Identity",
+              "firstReleaseDate": "2024-10-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2024-10-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Bouquet",
+          "artist": "MISAMO",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2023-06-17",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-01-25",
+          "musicBrainzRecordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-01-25",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "0da1f29c-4b31-4c99-b993-40687eec9c67",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "764a4641-2d74-436e-8105-a14b3047c32f",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-02-09",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-06-17",
+          "effectiveReleaseDate": "2023-06-17",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "Do not touch",
+          "artist": "MISAMO",
+          "releaseDate": "2023-07-14",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-07-14",
+          "musicBrainzRecordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "9ed59ae3-7a2b-4d62-9680-bc7b69ef801d",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "5aabd1fb-76fc-4515-971a-4a50f6e64a15",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-07-14",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "ac28baf3-118e-469c-a907-62c1a2607e86",
+              "title": "Do not touch",
+              "firstReleaseDate": "2023-08-18",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "8b885a1b-da0d-4656-8f43-01d603cd150c",
+              "title": "Do Not Touch",
+              "firstReleaseDate": "2023-07-14",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-07-14",
+          "effectiveReleaseDate": "2023-07-14",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Marshmallow",
+          "artist": "MISAMO",
+          "releaseDate": "2023-06-17",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-06-16",
+          "musicBrainzRecordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3c44bfe0-2b8f-4f7b-a178-acf558a3ed1c",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-16",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "bbfdb453-ef3c-4c64-8e12-ad677533a9df",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-16",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "8b1ca900-fdad-4d3a-a379-839cd5f047a3",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-06-30",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "15facb94-adb8-48b1-997c-6916754361f4",
+              "title": "Marshmallow",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-06-17",
+          "effectiveReleaseDate": "2023-06-17",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Funny Valentine",
+          "artist": "MISAMO",
+          "releaseDate": "2023-07-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-07-25",
+          "musicBrainzRecordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "ff791292-99da-4e03-8662-09665e194387",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "835690ed-ab3c-47ce-b2e0-71cf6a9ddba9",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-07-26",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "75fac6ae-0ae3-43c7-84da-3f1334746572",
+              "title": "Funny Valentine",
+              "firstReleaseDate": "2023-07-25",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-07-26",
+          "effectiveReleaseDate": "2023-07-26",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Identity",
+          "artist": "MISAMO",
+          "releaseDate": "2024-10-28",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2024-10-28",
+          "musicBrainzRecordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "bcd325f9-dee1-480f-9b83-a5df9cc7af51",
+              "title": "Identity",
+              "firstReleaseDate": "2024-10-28",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2024-10-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "Bouquet",
+          "artist": "MISAMO",
+          "releaseDate": "2023-06-17",
+          "itunesMatches": 2,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": "2023-01-25",
+          "musicBrainzRecordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "c59fa592-c21e-4783-b46c-51c197886fe5",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-01-25",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "0da1f29c-4b31-4c99-b993-40687eec9c67",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-12-20",
+              "datePrecision": "day"
+            },
+            {
+              "recordingMbid": "764a4641-2d74-436e-8105-a14b3047c32f",
+              "title": "Bouquet",
+              "firstReleaseDate": "2023-02-09",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": "2023-06-17",
+          "effectiveReleaseDate": "2023-06-17",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "BOTH",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CONFIRMED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "MISAMO",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "TWICE"
+    },
+    {
+      "seed": {
+        "artist": "볼빨간사춘기",
+        "title": "심술"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 14,
+        "title": "비밀번호 486",
+        "artist": "윤하",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "심술",
+        "sourceSeedArtist": "볼빨간사춘기",
+        "relatedArtist": "윤하",
+        "relatedArtistMatch": 0.948793,
+        "releaseDate": "2007-03-15",
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": "2007-03-15",
+        "musicBrainzRecordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+        "musicBrainzMatches": [
+          {
+            "recordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+            "title": "비밀번호 486",
+            "firstReleaseDate": "2007-03-15",
+            "datePrecision": "day"
+          }
+        ],
+        "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": "2007-03-15",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "MUSICBRAINZ",
+        "category": "Older",
+        "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "비밀번호 486",
+          "artist": "윤하",
+          "releaseDate": "2007-03-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2007-03-15",
+          "musicBrainzRecordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+              "title": "비밀번호 486",
+              "firstReleaseDate": "2007-03-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2007-03-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Older",
+          "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "윤하",
+          "match": 0.948793
+        }
+      ],
+      "canonicalArtist": "볼빨간사춘기"
+    },
+    {
+      "seed": {
+        "artist": "박원",
+        "title": "노력"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 15,
+        "title": "청춘 (feat. 김창완)",
+        "artist": "김필",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "노력",
+        "sourceSeedArtist": "박원",
+        "relatedArtist": "김필",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 2,
+        "circleMonthsOnChart": 4,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 2,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "그때 그 아인",
+          "artist": "김필",
+          "reason": "FUTURE_RELEASE",
+          "releaseDate": "2020-02-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2020-02-15",
+          "musicBrainzRecordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+              "title": "그때 그 아인",
+              "firstReleaseDate": "2020-02-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2020-02-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "그때 그 아인",
+          "artist": "김필",
+          "releaseDate": "2020-02-15",
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": "2020-02-15",
+          "musicBrainzRecordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+          "musicBrainzMatches": [
+            {
+              "recordingMbid": "de631386-cc8a-4998-835b-05d37628c5a1",
+              "title": "그때 그 아인",
+              "firstReleaseDate": "2020-02-15",
+              "datePrecision": "day"
+            }
+          ],
+          "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": "2020-02-15",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "MUSICBRAINZ",
+          "category": "Future",
+          "releaseDecision": "FUTURE_CAUGHT_BY_MUSICBRAINZ"
+        },
+        {
+          "title": "청춘 (feat. 김창완)",
+          "artist": "김필",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "김필",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "박원"
+    },
+    {
+      "seed": {
+        "artist": "WINNER",
+        "title": "REALLY REALLY"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 16,
+        "title": "Wild And Young",
+        "artist": "강승윤",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "REALLY REALLY",
+        "sourceSeedArtist": "WINNER",
+        "relatedArtist": "강승윤",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "Wild And Young",
+          "artist": "강승윤",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "강승윤",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Winner"
+    },
+    {
+      "seed": {
+        "artist": "IU",
+        "title": "가을 아침"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 17,
+        "title": "Fine",
+        "artist": "태연",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "가을 아침",
+        "sourceSeedArtist": "IU",
+        "relatedArtist": "태연",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "Fine",
+          "artist": "태연",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "태연",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "IU"
+    },
+    {
+      "seed": {
+        "artist": "넉살",
+        "title": "N분의1"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 18,
+        "title": "비행",
+        "artist": "이센스",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "N분의1",
+        "sourceSeedArtist": "넉살",
+        "relatedArtist": "이센스",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "비행",
+          "artist": "이센스",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "이센스",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "넉살"
+    },
+    {
+      "seed": {
+        "artist": "BTOB",
+        "title": "그리워하다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 19,
+        "title": "BOOM",
+        "artist": "LEE MINHYUK (HUTA)",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "그리워하다",
+        "sourceSeedArtist": "BTOB",
+        "relatedArtist": "LEE MINHYUK (HUTA)",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "BOOM",
+          "artist": "LEE MINHYUK (HUTA)",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "LEE MINHYUK (HUTA)",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "BTOB"
+    },
+    {
+      "seed": {
+        "artist": "HAON(김하온)",
+        "title": "붕붕"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 20,
+        "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+        "artist": "지코 (Zico)",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "붕붕",
+        "sourceSeedArtist": "HAON(김하온)",
+        "relatedArtist": "지코 (Zico)",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 2,
+        "circleMonthsOnChart": 1,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "유레카 (Feat. Zion.T)",
+          "artist": "지코 (Zico)",
+          "reason": "Previously shown"
+        }
+      ],
+      "evaluations": [
+        {
+          "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+          "artist": "지코 (Zico)",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "지코 (Zico)",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "HAON(김하온)"
+    },
+    {
+      "seed": {
+        "artist": "SHAUN",
+        "title": "Way Back Home"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 21,
+        "title": "Some",
+        "artist": "BOL4",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "Way Back Home",
+        "sourceSeedArtist": "SHAUN",
+        "relatedArtist": "BOL4",
+        "relatedArtistMatch": 1,
+        "releaseDate": "2017-09-28",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+        "itunesReleaseDate": "2017-09-28",
+        "effectiveReleaseDate": "2017-09-28",
+        "effectiveDatePrecision": "day",
+        "releaseEvidence": "ITUNES",
+        "category": "Era",
+        "releaseDecision": "ITUNES_ELIGIBLE",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "Some",
+          "artist": "BOL4",
+          "releaseDate": "2017-09-28",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+          "itunesReleaseDate": "2017-09-28",
+          "effectiveReleaseDate": "2017-09-28",
+          "effectiveDatePrecision": "day",
+          "releaseEvidence": "ITUNES",
+          "category": "Era",
+          "releaseDecision": "ITUNES_ELIGIBLE"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "BOL4",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Shaun"
+    },
+    {
+      "seed": {
+        "artist": "iKON",
+        "title": "사랑을 했다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 22,
+        "title": "BTBT",
+        "artist": "B.I",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "사랑을 했다",
+        "sourceSeedArtist": "iKON",
+        "relatedArtist": "B.I",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "musicBrainzFirstReleaseDate": null,
+        "musicBrainzRecordingMbid": null,
+        "musicBrainzMatches": [],
+        "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+        "itunesReleaseDate": null,
+        "effectiveReleaseDate": null,
+        "effectiveDatePrecision": null,
+        "releaseEvidence": "NONE",
+        "category": "Unknown",
+        "releaseDecision": "STILL_UNKNOWN",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "evaluations": [
+        {
+          "title": "BTBT",
+          "artist": "B.I",
+          "releaseDate": null,
+          "itunesMatches": 0,
+          "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+          "musicBrainzFirstReleaseDate": null,
+          "musicBrainzRecordingMbid": null,
+          "musicBrainzMatches": [],
+          "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+          "itunesReleaseDate": null,
+          "effectiveReleaseDate": null,
+          "effectiveDatePrecision": null,
+          "releaseEvidence": "NONE",
+          "category": "Unknown",
+          "releaseDecision": "STILL_UNKNOWN"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "B.I",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Ikon"
+    }
+  ],
+  "finalCandidates": [
+    {
+      "rank": 1,
+      "title": "BANG BANG BANG",
+      "artist": "Bigbang",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "거짓말",
+      "sourceSeedArtist": "BIGBANG",
+      "releaseDate": "2015-06-01",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2015-06-01",
+      "effectiveReleaseDate": "2015-06-01",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Older",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 2,
+      "title": "나란 놈은 답은 너다 (Feat. 하림)",
+      "artist": "리쌍",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "광대",
+      "sourceSeedArtist": "리쌍",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 3,
+      "title": "나의 사춘기에게",
+      "artist": "볼빨간사춘기",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "심술",
+      "sourceSeedArtist": "볼빨간사춘기",
+      "releaseDate": "2017-09-28",
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": "2017-09-28",
+      "musicBrainzRecordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+      "musicBrainzMatches": [
+        {
+          "recordingMbid": "e31ff0eb-d1c5-4690-9d8e-47aaa30c4a7f",
+          "title": "나의 사춘기에게",
+          "firstReleaseDate": "2017-09-28",
+          "datePrecision": "day"
+        }
+      ],
+      "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": "2017-09-28",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "MUSICBRAINZ",
+      "category": "Era",
+      "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+      "artistTopTrackRank": 3,
+      "circleMonthsOnChart": 8,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 4,
+      "title": "이럴거면 헤어지지 말았어야지",
+      "artist": "박원",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "노력",
+      "sourceSeedArtist": "박원",
+      "releaseDate": "2015-11-12",
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": "2015-11-12",
+      "musicBrainzRecordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+      "musicBrainzMatches": [
+        {
+          "recordingMbid": "aa620608-64f6-4680-be35-476a5bdd4e2e",
+          "title": "이럴거면 헤어지지 말았어야지",
+          "firstReleaseDate": "2015-11-12",
+          "datePrecision": "day"
+        }
+      ],
+      "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": "2015-11-12",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "MUSICBRAINZ",
+      "category": "Older",
+      "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+      "artistTopTrackRank": 3,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 5,
+      "title": "EVERYDAY",
+      "artist": "Winner",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "REALLY REALLY",
+      "sourceSeedArtist": "WINNER",
+      "releaseDate": "2018-04-04",
+      "itunesMatches": 1,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2018-04-04",
+      "effectiveReleaseDate": "2018-04-04",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Era",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 5,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 6,
+      "title": "eight(Prod.&Feat. SUGA of BTS)",
+      "artist": "IU",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "가을 아침",
+      "sourceSeedArtist": "IU",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 7,
+      "title": "Nuckle Flow",
+      "artist": "넉살",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "N분의1",
+      "sourceSeedArtist": "넉살",
+      "releaseDate": "2017-06-25",
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": "2017-06-25",
+      "musicBrainzRecordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+      "musicBrainzMatches": [
+        {
+          "recordingMbid": "1d52d1e7-63d4-4f74-b824-161329fa1e45",
+          "title": "Nuckle Flow",
+          "firstReleaseDate": "2017-06-25",
+          "datePrecision": "day"
+        }
+      ],
+      "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": "2017-06-25",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "MUSICBRAINZ",
+      "category": "Era",
+      "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 8,
+      "title": "WOW",
+      "artist": "BTOB",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "그리워하다",
+      "sourceSeedArtist": "BTOB",
+      "releaseDate": "2012-01-01",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2012-01-01",
+      "effectiveReleaseDate": "2012-01-01",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Older",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 9,
+      "title": "붕붕 (Feat. 식케이) (Prod. GroovyRoom)",
+      "artist": "HAON(김하온)",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "붕붕",
+      "sourceSeedArtist": "HAON(김하온)",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 10,
+      "title": "Steal The Show",
+      "artist": "Shaun",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "Way Back Home",
+      "sourceSeedArtist": "SHAUN",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "artistTopTrackRank": 4,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 11,
+      "title": "KILLING ME",
+      "artist": "Ikon",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "사랑을 했다",
+      "sourceSeedArtist": "iKON",
+      "releaseDate": "2018-08-02",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2018-08-02",
+      "effectiveReleaseDate": "2018-08-02",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Era",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 3,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 12,
+      "title": "CROOKED",
+      "artist": "G-DRAGON",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "거짓말",
+      "sourceSeedArtist": "BIGBANG",
+      "relatedArtist": "G-DRAGON",
+      "relatedArtistMatch": 1,
+      "releaseDate": "2013-09-05",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2013-09-05",
+      "effectiveReleaseDate": "2013-09-05",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Older",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 13,
+      "title": "INSOMNIA (불면증)",
+      "artist": "휘성",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "광대",
+      "sourceSeedArtist": "리쌍",
+      "relatedArtist": "휘성",
+      "relatedArtistMatch": 1,
+      "releaseDate": "2009-02-18",
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": "2009-02-18",
+      "musicBrainzRecordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+      "musicBrainzMatches": [
+        {
+          "recordingMbid": "32426cac-3cb8-4022-8bce-8ead443b1947",
+          "title": "Insomnia (불면증)",
+          "firstReleaseDate": "2009-02-18",
+          "datePrecision": "day"
+        },
+        {
+          "recordingMbid": "51548813-39ec-4bba-8c71-ccfa2e01a105",
+          "title": "insomnia (불면증)",
+          "firstReleaseDate": "2018-09-29",
+          "datePrecision": "day"
+        }
+      ],
+      "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": "2009-02-18",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "MUSICBRAINZ",
+      "category": "Older",
+      "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 14,
+      "title": "비밀번호 486",
+      "artist": "윤하",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "심술",
+      "sourceSeedArtist": "볼빨간사춘기",
+      "relatedArtist": "윤하",
+      "relatedArtistMatch": 0.948793,
+      "releaseDate": "2007-03-15",
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": "2007-03-15",
+      "musicBrainzRecordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+      "musicBrainzMatches": [
+        {
+          "recordingMbid": "3943ae06-0130-4080-bb42-9d16aeb379c8",
+          "title": "비밀번호 486",
+          "firstReleaseDate": "2007-03-15",
+          "datePrecision": "day"
+        }
+      ],
+      "musicBrainzMatching": "MUSICBRAINZ_SEMANTIC_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": "2007-03-15",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "MUSICBRAINZ",
+      "category": "Older",
+      "releaseDecision": "UNKNOWN_RESOLVED_BY_MUSICBRAINZ",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 15,
+      "title": "청춘 (feat. 김창완)",
+      "artist": "김필",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "노력",
+      "sourceSeedArtist": "박원",
+      "relatedArtist": "김필",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 2,
+      "circleMonthsOnChart": 4,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 16,
+      "title": "Wild And Young",
+      "artist": "강승윤",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "REALLY REALLY",
+      "sourceSeedArtist": "WINNER",
+      "relatedArtist": "강승윤",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 17,
+      "title": "Fine",
+      "artist": "태연",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "가을 아침",
+      "sourceSeedArtist": "IU",
+      "relatedArtist": "태연",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 18,
+      "title": "비행",
+      "artist": "이센스",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "N분의1",
+      "sourceSeedArtist": "넉살",
+      "relatedArtist": "이센스",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 19,
+      "title": "BOOM",
+      "artist": "LEE MINHYUK (HUTA)",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "그리워하다",
+      "sourceSeedArtist": "BTOB",
+      "relatedArtist": "LEE MINHYUK (HUTA)",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 20,
+      "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+      "artist": "지코 (Zico)",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "붕붕",
+      "sourceSeedArtist": "HAON(김하온)",
+      "relatedArtist": "지코 (Zico)",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 2,
+      "circleMonthsOnChart": 1,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 21,
+      "title": "Some",
+      "artist": "BOL4",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "Way Back Home",
+      "sourceSeedArtist": "SHAUN",
+      "relatedArtist": "BOL4",
+      "relatedArtistMatch": 1,
+      "releaseDate": "2017-09-28",
+      "itunesMatches": 1,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NOT_NEEDED",
+      "itunesReleaseDate": "2017-09-28",
+      "effectiveReleaseDate": "2017-09-28",
+      "effectiveDatePrecision": "day",
+      "releaseEvidence": "ITUNES",
+      "category": "Era",
+      "releaseDecision": "ITUNES_ELIGIBLE",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 22,
+      "title": "BTBT",
+      "artist": "B.I",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "사랑을 했다",
+      "sourceSeedArtist": "iKON",
+      "relatedArtist": "B.I",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "musicBrainzFirstReleaseDate": null,
+      "musicBrainzRecordingMbid": null,
+      "musicBrainzMatches": [],
+      "musicBrainzMatching": "MUSICBRAINZ_NO_EXACT_MATCH",
+      "itunesReleaseDate": null,
+      "effectiveReleaseDate": null,
+      "effectiveDatePrecision": null,
+      "releaseEvidence": "NONE",
+      "category": "Unknown",
+      "releaseDecision": "STILL_UNKNOWN",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    }
+  ]
+}

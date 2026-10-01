@@ -1,0 +1,1411 @@
+{
+  "experiment": "Personal Recall v1",
+  "executionStatus": "completed",
+  "era": {
+    "startMonth": "2016-01",
+    "endMonth": "2018-12"
+  },
+  "anchors": [
+    {
+      "artist": "BIGBANG",
+      "title": "거짓말"
+    },
+    {
+      "artist": "리쌍",
+      "title": "광대"
+    },
+    {
+      "artist": "TWICE",
+      "title": "CHEER UP"
+    },
+    {
+      "artist": "볼빨간사춘기",
+      "title": "심술"
+    },
+    {
+      "artist": "박원",
+      "title": "노력"
+    },
+    {
+      "artist": "WINNER",
+      "title": "REALLY REALLY"
+    },
+    {
+      "artist": "IU",
+      "title": "가을 아침"
+    },
+    {
+      "artist": "넉살",
+      "title": "N분의1"
+    },
+    {
+      "artist": "BTOB",
+      "title": "그리워하다"
+    },
+    {
+      "artist": "HAON(김하온)",
+      "title": "붕붕"
+    },
+    {
+      "artist": "SHAUN",
+      "title": "Way Back Home"
+    },
+    {
+      "artist": "iKON",
+      "title": "사랑을 했다"
+    }
+  ],
+  "policy": "Original 12 high-intent Seeds only. SAME_ARTIST top-track rank; RELATED_ARTIST match DESC then top-track rank ASC. No weighted score, chart ranking, feedback Anchors or quota refill.",
+  "budget": {
+    "topTracksPerArtist": 30,
+    "relatedArtistsPerSeed": 3,
+    "metadataPerSeedPerChannel": 5,
+    "lastfmStartIntervalMs": 300,
+    "itunesStartIntervalMs": 3100
+  },
+  "requestCounts": {
+    "lastfm": 36,
+    "itunes": 32
+  },
+  "shownInputFiles": [
+    "results/hybrid/hybrid-recommendation-2016-2018.json",
+    "results/hybrid/hybrid-round2-2016-2018.json",
+    "results/cochart/cochart-round3-2016-2018.json",
+    "results/cochart/cochart-v2-2016-2018.json",
+    "results/cochart/cochart-v3-time-balanced-2016-2018.json"
+  ],
+  "diagnostics": {
+    "releaseCaveat": "iTunes dates are earliest observed exact-match catalog listings, not original-release ground truth. Reissues can wrongly exclude older songs as Future; translation/alias misses remain Unknown.",
+    "countMeaning": "Exclusion counters count attempted candidate rows across channels, not distinct identities.",
+    "coverageCaveat": "Bounded lookup windows, metadata availability and previous-shown exclusions affect success; this is not a full-catalog coverage measure."
+  },
+  "summary": {
+    "totalSeeds": 12,
+    "sameArtistSeedSuccess": 11,
+    "sameArtistSeedFailure": 1,
+    "relatedArtistSeedSuccess": 12,
+    "relatedArtistSeedFailure": 0,
+    "sameArtistCandidateCount": 11,
+    "relatedArtistCandidateCount": 12,
+    "finalCandidateCount": 23,
+    "shortfall": 1,
+    "olderCount": 3,
+    "eraCount": 3,
+    "unknownCount": 17,
+    "inEraCircleCount": 4,
+    "offEraCircleCount": 19,
+    "olderAndOffCircleCount": 3,
+    "futureExcludedCount": 9,
+    "originalSeedExcluded": 5,
+    "previouslyShownExcluded": 7,
+    "semanticDuplicateSkipped": 0,
+    "coverageComparison": {
+      "previousTrackGetSimilarSuccess": 4,
+      "artistLevelEitherChannelSuccess": 12,
+      "previousFailedSeedsNowSuccessful": [
+        "리쌍 - 광대",
+        "볼빨간사춘기 - 심술",
+        "박원 - 노력",
+        "IU - 가을 아침",
+        "넉살 - N분의1",
+        "BTOB - 그리워하다",
+        "HAON(김하온) - 붕붕",
+        "iKON - 사랑을 했다"
+      ],
+      "caveat": "Saved track-level baseline vs current artist-level eligible-candidate coverage; API availability, time and exclusions differ."
+    }
+  },
+  "validation": {
+    "onlyOriginalSeeds": true,
+    "feedbackAnchorsUsed": 0,
+    "originalSeedReappearances": 0,
+    "previouslyShownReappearances": 0,
+    "finalSemanticDuplicates": 0,
+    "knownFutureCandidates": 0,
+    "maximumOnePerSeedPerChannel": true,
+    "circleUsedOnlyAfterSelection": true
+  },
+  "sameArtistReports": [
+    {
+      "seed": {
+        "artist": "BIGBANG",
+        "title": "거짓말"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 1,
+        "title": "BANG BANG BANG",
+        "artist": "Bigbang",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "거짓말",
+        "sourceSeedArtist": "BIGBANG",
+        "releaseDate": "2015-06-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Older",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "canonicalArtist": "Bigbang",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "리쌍",
+        "title": "광대"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 2,
+        "title": "나란 놈은 답은 너다 (Feat. 하림)",
+        "artist": "리쌍",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "광대",
+        "sourceSeedArtist": "리쌍",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "canonicalArtist": "리쌍",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "TWICE",
+        "title": "CHEER UP"
+      },
+      "success": false,
+      "candidate": null,
+      "failureReason": "Metadata lookup budget reached; coverage not exhaustively searched",
+      "metadataRequests": 5,
+      "metadataBudgetReached": true,
+      "skipped": [
+        {
+          "title": "FANCY",
+          "artist": "TWICE",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2019-04-22",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "The Feels",
+          "artist": "TWICE",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2021-10-01",
+          "itunesMatches": 3,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "I CAN'T STOP ME",
+          "artist": "TWICE",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2020-10-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "Feel Special",
+          "artist": "TWICE",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2019-09-23",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "What is Love?",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "TT",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "LIKEY",
+          "artist": "TWICE",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "Talk that Talk",
+          "artist": "TWICE",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2022-08-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "TWICE",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "볼빨간사춘기",
+        "title": "심술"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 3,
+        "title": "나의 사춘기에게",
+        "artist": "볼빨간사춘기",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "심술",
+        "sourceSeedArtist": "볼빨간사춘기",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 3,
+        "circleMonthsOnChart": 8,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "썸 탈꺼야",
+          "artist": "볼빨간사춘기",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "우주를 줄게",
+          "artist": "볼빨간사춘기",
+          "reason": "Previously shown"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "볼빨간사춘기",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "박원",
+        "title": "노력"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 4,
+        "title": "이럴거면 헤어지지 말았어야지",
+        "artist": "박원",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "노력",
+        "sourceSeedArtist": "박원",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 3,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "all of my life",
+          "artist": "박원",
+          "reason": "Previously shown"
+        },
+        {
+          "title": "노력",
+          "artist": "박원",
+          "reason": "Original Seed"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "박원",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "WINNER",
+        "title": "REALLY REALLY"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 5,
+        "title": "EVERYDAY",
+        "artist": "Winner",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "REALLY REALLY",
+        "sourceSeedArtist": "WINNER",
+        "releaseDate": "2018-04-04",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Era",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 5,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "REALLY REALLY",
+          "artist": "Winner",
+          "reason": "Original Seed"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Winner",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "IU",
+        "title": "가을 아침"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 6,
+        "title": "eight(Prod.&Feat. SUGA of BTS)",
+        "artist": "IU",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "가을 아침",
+        "sourceSeedArtist": "IU",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 2,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "LILAC",
+          "artist": "IU",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2021-03-25",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "IU",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "넉살",
+        "title": "N분의1"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 7,
+        "title": "Nuckle Flow",
+        "artist": "넉살",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "N분의1",
+        "sourceSeedArtist": "넉살",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "canonicalArtist": "넉살",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "BTOB",
+        "title": "그리워하다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 8,
+        "title": "WOW",
+        "artist": "BTOB",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "그리워하다",
+        "sourceSeedArtist": "BTOB",
+        "releaseDate": "2012-01-01",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Older",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "Missing You",
+          "artist": "BTOB",
+          "reason": "Original Seed"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "BTOB",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "HAON(김하온)",
+        "title": "붕붕"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 9,
+        "title": "꽃(FLOWER) (Prod. AVIN) MV (SUB KOR/ENG)",
+        "artist": "HAON(김하온)",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "붕붕",
+        "sourceSeedArtist": "HAON(김하온)",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "canonicalArtist": "HAON(김하온)",
+      "rawTrackCount": 20
+    },
+    {
+      "seed": {
+        "artist": "SHAUN",
+        "title": "Way Back Home"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 10,
+        "title": "Way Back Home (feat. Conor Maynard) - Sam Feldt Edit",
+        "artist": "Shaun",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "Way Back Home",
+        "sourceSeedArtist": "SHAUN",
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "Way Back Home",
+          "artist": "Shaun",
+          "reason": "Original Seed"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Shaun",
+      "rawTrackCount": 30
+    },
+    {
+      "seed": {
+        "artist": "iKON",
+        "title": "사랑을 했다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 11,
+        "title": "KILLING ME",
+        "artist": "Ikon",
+        "source": "SAME_ARTIST",
+        "sourceSeedTitle": "사랑을 했다",
+        "sourceSeedArtist": "iKON",
+        "releaseDate": "2018-08-02",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Era",
+        "artistTopTrackRank": 2,
+        "circleMonthsOnChart": 3,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "LOVE SCENARIO",
+          "artist": "Ikon",
+          "reason": "Original Seed"
+        }
+      ],
+      "errors": [],
+      "canonicalArtist": "Ikon",
+      "rawTrackCount": 30
+    }
+  ],
+  "relatedArtistReports": [
+    {
+      "seed": {
+        "artist": "BIGBANG",
+        "title": "거짓말"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 12,
+        "title": "CROOKED",
+        "artist": "G-DRAGON",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "거짓말",
+        "sourceSeedArtist": "BIGBANG",
+        "relatedArtist": "G-DRAGON",
+        "relatedArtistMatch": 1,
+        "releaseDate": "2013-09-05",
+        "itunesMatches": 2,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Older",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "G-DRAGON",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Bigbang"
+    },
+    {
+      "seed": {
+        "artist": "리쌍",
+        "title": "광대"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 13,
+        "title": "INSOMNIA (불면증)",
+        "artist": "휘성",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "광대",
+        "sourceSeedArtist": "리쌍",
+        "relatedArtist": "휘성",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "휘성",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "리쌍"
+    },
+    {
+      "seed": {
+        "artist": "TWICE",
+        "title": "CHEER UP"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 14,
+        "title": "Identity",
+        "artist": "MISAMO",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "CHEER UP",
+        "sourceSeedArtist": "TWICE",
+        "relatedArtist": "MISAMO",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 4,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 4,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "Do not touch",
+          "artist": "MISAMO",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2023-07-14",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "Marshmallow",
+          "artist": "MISAMO",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2023-06-17",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        },
+        {
+          "title": "Funny Valentine",
+          "artist": "MISAMO",
+          "reason": "Known Future catalog date",
+          "releaseDate": "2023-07-26",
+          "itunesMatches": 1,
+          "matching": "Exact normalized match; earliest observed catalog date"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "MISAMO",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "TWICE"
+    },
+    {
+      "seed": {
+        "artist": "볼빨간사춘기",
+        "title": "심술"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 15,
+        "title": "비밀번호 486",
+        "artist": "윤하",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "심술",
+        "sourceSeedArtist": "볼빨간사춘기",
+        "relatedArtist": "윤하",
+        "relatedArtistMatch": 0.948793,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "윤하",
+          "match": 0.948793
+        }
+      ],
+      "canonicalArtist": "볼빨간사춘기"
+    },
+    {
+      "seed": {
+        "artist": "박원",
+        "title": "노력"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 16,
+        "title": "그때 그 아인",
+        "artist": "김필",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "노력",
+        "sourceSeedArtist": "박원",
+        "relatedArtist": "김필",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "김필",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "박원"
+    },
+    {
+      "seed": {
+        "artist": "WINNER",
+        "title": "REALLY REALLY"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 17,
+        "title": "Wild And Young",
+        "artist": "강승윤",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "REALLY REALLY",
+        "sourceSeedArtist": "WINNER",
+        "relatedArtist": "강승윤",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "강승윤",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Winner"
+    },
+    {
+      "seed": {
+        "artist": "IU",
+        "title": "가을 아침"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 18,
+        "title": "Fine",
+        "artist": "태연",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "가을 아침",
+        "sourceSeedArtist": "IU",
+        "relatedArtist": "태연",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "태연",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "IU"
+    },
+    {
+      "seed": {
+        "artist": "넉살",
+        "title": "N분의1"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 19,
+        "title": "비행",
+        "artist": "이센스",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "N분의1",
+        "sourceSeedArtist": "넉살",
+        "relatedArtist": "이센스",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "이센스",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "넉살"
+    },
+    {
+      "seed": {
+        "artist": "BTOB",
+        "title": "그리워하다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 20,
+        "title": "BOOM",
+        "artist": "LEE MINHYUK (HUTA)",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "그리워하다",
+        "sourceSeedArtist": "BTOB",
+        "relatedArtist": "LEE MINHYUK (HUTA)",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "LEE MINHYUK (HUTA)",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "BTOB"
+    },
+    {
+      "seed": {
+        "artist": "HAON(김하온)",
+        "title": "붕붕"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 21,
+        "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+        "artist": "지코 (Zico)",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "붕붕",
+        "sourceSeedArtist": "HAON(김하온)",
+        "relatedArtist": "지코 (Zico)",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 2,
+        "circleMonthsOnChart": 1,
+        "inEraCircleChart": true
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [
+        {
+          "title": "유레카 (Feat. Zion.T)",
+          "artist": "지코 (Zico)",
+          "reason": "Previously shown"
+        }
+      ],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "지코 (Zico)",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "HAON(김하온)"
+    },
+    {
+      "seed": {
+        "artist": "SHAUN",
+        "title": "Way Back Home"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 22,
+        "title": "Some",
+        "artist": "BOL4",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "Way Back Home",
+        "sourceSeedArtist": "SHAUN",
+        "relatedArtist": "BOL4",
+        "relatedArtistMatch": 1,
+        "releaseDate": "2017-09-28",
+        "itunesMatches": 1,
+        "matching": "Exact normalized match; earliest observed catalog date",
+        "category": "Era",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "BOL4",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Shaun"
+    },
+    {
+      "seed": {
+        "artist": "iKON",
+        "title": "사랑을 했다"
+      },
+      "success": true,
+      "candidate": {
+        "rank": 23,
+        "title": "BTBT",
+        "artist": "B.I",
+        "source": "RELATED_ARTIST",
+        "sourceSeedTitle": "사랑을 했다",
+        "sourceSeedArtist": "iKON",
+        "relatedArtist": "B.I",
+        "relatedArtistMatch": 1,
+        "releaseDate": null,
+        "itunesMatches": 0,
+        "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+        "category": "Unknown",
+        "relatedArtistTopTrackRank": 1,
+        "circleMonthsOnChart": 0,
+        "inEraCircleChart": false
+      },
+      "failureReason": null,
+      "metadataRequests": 1,
+      "metadataBudgetReached": false,
+      "skipped": [],
+      "errors": [],
+      "relatedArtistsTried": [
+        {
+          "artist": "B.I",
+          "match": 1
+        }
+      ],
+      "canonicalArtist": "Ikon"
+    }
+  ],
+  "finalCandidates": [
+    {
+      "rank": 1,
+      "title": "BANG BANG BANG",
+      "artist": "Bigbang",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "거짓말",
+      "sourceSeedArtist": "BIGBANG",
+      "releaseDate": "2015-06-01",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Older",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 2,
+      "title": "나란 놈은 답은 너다 (Feat. 하림)",
+      "artist": "리쌍",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "광대",
+      "sourceSeedArtist": "리쌍",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 3,
+      "title": "나의 사춘기에게",
+      "artist": "볼빨간사춘기",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "심술",
+      "sourceSeedArtist": "볼빨간사춘기",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 3,
+      "circleMonthsOnChart": 8,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 4,
+      "title": "이럴거면 헤어지지 말았어야지",
+      "artist": "박원",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "노력",
+      "sourceSeedArtist": "박원",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 3,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 5,
+      "title": "EVERYDAY",
+      "artist": "Winner",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "REALLY REALLY",
+      "sourceSeedArtist": "WINNER",
+      "releaseDate": "2018-04-04",
+      "itunesMatches": 1,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Era",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 5,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 6,
+      "title": "eight(Prod.&Feat. SUGA of BTS)",
+      "artist": "IU",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "가을 아침",
+      "sourceSeedArtist": "IU",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 7,
+      "title": "Nuckle Flow",
+      "artist": "넉살",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "N분의1",
+      "sourceSeedArtist": "넉살",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 8,
+      "title": "WOW",
+      "artist": "BTOB",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "그리워하다",
+      "sourceSeedArtist": "BTOB",
+      "releaseDate": "2012-01-01",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Older",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 9,
+      "title": "꽃(FLOWER) (Prod. AVIN) MV (SUB KOR/ENG)",
+      "artist": "HAON(김하온)",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "붕붕",
+      "sourceSeedArtist": "HAON(김하온)",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 10,
+      "title": "Way Back Home (feat. Conor Maynard) - Sam Feldt Edit",
+      "artist": "Shaun",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "Way Back Home",
+      "sourceSeedArtist": "SHAUN",
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 11,
+      "title": "KILLING ME",
+      "artist": "Ikon",
+      "source": "SAME_ARTIST",
+      "sourceSeedTitle": "사랑을 했다",
+      "sourceSeedArtist": "iKON",
+      "releaseDate": "2018-08-02",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Era",
+      "artistTopTrackRank": 2,
+      "circleMonthsOnChart": 3,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 12,
+      "title": "CROOKED",
+      "artist": "G-DRAGON",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "거짓말",
+      "sourceSeedArtist": "BIGBANG",
+      "relatedArtist": "G-DRAGON",
+      "relatedArtistMatch": 1,
+      "releaseDate": "2013-09-05",
+      "itunesMatches": 2,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Older",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 13,
+      "title": "INSOMNIA (불면증)",
+      "artist": "휘성",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "광대",
+      "sourceSeedArtist": "리쌍",
+      "relatedArtist": "휘성",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 14,
+      "title": "Identity",
+      "artist": "MISAMO",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "CHEER UP",
+      "sourceSeedArtist": "TWICE",
+      "relatedArtist": "MISAMO",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 4,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 15,
+      "title": "비밀번호 486",
+      "artist": "윤하",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "심술",
+      "sourceSeedArtist": "볼빨간사춘기",
+      "relatedArtist": "윤하",
+      "relatedArtistMatch": 0.948793,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 16,
+      "title": "그때 그 아인",
+      "artist": "김필",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "노력",
+      "sourceSeedArtist": "박원",
+      "relatedArtist": "김필",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 17,
+      "title": "Wild And Young",
+      "artist": "강승윤",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "REALLY REALLY",
+      "sourceSeedArtist": "WINNER",
+      "relatedArtist": "강승윤",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 18,
+      "title": "Fine",
+      "artist": "태연",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "가을 아침",
+      "sourceSeedArtist": "IU",
+      "relatedArtist": "태연",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 19,
+      "title": "비행",
+      "artist": "이센스",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "N분의1",
+      "sourceSeedArtist": "넉살",
+      "relatedArtist": "이센스",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 20,
+      "title": "BOOM",
+      "artist": "LEE MINHYUK (HUTA)",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "그리워하다",
+      "sourceSeedArtist": "BTOB",
+      "relatedArtist": "LEE MINHYUK (HUTA)",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 21,
+      "title": "말해 Yes Or No (Feat. PENOMECO, The Quiett)",
+      "artist": "지코 (Zico)",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "붕붕",
+      "sourceSeedArtist": "HAON(김하온)",
+      "relatedArtist": "지코 (Zico)",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 2,
+      "circleMonthsOnChart": 1,
+      "inEraCircleChart": true
+    },
+    {
+      "rank": 22,
+      "title": "Some",
+      "artist": "BOL4",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "Way Back Home",
+      "sourceSeedArtist": "SHAUN",
+      "relatedArtist": "BOL4",
+      "relatedArtistMatch": 1,
+      "releaseDate": "2017-09-28",
+      "itunesMatches": 1,
+      "matching": "Exact normalized match; earliest observed catalog date",
+      "category": "Era",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    },
+    {
+      "rank": 23,
+      "title": "BTBT",
+      "artist": "B.I",
+      "source": "RELATED_ARTIST",
+      "sourceSeedTitle": "사랑을 했다",
+      "sourceSeedArtist": "iKON",
+      "relatedArtist": "B.I",
+      "relatedArtistMatch": 1,
+      "releaseDate": null,
+      "itunesMatches": 0,
+      "matching": "No exact title/artist match; possible translation/alias/catalog gap",
+      "category": "Unknown",
+      "relatedArtistTopTrackRank": 1,
+      "circleMonthsOnChart": 0,
+      "inEraCircleChart": false
+    }
+  ]
+}
