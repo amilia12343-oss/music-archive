@@ -78,8 +78,8 @@
 
 ### D-10 — 곡 중심 Seed, 최소 5곡과 최대 제한 없음
 
-- **상태:** Confirmed / Current Direction. D-23에서 정확히 5곡과 완료 제한을 확정했다.
-- **결정:** 기억나는 대표곡을 최소 정확히 5곡 선택하며 최대 개수는 제한하지 않는다. 개인적으로 중요한 ‘나만의 곡’을 강한 신호로 취급한다. 아티스트 자체를 Seed로 고르는 기능은 MVP에서 제외한다.
+- **상태:** 최소 5곡 조건은 Superseded (2026-10-01 D-25). 곡 중심·개인적 대표곡 존중은 유지. D-23 당시 구현과 현재 코드의 5곡 제한은 이력으로 보존한다.
+- **결정 (당시):** 기억나는 대표곡을 최소 정확히 5곡 선택하며 최대 개수는 제한하지 않는다. 개인적으로 중요한 ‘나만의 곡’을 강한 신호로 취급한다. 아티스트 자체를 Seed로 고르는 기능은 MVP에서 제외한다.
 - **이유:** 인기곡만으로는 개인의 음악 기억을 충분히 표현하기 어렵다.
 - **영향:** 당시 인기곡 후보 외에 개인 대표곡 검색을 고려한다. 곡 제목·아티스트·앨범 이미지·발매연도/발매일과 현재 복원 중인 Era의 시절 라벨/맥락을 표시한다. 사용자가 어느 시절에 관련된 후보인지 이해할 수 있게 하되 청취 사실을 확정하는 표시는 아니다.
 
@@ -88,7 +88,7 @@
 - **상태:** Confirmed.
 - **결정:** 추천된 것만으로 청취 기록을 생성하지 않는다. 해당 Era에서 들었다고 사용자가 확인한 음악만 Archive에 저장한다.
 - **이유:** 시스템 추측을 사용자의 실제 과거 기록으로 오인하게 해서는 안 된다.
-- **영향:** Seed 기반 추천과 사용자 피드백 기반 개선을 우선한다. Seed 유사성·시기·인기·과거 발매곡·평가 등을 조합할 수 있다. Era 중 발매된 곡만 허용하는 제한을 두지 않는다. 같은 아티스트·비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate 신호이며 필수 MVP 알고리즘이 아니다. 비슷한 사용자 기반 추천/collaborative filtering은 Later다. 구체적인 알고리즘은 미정이다.
+- **영향:** Seed 기반 추천과 사용자 피드백 기반 개선을 우선한다. Seed 유사성·시기·인기·과거 발매곡·평가 등을 조합할 수 있다. Era 중 발매된 곡만 허용하는 제한을 두지 않는다. D-25에서 SAME_ARTIST / RELATED_ARTIST / CO_CHART 단계 도입을 target으로 정했다. 비슷한 장르·당시 연령/생활 단계·국가/시장은 여전히 Candidate 신호이며 필수 MVP 알고리즘이 아니다. 비슷한 사용자 기반 추천/collaborative filtering은 Later다. 구체적인 알고리즘은 미정이다.
 
 ### D-12 — RecommendationFeedback 유지, 미선택은 미평가
 
@@ -99,8 +99,8 @@
 
 ### D-13 — 약 30곡 추천과 아티스트 정렬
 
-- **상태:** Current Direction. 추천 수는 UX 테스트 후 조정 가능.
-- **결정:** 한 곡씩 넘기는 방식이 아닌, 약 30곡을 한 화면에서 함께 탐색하는 밀도 높은 목록/표를 사용한다. 화면 높이에 따라 목록 스크롤은 가능하다. 기본 정렬은 아티스트 이름 오름차순이며 아티스트별 그룹을 만들지 않는다. 별도 정렬 선택 기능은 현재 필요하지 않다. 같은 Era에서 이미 평가한 곡은 다음 후보에서 제외하고 `추천 더 보기`를 제공한다.
+- **상태:** 약 30곡 1회 batch와 추천 더 보기 흐름은 Superseded (2026-10-01 D-25). 밀도 높은 목록·아티스트 정렬·상태 표시 방향은 유지하며 새 기본은 15곡 round다.
+- **결정 (당시):** 한 곡씩 넘기는 방식이 아닌, 약 30곡을 한 화면에서 함께 탐색하는 밀도 높은 목록/표를 사용한다. 화면 높이에 따라 목록 스크롤은 가능하다. 기본 정렬은 아티스트 이름 오름차순이며 아티스트별 그룹을 만들지 않는다. 별도 정렬 선택 기능은 현재 필요하지 않다. 같은 Era에서 이미 평가한 곡은 다음 후보에서 제외하고 `추천 더 보기`를 제공한다.
 - **이유:** 후보를 탐색하기 쉽게 하고 반복 평가 부담을 줄인다.
 - **영향:** 각 항목에는 최소 앨범 이미지·곡 제목·아티스트·발매연도/발매일·평가 상태/상태 아이콘을 표시한다. 목록 위에 간단한 상태 범례를 둔다. 곡 선택 시 항목 확장 또는 명확한 액션 영역에서 들었어요·시절 미정·안 들었어요를 고르게 한다. 기본 상태에서는 빠른 전체 탐색이 가능하고 선택한 평가 상태는 목록에서 바로 구분되어야 한다. 세부 시각 디자인은 구현 시 조정한다. Era Detail 음악 목록도 아티스트 기준 정렬을 사용하고 앨범별·장르별로 묶지 않는다.
 
@@ -173,8 +173,8 @@
 
 ### D-23 — Phase 4 Seed Selection 확정과 임시 복원 세션
 
-- **상태:** Confirmed / Current Direction, 구현 완료.
-- **결정:** 최소 정확히 5곡, 최대 제한 없음. 기존 Era 곡은 후보지만 자동 선택하지 않는다. 검색과 직접 입력한 나만의 곡도 선택·해제할 수 있다. 선택 중에는 Archive/localStorage를 변경하지 않으며 뒤로 가면 미확정 상태를 버린다.
+- **상태:** Phase 4 구현 완료 이력. 최소 5곡 제품 요구와 완료 후 상세 복귀 목표는 D-25로 대체됨. 현재 코드는 여전히 5곡 최소·상세 복귀를 유지하며 Phase 5 A에서 변경한다. 나머지 확정·저장·metadata 원칙은 유지.
+- **결정 (당시):** 최소 정확히 5곡, 최대 제한 없음. 기존 Era 곡은 후보지만 자동 선택하지 않는다. 검색과 직접 입력한 나만의 곡도 선택·해제할 수 있다. 선택 중에는 Archive/localStorage를 변경하지 않으며 뒤로 가면 미확정 상태를 버린다.
 - **확정 의미:** 최종 완료는 해당 Era에서 들었다는 명시적 사용자 확인이다. 기존 곡은 재사용하고 새로운 곡만 Track + EraTrack으로 저장한다. 같은 Era에서 trim 후 title + artist를 대소문자 무시 비교해 중복을 합치되 전역 병합은 하지 않는다. 동명이곡/버전 식별은 별도 결정이다.
 - **세션:** App은 `{ eraId, trackIds }`만 임시로 기억한다. 영구 Seed entity·DB·timestamp·score·weight를 만들거나 세션을 localStorage에 저장하지 않는다. 확정 후 Era Detail 복귀는 Phase 5 이전의 임시 연결이다. 재진입은 새 미선택 초안이며 취소는 이전 확정 세션을 바꾸지 않는다. 해당 Era에서 곡을 삭제하면 오래된 세션을 해제한다.
 - **메타데이터:** Track·MusicSearchResult에 optional albumImageUrl/releaseDate를 추가하고 이미지·발매연도를 실제 표시한다. 없거나 잘못된 metadata는 생략하고 기존 Track은 복원한다. iTunes artworkUrl100/releaseDate에서 유효한 값만 변환한다. externalId는 검색 전용이며 영구 Track ID는 UUID다.
@@ -190,6 +190,18 @@
 - **조회:** iTunes 후보 50개를 한 번 조회한 뒤 Era 필터를 적용하고 최대 10개를 표시한다. 처음 10개에서 미래 곡을 제거하면 결과가 지나치게 줄어드는 문제를 완화하기 위한 단순한 여유분이다. 항상 10개를 보장하지 않으며 pagination·자동 추가 요청은 도입하지 않는다. 숫자는 현 구현 선택이며 영구 제품 요구가 아니다.
 - **후속 UI 방향, 미구현:** 현재 세로형 UI는 핵심 기능 검증용 임시 구조다. 데스크톱은 왼쪽 Era 탐색/내비게이션과 오른쪽 선택한 Era 음악 작업 영역을 목표로 한다. Seed·Memory Reconstruction 흐름이 자리 잡은 뒤 구조화하며 Phase 4에서는 레이아웃을 변경하지 않는다.
 
+### D-25 — 2026-10-01 Phase 5 Strong Seed·round·점진적 personalization
+
+- **상태:** Confirmed / Current Direction — product target, not implemented yet. D-10·D-23의 Seed minimum 5와 D-13의 약 30곡 1회 batch만 대체한다. Phase 4의 현 구현을 완료된 Phase 5로 표현하지 않는다.
+- **Seed:** 2~3곡 권장·hard minimum 없음·0곡 시작 가능·더 많은 곡도 허용. Strong Seed는 스스로 먼저 떠올린 높은 기억 강도/사용자 의도 신호이며, MVP 최종 선택은 현재 Era의 실제 청취 확인(LISTENED positive)이다. Archive / EraTrack과 이후 Anchor 대상이다. 후보 노출 뒤 LISTENED로 확인된 Confirmed Track도 Anchor지만 두 신호의 의미는 구분한다. Strong Seed 별도 영구 entity와 수치 weight는 설계하지 않는다.
+- **Anchor 경계:** 후보 보기·untouched·NOT_LISTENED·UNASSIGNED는 현재 Era Anchor가 아니다. 시절이 불확실한 UNASSIGNED는 personalization에서 제외하되 부정으로 취급하지 않는다.
+- **Round:** 15 candidates → feedback → next round. 강제 종료 라운드 수 없음. 원하는 때 종료·Archive, 이후 Era Detail의 “기억 더 찾기”로 이어가기. session persistence·untouched 재노출 등은 구현 시 결정한다.
+- **Source taxonomy:** 실제 generator는 HISTORICAL_CHART / CO_CHART / SAME_ARTIST / RELATED_ARTIST. Personal은 단일 generator가 아닌 Anchor와 관계를 통해 개인화되는 상위 개념이다. 초기 Historical 중심에 Seed 기반 후보·co-chart를 일부 섞고 확인이 쌓일수록 개인화 source 비중을 높인다. Historical exploration은 0으로 만들지 않는다. 정확한 비율·weight는 미확정이다.
+- **취향·다양성:** 한두 Strong Seed로 장르 취향을 확정하지 않는다. 여러 round의 비슷한 artist / related-artist / taste neighborhood 방향 LISTENED 확인이 반복될 때 해당 source 방향의 비중을 점진적으로 높인다. MVP explicit genre weight·장르 균등 quota 없음; genre metadata scoring은 Later. NOT_LISTENED는 해당 Track 단위로만 사용하며 genre·아티스트 전체에 전파하지 않는다.
+- **이유·실험:** Personal Recall은 단독 정답 엔진보다 개인 취향 주변을 넓게 탐색하는 source 계열로 해석한다. Historical/Chart/Co-chart는 음악 환경 복원, Personal Recall은 개인 취향 주변 탐색이며 함께 사용한다. 실험·평가 상세는 experiments/README와 별도 평가 JSON을 따른다. N=1, 반복 노출이 있는 18곡 평가에서 rating 3은 관찰되지 않았지만 strict blind recall test가 아니므로 잊은 곡 복원이 불가능하다는 결론을 내리지 않는다. fresh/unseen 후보로 제품 흐름에서 재평가한다.
+- **연구 상태:** current standalone Personal Recall experiment series concluded at v1.2.1. v1.3 등을 계속 튜닝하지 않고 현재 결과를 Phase 5 source-mix 설계에 통합한다. 실제 제품 평가에서 필요성이 확인되면 후속 연구 가능.
+- **후속:** Phase 5 A~I 순서로 작은 단위 구현. 현재 코드의 5곡 제한은 A에서 제거한다. localized title은 source title을 바꾸지 않는 Later product note이며 특정 곡 하드코딩은 하지 않는다. 이번 작업은 문서/실험 기록만 수정한다.
+
 ## Candidate / Open Decisions
 
 Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되지 않았다. 해당 기능을 실제 구현할 때 필요한 항목부터 결정한다. 여기의 후보는 구현 권한이나 새로운 필수 기능을 뜻하지 않는다.
@@ -197,8 +209,8 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | ID | 출처·주제 | 현재 후보/미결정 사항 | 결정 시점 |
 | --- | --- | --- | --- |
 | O-01 | 사용자 제안: 학교 Era 예외 | “이후 학교 Era도 함께 이동할까요?” 확인 UX. 대상·이동량·이미 편집된 학교 Era·기간 충돌 처리 미정. 무경고 자동 변경 금지 방향. | 핵심 MVP 이후 필요 시, 낮은 우선순위 |
-| O-02 (Resolved) | 사용자 제안: Seed 개수 UX | D-23으로 최소 정확히 5곡, 0~4곡 완료 불가, 최대 제한 없음 확정·구현. | 해결됨: D-23 |
-| O-03 | 코드·기획 대조 + 사용자 아이디어: 음악 데이터·신호 | 기본 검색은 D-22의 iTunes API로 구현했다. 인기곡·추천용 데이터는 로컬/샘플 데이터 등 공급 방식을 별도 검토하며 정식 서비스 연동은 Later다. Seed·피드백 우선. 같은 아티스트·비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate 신호로 사용 여부·가중치 미정. 약 30곡의 정확한 수는 조정 가능. collaborative filtering은 Later. | 음악 데이터 흐름과 추천 구현 전 |
+| O-02 (Resolved) | 사용자 제안: Seed 개수 UX | D-23 당시 최소 5곡을 구현했으나 D-25에서 2~3곡 권장·최소 없음·0곡 시작 target으로 대체. Phase 5 A 구현은 아직 예정. | 해결됨: D-23 → D-25 |
+| O-03 | 코드·기획 대조 + 사용자 아이디어: 음악 데이터·신호 | 기본 검색은 D-22의 iTunes API로 구현했다. 인기곡·추천용 데이터는 로컬/샘플 데이터 등 공급 방식을 별도 검토하며 정식 서비스 연동은 Later다. Seed·피드백 우선. SAME_ARTIST / RELATED_ARTIST / CO_CHART는 D-25의 target source이며 공급·정확한 비중은 미정. 비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate이며 genre metadata scoring은 Later. D-25의 15곡 round를 기본으로 하며 정확한 source mix 비율은 미정. collaborative filtering은 Later. | 음악 데이터 흐름과 추천 구현 전 |
 | O-04 | 사용자 방향 + 설계 검토: RecommendationFeedback 구현 | 모델 유지, eraId·trackId·status의 최소 의미, 세 status와 미평가 레코드 미생성은 Current Direction. 추가 필드·별도 ID·timestamp·DB schema·persistence, 평가 변경/취소와 미평가 재노출 정책만 미정. | 피드백 구현 전 |
 | O-05 | 사용자 방향 + 설계 검토: EraTrack 구현·Seed | EraTrack 다대다 관계와 한 Track 여러 Era는 현재 방향. 최소 타입·localStorage 구현 완료. D-23에서 Seed 최종 확정은 청취 확인으로 정하고 같은 Era의 title + artist 중복 및 optional metadata 결측 처리를 구현했다. 전역 Track identity와 다른 버전 판별은 미정. | 음악 Archive·Seed 구현 전 |
 | O-06 | 사용자 방향 + 설계 검토: UnassignedTrack 구현 | 별도 UnassignedTrack 모델은 현재 방향. `sourceEraId`는 발견 맥락 후보이며 청취 Era가 아님. 구체적 타입·저장 방식, 여러 출처, 중복 저장, 출처 Era 삭제, 배정 후 잔류/제거 정책 미정. | 최소 시절 미정 보관 구현 전 |
@@ -245,3 +257,4 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | 2026-09-22 (리팩터링 기록) | 앞선 코드 리팩터링의 실제 결과를 D-21에 기록하고 O-08을 Resolved로 전환. ROADMAP의 코드 구조·완료 상태·검증 범위를 갱신. 이번 문서 갱신에서는 기능 코드 변경 및 commit/push 없음. |
 | 2026-09-29 (음악 검색) | D-22에 v0.1 iTunes 검색 선행 구현, 공통 검색 service·타입, 내부 UUID와 externalId 분리, 기존 저장 흐름 재사용을 기록. 정식 서비스 연동의 Later 방향은 유지. |
 | Phase 4 구현 | D-23에 정확히 5곡·확정 시 청취 확인·임시 세션·Era 내 중복·optional metadata 결정을 기록. O-02 해결, O-05의 잔여 전역 식별 질문을 분리. |
+| 2026-10-01 (Phase 5 방향) | D-25에 Strong Seed 최소 없음·15곡 round·source taxonomy·점진적 personalization·Track 단위 부정·genre scoring Later를 기록. D-10·D-13·D-23의 해당 조건만 supersede. 현재 Phase 4 구현과 제품 target 구분; 실험 평가 기록 추가, 코드 변경 없음. |

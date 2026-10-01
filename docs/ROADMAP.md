@@ -1,5 +1,7 @@
 # Music Archive — Roadmap
 
+2026-10-01 제품 target(미구현): Strong Seed 2~3곡 권장·hard minimum 없음·0곡 건너뛰기, round당 15곡. 현재 코드는 Phase 4 최소 5곡 동작을 유지하며 Phase 5 A에서 변경 예정이다. 실험 결과는 production 추천 구현 완료가 아니다.
+
 최신 Phase 4 구현: Seed Selection 완료(기존 곡·검색·직접 입력, 5곡 이상 확정). 당시 인기곡 공급과 Phase 5 추천은 미구현. 아래 날짜별 기록은 각 시점의 범위를 보존한다.
 
 최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리, localStorage 저장·복원, iTunes Search API 기반 검색·선택 추가 완료. Live Demo 배포 완료(사용자 확인 및 README 기준). 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
@@ -237,8 +239,8 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 | Phase 1 — Era 기반 안정화 | 일부 완료 / 나머지 예정 | 생성·선택·수정·Timeline과 App 구조·타입·util 분리 완료. Era 삭제, 폼 검증 개선, 모바일·반응형 검증은 남아 있음. |
 | Phase 2 — 지속성 | 완료 | 프로필·Era·Track·관계를 단일 JSON으로 저장·복원. 누락/잘못된 값과 저장 예외 처리. 임시 UI 상태·migration·버전 관리는 제외. |
 | Phase 3 — 음악 Archive 기반 | 일부 완료 | v0.1 최소 Track·EraTrack, Era별 수동 곡 추가·목록·삭제 완료. 기존 Track을 여러 Era에 연결하는 UI는 미구현. 미사용 관계 metadata는 추가하지 않음. |
-| Phase 4 — Seed | 현재 범위 완료 | 기존 Era 곡·검색·직접 입력 후보, 선택·해제, 최소 정확히 5곡 확정, 최대 제한 없음. 완료 시 Era 내 중복 없이 Archive 저장 후 상세 복귀. 역사적 인기곡 공급은 미결정·미구현. |
-| Phase 5 — Memory Reconstruction | 예정 | 약 30곡을 함께 탐색하는 밀도 높은 목록/표, 아티스트 이름 오름차순·그룹화 없음. 평가 상태/아이콘과 범례, 선택 항목의 세 액션. `RecommendationFeedback { eraId, trackId, status }`로 Era별 반응 기록, 미평가에는 레코드 미생성. 추천 더 보기와 같은 Era의 평가곡 제외. 발매 시기만으로 후보를 제한하지 않음. |
+| Phase 4 — Seed | 현재 범위 완료 | 기존 Era 곡·검색·직접 입력 후보, 선택·해제, 현재 구현 최소 5곡 확정 (Phase 5 A에서 변경 예정), 최대 제한 없음. 완료 시 Era 내 중복 없이 Archive 저장 후 상세 복귀. 역사적 인기곡 공급은 미결정·미구현. |
+| Phase 5 — Memory Reconstruction | 예정 / target, 미구현 | Strong Seed 2~3곡 권장·최소 없음, 15곡 round의 밀도 높은 목록/표와 세 평가·미평가 구분. HISTORICAL_CHART / CO_CHART / SAME_ARTIST / RELATED_ARTIST를 점진적으로 혼합. LISTENED만 현재 Era Anchor로 사용하고 untouched·NOT_LISTENED·UNASSIGNED는 제외. 중단 후 Archive, Era Detail에서 기억 더 찾기. |
 | Phase 6 — Unassigned | 예정 | 별도 UnassignedTrack 모델과 보관함, Era 선택·재배정과 여러 Era 저장. `sourceEraId`는 발견 맥락 Candidate이며 청취 Era가 아님. 중복·여러 출처·배정 후 잔류/삭제·저장 세부사항은 결정 후 구현. |
 | Phase 7 — Playlist / Archive 경험 | 예정 | 내부 Era Playlist, Life Timeline→음악 기록 탐색, 전체 기억 복원 경험 연결. |
 
@@ -246,7 +248,23 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 
 지원용 v0.1의 기본 곡 검색은 iTunes Search API로 선행 구현했다. 이는 Seed·추천 시스템 구현 완료를 뜻하지 않으며 기존 Phase 순서와 장기 우선순위를 바꾸지 않는다. 당시 인기곡·추천용 데이터 공급과 초기 검증 방식은 [DECISIONS](DECISIONS.md)의 O-03에서 결정한다. 샘플 후보를 실제 개인 청취 이력이나 검증된 과거 차트로 제시해서는 안 된다.
 
-추천은 Seed와 사용자 피드백을 우선한다. 같은 아티스트·비슷한 장르·당시 연령/생활 단계·국가/시장은 Candidate recommendation signals이며 Phase 5의 필수 알고리즘이나 선제 수집 필드로 확정하지 않는다. 추천은 한 곡씩 넘기는 UI가 아니며, 각 항목의 앨범 이미지·제목·아티스트·발매 시기·평가 상태를 목록에서 확인하는 방향이다. 별도 정렬 선택 기능은 현재 범위에 추가하지 않는다.
+추천은 Seed와 사용자 피드백을 우선한다. 같은 아티스트·관련 아티스트·co-chart는 Phase 5 target source다. Personal은 이 source들이 Anchor로 개인화되는 상위 개념이며 단일 generator가 아니다. 장르·당시 연령/생활 단계·국가/시장은 Candidate이고 명시적 genre metadata scoring은 Later다. 추천은 한 곡씩 넘기는 UI가 아니며, 각 항목의 앨범 이미지·제목·아티스트·발매 시기·평가 상태를 목록에서 확인하는 방향이다. 별도 정렬 선택 기능은 현재 범위에 추가하지 않는다.
+
+### Phase 5 — 작은 구현 단계 (모두 예정)
+
+| 단계 | 목표 |
+| --- | --- |
+| A | 현재 Seed 최소 5곡 조건 제거, 2~3곡 권장·0곡 건너뛰기. 최종 Strong Seed는 해당 Era 청취 확인으로 Archive/EraTrack에 연결. 별도 영구 Seed entity 없음. |
+| B | 15곡 후보 목록, LISTENED / UNASSIGNED / NOT_LISTENED와 untouched 구분. 미평가 feedback 미생성. |
+| C | round session·다음 후보 흐름, 강제 round 수 없이 중단·Archive 복귀·기억 더 찾기. session 저장 방식은 Needs Decision. |
+| D | HISTORICAL_CHART 후보 source 연결. 실험 Circle dataset과 제품 공급 방식은 구분. |
+| E | Confirmed LISTENED Track을 다음 round Anchor로 활용. 최초 Strong Seed와 의미는 구분하되 고정 수치 weight는 미정. |
+| F | SAME_ARTIST / CO_CHART source 연결. |
+| G | RELATED_ARTIST / taste neighborhood 탐색. |
+| H | 여러 round의 LISTENED에 따라 source mix 점진 조정. Historical 비중은 0으로 만들지 않으며 고정 비율·동일 장르 quota 없음. |
+| I | fresh/unseen 후보로 실제 사용자 평가 후 genre metadata 등 후속 필요성 검토. |
+
+처음에는 Historical 중심에 작은 personal/co-chart 탐색을 섞고, 이후 확인된 artist·related-artist·taste neighborhood 방향을 점진적으로 반영한다. NOT_LISTENED는 해당 Track/Era의 부정이며 artist/genre 전체로 전파하지 않는다. 한 번에 A~I 전체를 구현하지 않는다.
 
 ### Later
 
@@ -346,3 +364,12 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 
 - 기존 월 필터·최대 10곡 제한 후, 표시 대상 안에서 sameSong 기반 isAdded를 사용해 미추가 곡을 우선 배치한다. 그룹 내부 API 순서와 추가된 곡의 비활성 “추가됨” 표시는 유지한다. Seed 검색 순서는 변경하지 않는다.
 - 추가 검색 탐색/더 보기는 추후 개선 사항이며 요청 수·표시 개수를 확대하지 않았다. lint·TypeScript 포함 build 통과. 이번 작은 정렬 변경은 브라우저에서 재검증하지 않았다. commit/push 없음.
+
+### 2026-10-01 — Phase 5 방향 및 실험 평가 기록 (문서 작업)
+
+- Personal Recall v1.2.1 결과: SAME_ARTIST 11/12, RELATED_ARTIST 11/12, 총 22곡; Older 6 / Era-period 6 / Unknown 10, metadata retry 3. transport failure가 Unknown final로 들어간 수 0, media artifact·same recording variant final 0. 이는 provider에서 얻은 증거 기준 검증이며 실제 발매일 정확성 전체를 보장하지 않는다.
+- 사용자 외부 metadata 확인 보고에 따라 IU — eight, SHAUN — Steal The Show, LEE MINHYUK(HUTA) — BOOM, B.I — BTBT 4곡을 알려진 Future로 평가에서 제외했다. 이번 작업에서 외부 API를 재조회하지 않았다. 원본 실험 JSON의 Unknown 및 validation은 보존하며 metadata/matching coverage 한계를 추천 source의 실패와 구분한다.
+- 나머지 18곡 사용자 평가: rating 1=9, 2=2, 3=0, 4=7; 명시적 청취 확인 50%, 사용자 1명. [평가 기록](../experiments/data/personal-recall/personal-recall-v1_2_1-evaluation.json) 참조. 실험 rating은 앱의 영구 Feedback status가 아니다.
+- rating 3은 이번 평가에서 관찰되지 않았다. v1/v1.1/v1.2에서 일부 후보를 이미 본 repeated exposure가 있어 strict blind recall test가 아니다. 잊었던 곡 복원이 불가능하다고 결론 내리지 않으며 Phase 5 fresh/unseen 후보로 재평가한다.
+- 현재 standalone Personal Recall experiment series concluded: v1.3 추가 튜닝 대신 결과를 Phase 5 source-mix 설계에 통합한다. 실제 제품 평가에서 필요성이 확인되면 후속 연구 가능.
+- D-25 제품 target과 현재 Phase 4 최소 5곡 동작의 차이를 기록했다. 코드·기존 실험 결과·AGENTS·앱 README는 수정하지 않았으며 앱 검사·브라우저 검증·API 실행·commit/push는 수행하지 않았다.

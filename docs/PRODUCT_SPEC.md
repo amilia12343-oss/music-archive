@@ -1,6 +1,6 @@
 # Music Archive — Product Spec
 
-최종 정리: 2026-09-22
+최종 정리: 2026-10-01 (Phase 5 제품 목표 보완; 구현 상태와 구분)
 
 이 문서는 서비스의 최신 제품 방향을 정의한다. 구현 현황은 [ROADMAP](ROADMAP.md), 결정 이유와 변경 이력은 [DECISIONS](DECISIONS.md)를 참고한다. 아래 사양이 모두 구현되어 있다는 뜻은 아니다.
 
@@ -110,7 +110,7 @@ Timeline UX의 현재 방향:
 | --- | --- | --- |
 | Home / Life Timeline | Era 탐색·선택·추가 | 타임라인 영역 구현. 독립 라우트는 없음. |
 | Era Detail | Era 정보와 해당 시기 음악 Archive | 이름·기간·설명·수정, 제목·아티스트 수동 입력과 Era별 곡 목록·삭제 구현. localStorage 저장·복원, iTunes 기본 곡 검색·선택 추가 구현. |
-| Seed Selection | 기억나는 대표곡 선택 | 기존 Era 곡·검색·직접 입력 후보 선택, 최소 5곡 확정 구현. 현재 완료 후 Era Detail 복귀. |
+| Seed Selection | 기억나는 대표곡 선택 | 기존 Era 곡·검색·직접 입력 후보 선택, 현재 Phase 4 최소 5곡 확정 구현. Phase 5 target은 2~3곡 권장·최소 없음이며 아직 미구현. 현재 완료 후 Era Detail 복귀. |
 | Memory Reconstruction | 후보 음악에 대한 기억 확인 | 미구현 |
 | Unassigned | 기억나지만 시절이 불명확한 곡 보관·배정 | 미구현 |
 
@@ -130,7 +130,11 @@ EraTracks 검색은 표시 대상 안에서 미추가 곡을 먼저, 추가된 �
 
 Seed는 특정 Era의 기억 복원에 사용하는 강한 초기 신호이며 **곡 중심**이다. 그 시절 많이 들은 곡, 인상 깊은 곡, 남들은 잘 모르지만 자신에게 중요한 ‘나만의 곡’을 사용자가 직접 선택한다. 이런 개인적인 선택을 추천에서 약하게 취급하지 않는다.
 
-- 최소 **정확히 5곡**, 최대 제한 없음. 0~4곡은 완료 불가하며 5곡 이상일 때만 완료한다.
+- **Product target — Current Direction / not implemented yet:** Strong Seed 2~3곡을 권장하지만 hard minimum은 없다. 0곡도 Reconstruction 시작 가능하며 사용자가 원하면 3곡 이상 추가할 수 있다. 기존 5곡 최소 제품 요구는 D-25로 대체한다.
+- **Current implementation — Phase 4:** SeedSelection 완료 버튼과 App 확정 처리에는 최소 5곡 로직이 남아 있다. 0~4곡 완료 불가는 현재 코드의 동작이며 새 목표가 아니다. Phase 5 구현 A에서 변경한다.
+- Strong Seed는 사용자가 시스템 도움 없이 먼저 떠올린 강한 기억의 곡이다. MVP에서 최종 선택은 **이 Era에서 실제로 들었다는 명시적 확인**으로 취급한다. 현재 Era의 LISTENED positive이자 Archive / EraTrack 대상이며 이후 Personal Recall Anchor가 될 수 있다.
+- Confirmed Track은 추천 후보를 본 뒤 “들었어요”로 확인한 곡이다. 두 신호 모두 Anchor가 될 수 있지만 Strong Seed의 높은 기억 강도·사용자 의도와 후보 노출 뒤 확인을 같은 의미로 취급하지 않는다. 구체적인 수치 weight와 별도 영구 Strong Seed entity는 만들지 않는다.
+- 추천 후보를 보기만 한 것·untouched·NOT_LISTENED·UNASSIGNED는 현재 Era의 Anchor가 아니다. UNASSIGNED는 Era가 불확실하므로 현재 Era personalization에 사용하지 않는다.
 - 현재 후보는 기존 Era 곡·음악 검색·직접 입력한 나만의 곡이다. 기존 Era 곡은 자동 선택하지 않는다. 당시 인기곡 후보 방향은 유지하지만 신뢰할 데이터 공급 방식 결정 전 미구현이며, iTunes를 역사적 차트로 취급하거나 임의 인기곡을 만들지 않는다.
 - 곡 제목, 아티스트, 앨범 이미지, 발매연도 또는 발매일과 **현재 복원 중인 Era에 관련된 시절 라벨/맥락**을 표시해 기억을 돕는다. 단순한 곡 정보 외에 “이 곡이 내 어느 시절과 관련된 후보인지” 이해할 수 있어야 한다. 이 맥락 표시는 실제 청취 사실의 확정을 뜻하지 않는다.
 - MVP에서는 아티스트 자체를 별도의 Seed로 선택하는 기능을 제외한다.
@@ -162,16 +166,35 @@ Seed는 특정 Era의 기억 복원에 사용하는 강한 초기 신호이며 *
 
 Era 시작 이전 곡은 허용하되, 유효한 발매일의 월이 Era 종료 월 이후이면 후보에서 제외한다. 종료 월과 같은 월은 허용하며 발매일이 없거나 판별 불가하면 제외하지 않는다. 이 원칙은 현재 Era 검색·Seed 후보와 공통 추가 로직에 적용되어 있으며, 추천 시스템 자체는 아직 미구현이다.
 
-추천 UI — Current Direction:
+### Phase 5 round와 source mix — Current Direction / target, 미구현
 
-- 한 곡씩 넘기는 UI를 사용하지 않는다. **약 30곡을 한 화면에서 함께 탐색할 수 있는 밀도 높은 목록/표**를 사용한다. 정확한 후보 수와 세부 시각 디자인은 UX 테스트·구현 시 조정할 수 있다. 한 화면은 하나의 결과 목록을 뜻하며, 기기 높이에 따라 목록을 스크롤할 수 있다.
+“처음에는 그 시절의 음악을 보여주고, 사용자의 확인이 쌓일수록 그 시절의 나에게 가까워진다.”
+
+Era 선택 → “이 시절 하면 바로 떠오르는 노래가 있나요?”(2~3곡 권장, 없어도 시작) → Strong Seed 최종 확인 또는 skip → Historical 중심 Round 1 → 15 candidates 평가 → Confirmed LISTENED Track 축적 → Round 2+ 개인화 강화 → 원하는 때 종료·Archive → Era Detail의 “기억 더 찾기”로 이어가기. 라운드 수에 강제 종료 조건을 두지 않는다. 재개 세션의 구체적인 persistence는 구현 시 결정한다.
+
+| Generator source | 역할 |
+| --- | --- |
+| HISTORICAL_CHART | 그 시절의 음악 환경과 인기곡을 넓게 탐색 |
+| CO_CHART | 확인된 곡과 같은 월의 차트에 존재한 historical context |
+| SAME_ARTIST | Anchor와 같은 아티스트의 다른 곡 탐색 |
+| RELATED_ARTIST | 관련 아티스트를 통한 taste neighborhood 탐색 |
+
+Personal은 단일 generator source가 아니라 Strong Seed·Confirmed LISTENED Track·Same Artist·Related Artist·Co-chart 관계로 개인화되는 상위 개념이다. Historical Recall은 “그 시절의 음악 환경”, Personal Recall은 “그 시절의 나 / 개인 취향 주변”을 탐색하며 Phase 5에서 함께 사용한다.
+
+- Round 1은 Historical 중심에 Strong Seed 기반 SAME_ARTIST / RELATED_ARTIST 후보 소량과 CO_CHART context 일부를 섞는 목표다. Seed가 0곡이면 이용 가능한 historical 후보부터 시작한다.
+- Round 2는 historical·개인화 source 혼합, Round 3+는 Confirmed Anchor 기반 SAME_ARTIST / RELATED_ARTIST / CO_CHART 비중을 점진적으로 높인다. Historical 탐색 경로는 완전히 0으로 만들지 않는다. 정확한 비율·weight·quota 숫자는 Candidate / Needs Decision이다.
+- Strong Seed 한두 곡으로 취향 전체를 단정하지 않는다. 여러 round에서 비슷한 artist / related-artist / taste neighborhood 방향의 LISTENED 선택이 반복되면 그 방향의 candidate source 비중을 점진적으로 높인다. MVP에 명시적인 genre score나 genre별 균등 quota는 도입하지 않는다. 장르 metadata 기반 weight는 Later다.
+
+추천 UI — Current Direction / Phase 5 target, 미구현:
+
+- 한 곡씩 넘기는 UI를 사용하지 않는다. **한 round 15 candidates를 함께 탐색하는 밀도 높은 목록/표**를 사용한다. 이전 약 30곡 1회 batch 방향은 D-25로 대체하며, 세부 시각 디자인은 구현 시 조정한다. 한 화면은 하나의 결과 목록을 뜻하며, 기기 높이에 따라 목록을 스크롤할 수 있다.
 - 각 항목에는 최소한 **앨범 이미지, 곡 제목, 아티스트, 발매연도 또는 발매일, 평가 상태/상태 아이콘**을 표시한다.
 - 기본 정렬은 **아티스트 이름 오름차순**이다. 아티스트별 그룹으로 묶지 않으며, 사용자가 별도 정렬 방식을 선택하는 기능은 현재 필요하지 않다.
 - 결과 위에 평가 아이콘/상태의 의미를 설명하는 간단한 범례를 제공한다.
 - 곡을 선택하면 해당 항목이 확장되거나 명확한 액션 영역을 보여주고 **들었어요 / 시절 미정 / 안 들었어요**를 선택할 수 있게 한다. 확장 형태 등 세부 디자인은 구현 시 조정한다.
 - 기본 상태에서는 전체 결과를 빠르게 탐색할 수 있어야 한다. 선택한 평가 상태는 아이콘 등으로 목록에서 바로 구분되며, 곡을 열어야만 확인할 수 있는 정보로 숨기지 않는다.
 - 이미 평가한 곡은 **같은 Era**의 다음 추천 목록에서 제외한다.
-- `추천 더 보기`로 새로운 후보 목록을 제공한다.
+- round feedback을 다음 round에 활용하고 새 15곡 후보를 제공한다. 원하는 시점에 종료하고 Era Detail의 “기억 더 찾기”로 이어갈 수 있다.
 - 다른 Era에서의 청취 가능성까지 일괄 부정하거나 제외하지 않는다.
 
 ### RecommendationFeedback — Confirmed / Current Direction, 미구현
@@ -195,7 +218,7 @@ RecommendationFeedback {
 | 안 들었어요 | `NOT_LISTENED` | 해당 Era에서 듣지 않았다는 명시적 부정 신호. |
 | 아무것도 선택하지 않음 | 미평가 | RecommendationFeedback을 생성하지 않는다. 부정 신호가 아니며 청취 여부를 추론하지 않는다. |
 
-`NOT_LISTENED`만 명시적인 부정 신호다. `UNASSIGNED`는 ‘안 들음’이 아니며, 미선택도 ‘안 들음’이 아니다.
+`NOT_LISTENED`만 해당 Era의 해당 Track에 대한 명시적인 부정 신호다. 하나의 부정 응답을 genre 전체·아티스트 전체·관련 아티스트 전체의 negative로 전파하지 않는다. `UNASSIGNED`는 ‘안 들음’이 아니며, 미선택도 ‘안 들음’이 아니다.
 
 미평가 곡에는 RecommendationFeedback을 생성하지 않는 방향을 사용한다. 세 가지 명시적 status와 미평가의 구분은 현재 방향이며, 실제 타입의 추가 필드·별도 ID·timestamp·DB schema·persistence 구현 방식은 구현할 때 결정한다.
 
@@ -203,8 +226,8 @@ RecommendationFeedback {
 
 - RecommendationFeedback의 구체적인 타입과 persistence 구현 세부사항. 모델의 유지, 세 가지 명시적 status, Era별 반응과 미평가 레코드 미생성 방향 자체는 미정이 아니다.
 - 미평가 후보를 다음 목록에 언제 다시 노출할지, 명시적 평가의 수정·취소 방식.
-- 추천 후보 수, 공급 방식, 신호 조합과 알고리즘. 불필요한 score·confidence·source metadata를 선제 설계하지 않는다.
-- 추가 추천 신호 후보: **같은 아티스트, 비슷한 장르, 사용자의 당시 연령/생활 단계, 국가 또는 음악 시장**. 필수 MVP 알고리즘이나 프로필 필드로 확정하지 않는다. Seed와 사용자 피드백 우선 방향을 유지한다.
+- 기본 15곡 round와 별개로, source 공급 방식·정확한 비중·신호 조합과 알고리즘. 불필요한 score·confidence·source metadata를 선제 설계하지 않는다.
+- 추가 추천 신호 후보: **비슷한 장르, 사용자의 당시 연령/생활 단계, 국가 또는 음악 시장**. 필수 MVP 알고리즘이나 프로필 필드로 확정하지 않는다. SAME_ARTIST / RELATED_ARTIST / CO_CHART의 단계적 도입 방향은 위 Phase 5 target을 따르되 공급·실행 정책은 별도 결정한다. Seed와 사용자 피드백 우선 방향을 유지한다.
 
 비슷한 사용자들의 선택을 활용하는 추천과 collaborative filtering은 Candidate MVP 신호에 포함하지 않고 Later로 둔다.
 
@@ -306,3 +329,7 @@ MVP의 핵심 경로는 **Era 생성·관리 → Era 선택 → Seed 선택 → 
 - 모바일 앱
 
 장기 확장 가능성만을 이유로 미사용 코드·데이터 필드·아키텍처를 추가하지 않는다.
+
+### Later / product note — 곡 제목 localization
+
+internal/source title은 유지한다. 신뢰할 수 있는 localized title metadata가 있으면 한국 사용자 UI에서 우선 표시하고 원문을 병기할 수 있다. CROOKED 등 특정 곡을 하드코딩하지 않으며 Phase 5 핵심 구현의 선행 조건으로 두지 않는다.
