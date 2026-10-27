@@ -257,7 +257,8 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 | A (완료) | Seed 최소 5곡 조건 제거, 2~3곡 권장·0곡 건너뛰기. 최종 Strong Seed는 해당 Era 청취 확인으로 Archive/EraTrack에 연결. 별도 영구 Seed entity 없음. |
 | B (현재 범위 완료) | Reconstruction 기본 화면, 전달받은 후보 목록·세 응답·선택 취소·완료 callback. 앱 후보는 빈 배열이며 fake/Archive/실험 후보 없음. 임시 응답만 관리하고 영구 feedback 미생성. |
 | C (현재 범위 완료) | 메모리 ReconstructionSession, Strong Seed ID snapshot·round별 candidateIds/explicit responses·다음 round 번호. 완료 후 상세 복귀, 실제 다음 후보 및 재개 연결은 D 이후. session 영구 저장 없음. |
-| D | HISTORICAL_CHART 후보 source 연결. 실험 Circle dataset과 제품 공급 방식은 구분. |
+| D0 (설계 문서 완료) | [과거 음악 데이터 설계](HISTORICAL_MUSIC_DATA.md): Track/ChartSource/ChartEntry 책임·권한/coverage·identity·기간 균형 제안. 모델 코드·데이터 확보·후보 공급은 미구현. |
+| D (연결 예정) | 허가·품질 확인 후 HISTORICAL_CHART 후보 source 연결. D0 문서 완료와 실제 공급을 구분하며 실험 Circle dataset은 자동 전용하지 않음. |
 | E | Confirmed LISTENED Track을 다음 round Anchor로 활용. 최초 Strong Seed와 의미는 구분하되 고정 수치 weight는 미정. |
 | F | SAME_ARTIST / CO_CHART source 연결. |
 | G | RELATED_ARTIST / taste neighborhood 탐색. |
@@ -399,3 +400,10 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - Archive·Feedback·Unassigned에 round 응답을 반영하지 않고 session을 localStorage에 저장하지 않는다. 새로고침 시 session은 사라지며 기존 음악 저장 schema와 Strong Seed 확정 규칙은 유지한다.
 - 검증: React hook mock으로 Seed 0/1/4곡 session 생성, 응답 세 상태·변경·취소, untouched 표시 이력, 완료 기록·snapshot 불변·중복 완료 차단·다음 번호·상세 복귀, 저장 불변·새로고침 session 미복원·기존 Track 복원 및 empty state 확인. 실제 브라우저·외부 API 미검증.
 - npm run lint·npm run build(TypeScript 포함) 통과. PRODUCT_SPEC/DECISIONS는 추가 편집하지 않고 기존 변경을 보존했다. 이미지·dependency·storage 유틸 변경 및 commit/push 없음.
+
+### 2026-10-27 — Phase 5 D0 설계 문서
+
+- A~C 실제 코드와 대조해 카탈로그·차트 시리즈·기간별 관측의 책임, 발매일/등장 시기 분리, source 간 identity와 결측 처리, 1990~2009 및 2010~현재 coverage/권한 추적을 설계했다. 상세는 [D0 설계](HISTORICAL_MUSIC_DATA.md)를 따른다.
+- 15곡 공급은 후보/Seed 제외·안정적 ID·기간 구간 및 월 순환을 baseline 제안으로 기록했다. 현재 completedRounds만으로 완료 전 이탈의 shown history까지 보장하지 못하는 경계도 남겼다. 정확한 정책은 Needs Decision이다.
+- Circle 이용 문의는 사용자 보고 기준 답변 대기. 이번에 자료·허가를 외부 확인하거나 수집·복제·배포하지 않았다. A~C는 구현, D0는 문서 설계 완료, 실제 후보 공급·다음 Round 생성·영구 feedback는 미구현이다.
+- 코드·CSS·이미지·dependency·DB·localStorage 변경 없음. 문서 링크·상태 구분·변경 범위를 검토하며 앱 테스트/빌드·데이터 실행 검증·commit/push는 수행하지 않는다.

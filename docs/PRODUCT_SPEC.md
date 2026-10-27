@@ -222,6 +222,10 @@ RecommendationFeedback {
 
 미평가 곡에는 RecommendationFeedback을 생성하지 않는 방향을 사용한다. 세 가지 명시적 status와 미평가의 구분은 현재 방향이며, 실제 타입의 추가 필드·별도 ID·timestamp·DB schema·persistence 구현 방식은 구현할 때 결정한다.
 
+### Phase 5 D0 — 과거 음악 데이터 설계, 코드·공급 미구현
+
+1990년~현재의 장기 카탈로그와 2016~2018년 첫 검증을 검토한다. 곡 자체·차트 출처·기간별 순위를 분리하고 발매일을 차트 등장 시기로 대체하지 않는다. 권한 및 coverage 확인이 공급의 선행 조건이며 Circle 문의는 사용자 보고 기준 답변 대기다. 허가 미확인 Circle/Melon 자료는 production에 연결하지 않는다. 상세 책임·후보 선정 제안과 미결정 사항은 [D0 설계](HISTORICAL_MUSIC_DATA.md)를 따른다. A~C 구현과 별개로 실제 Historical 후보 공급·다음 Round 생성·feedback 영구 저장은 여전히 미구현이다.
+
 ### Candidate / Needs Decision
 
 - RecommendationFeedback의 구체적인 타입과 persistence 구현 세부사항. 모델의 유지, 세 가지 명시적 status, Era별 반응과 미평가 레코드 미생성 방향 자체는 미정이 아니다.

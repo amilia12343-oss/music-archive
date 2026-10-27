@@ -202,6 +202,14 @@
 - **연구 상태:** current standalone Personal Recall experiment series concluded at v1.2.1. v1.3 등을 계속 튜닝하지 않고 현재 결과를 Phase 5 source-mix 설계에 통합한다. 실제 제품 평가에서 필요성이 확인되면 후속 연구 가능.
 - **후속:** Phase 5 A~I 순서로 작은 단위 구현. A에서 코드의 5곡 제한을 제거했다. localized title은 source title을 바꾸지 않는 Later product note이며 특정 곡 하드코딩은 하지 않는다. 최초 기록은 문서/실험 정리이며 이후 A~C 구현 상태만 갱신했다.
 
+### D-26 — 2026-10-27 Phase 5 D0 과거 음악 데이터 설계
+
+- **상태:** Current Direction인 책임·범위 정리. D0 문서만 완료했으며 모델 코드·수집·production 후보 공급은 미구현.
+- **방향:** Track은 곡 자체, ChartSource는 비교 가능한 출처 시리즈, ChartEntry는 기간별 순위 관측을 담당한다. 발매일과 차트 등장 시기는 분리한다. 현재 Archive UUID·EraTrack·메모리 ReconstructionSession은 변경하지 않는다.
+- **이용 경계:** 1990년~현재 구축은 장기 목표, 2016~2018은 첫 검증 범위 후보다. 사용자 보고 기준 Circle 이용 문의는 pending. 허가 미확인 Circle/Melon 자료를 production에 연결하지 않으며 실제 데이터 수집·복제·배포도 이번 범위가 아니다.
+- **설계 제안 / Needs Decision:** 카탈로그 identity·명시적 alias, 권한/coverage 관리 기록, 안정적 candidate ID 및 Strong Seed UUID 매핑, 월별 순환·구간 균형 baseline을 [D0 설계](HISTORICAL_MUSIC_DATA.md)에 정리했다. 실제 출처·허용 범위·정확한 매칭·분산 선정 방식·중도 이탈 시 표시 이력은 검증 전 확정하지 않는다.
+- **후속:** 허가·데이터 품질 확인 후 별도 공급 연결 작업을 검토한다. DB/Neon/백엔드·새 dependency·feedback persistence를 선제 도입하지 않는다.
+
 ## Candidate / Open Decisions
 
 Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되지 않았다. 해당 기능을 실제 구현할 때 필요한 항목부터 결정한다. 여기의 후보는 구현 권한이나 새로운 필수 기능을 뜻하지 않는다.
