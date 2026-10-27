@@ -44,13 +44,13 @@ export default function SeedSelection({ era, tracks, onBack, onComplete }: SeedS
         <p>현재 복원 중인 Era</p>
         <h1>{era.name}</h1>
         <p>{era.startMonth} ~ {era.endMonth}</p>
-        <h2>대표곡 선택</h2>
-        <p>이 시절을 가장 잘 떠올리게 하는 곡을 5곡 이상 선택해주세요.</p>
-        <p>많이 들었던 곡, 인상 깊었던 곡, 나만의 특별한 곡을 골라주세요. 최대 개수 제한은 없습니다.</p>
+        <h2>이 시절 하면 바로 떠오르는 노래가 있나요?</h2>
+        <p>기억나는 곡을 먼저 알려주세요. 2~3곡이면 충분해요.</p>
+        <p>지금 떠오르는 곡이 없어도 괜찮아요. 더 기억난다면 원하는 만큼 골라주세요.</p>
       </header>
 
       <section aria-label="선택된 대표곡" className="seed-selected">
-        <h2>선택된 대표곡 <span aria-live="polite">{selected.length} / 5</span></h2>
+        <h2>선택된 대표곡 <span aria-live="polite">{selected.length}곡</span></h2>
         {selected.length === 0 ? <p>아직 선택한 대표곡이 없습니다.</p> : (
           <ul className="track-list">
             {selected.map((song, index) => <li key={index}>
@@ -62,7 +62,7 @@ export default function SeedSelection({ era, tracks, onBack, onComplete }: SeedS
       </section>
 
       <h2>{era.name} 시절의 대표곡 후보</h2>
-      <p>후보는 청취 이력을 자동으로 추정한 결과가 아닙니다. 직접 기억나는 곡만 선택해주세요.</p>
+      <p>이 시절에 실제로 들었다고 기억하는 곡만 선택해주세요. 후보가 청취 이력을 뜻하지는 않습니다.</p>
       <section aria-label="기존 Era 곡">
         <h3>현재 Era에 이미 저장된 곡</h3>
         <p>저장된 곡도 대표곡으로 직접 선택해야 합니다.</p>
@@ -91,8 +91,8 @@ export default function SeedSelection({ era, tracks, onBack, onComplete }: SeedS
       </MusicSearch>
       <footer className="seed-completion">
         <p>완료하면 선택한 곡을 이 시절에 들었다고 확인하고 Archive에도 저장합니다. 뒤로 가면 미확정 선택은 버려집니다.</p>
-        <button type="button" disabled={selected.length < 5} onClick={() => onComplete(selected)}>대표곡 선택 완료</button>
-        <p>기억 복원 추천 화면은 준비 중입니다. 완료 후 Era 상세로 돌아갑니다.</p>
+        <button type="button" onClick={() => onComplete(selected)}>{selected.length === 0 ? '떠오르는 곡 없이 진행' : '이 시절에 들은 곡으로 확인'}</button>
+        <p>완료하면 이 시절의 기억을 확인하는 화면으로 이어집니다.</p>
       </footer>
     </main>
   )

@@ -1,8 +1,8 @@
 # Music Archive — Roadmap
 
-2026-10-01 제품 target(미구현): Strong Seed 2~3곡 권장·hard minimum 없음·0곡 건너뛰기, round당 15곡. 현재 코드는 Phase 4 최소 5곡 동작을 유지하며 Phase 5 A에서 변경 예정이다. 실험 결과는 production 추천 구현 완료가 아니다.
+2026-10-01 제품 방향 및 구현 상태: Strong Seed 2~3곡 권장·hard minimum 없음·0곡 건너뛰기, round당 15곡. Phase 5 A 진입 UX 구현: 최소 5곡 제거·0곡 완료 가능. B 기본 화면·임시 응답 UI 구현: 완료 후 Reconstruction 진입. C 메모리 session·round 이력 구현. D 이후·실제 후보 source·영구 feedback는 미구현. 실험 결과는 production 추천 구현 완료가 아니다.
 
-최신 Phase 4 구현: Seed Selection 완료(기존 곡·검색·직접 입력, 5곡 이상 확정). 당시 인기곡 공급과 Phase 5 추천은 미구현. 아래 날짜별 기록은 각 시점의 범위를 보존한다.
+Phase 4 구현 이력: Seed Selection 완료(당시 5곡 이상 확정, 현재 A에서 제한 제거). 당시 인기곡 공급과 Phase 5 추천은 미구현. 아래 날짜별 기록은 각 시점의 범위를 보존한다.
 
 최신 추가 구현(2026-09-29): 지원용 v0.1 Era별 곡 관리, localStorage 저장·복원, iTunes Search API 기반 검색·선택 추가 완료. Live Demo 배포 완료(사용자 확인 및 README 기준). 아래 Phase 1 구조·줄 수·리팩터링 설명은 2026-09-22 당시 기록이며, 최신 곡 기능과 검증은 마지막 절을 따른다.
 
@@ -239,8 +239,8 @@ App에는 프로필·Era 배열·선택/수정 ID·모달 표시 상태, 데이�
 | Phase 1 — Era 기반 안정화 | 일부 완료 / 나머지 예정 | 생성·선택·수정·Timeline과 App 구조·타입·util 분리 완료. Era 삭제, 폼 검증 개선, 모바일·반응형 검증은 남아 있음. |
 | Phase 2 — 지속성 | 완료 | 프로필·Era·Track·관계를 단일 JSON으로 저장·복원. 누락/잘못된 값과 저장 예외 처리. 임시 UI 상태·migration·버전 관리는 제외. |
 | Phase 3 — 음악 Archive 기반 | 일부 완료 | v0.1 최소 Track·EraTrack, Era별 수동 곡 추가·목록·삭제 완료. 기존 Track을 여러 Era에 연결하는 UI는 미구현. 미사용 관계 metadata는 추가하지 않음. |
-| Phase 4 — Seed | 현재 범위 완료 | 기존 Era 곡·검색·직접 입력 후보, 선택·해제, 현재 구현 최소 5곡 확정 (Phase 5 A에서 변경 예정), 최대 제한 없음. 완료 시 Era 내 중복 없이 Archive 저장 후 상세 복귀. 역사적 인기곡 공급은 미결정·미구현. |
-| Phase 5 — Memory Reconstruction | 예정 / target, 미구현 | Strong Seed 2~3곡 권장·최소 없음, 15곡 round의 밀도 높은 목록/표와 세 평가·미평가 구분. HISTORICAL_CHART / CO_CHART / SAME_ARTIST / RELATED_ARTIST를 점진적으로 혼합. LISTENED만 현재 Era Anchor로 사용하고 untouched·NOT_LISTENED·UNASSIGNED는 제외. 중단 후 Archive, Era Detail에서 기억 더 찾기. |
+| Phase 4 — Seed | 현재 범위 완료 | 기존 Era 곡·검색·직접 입력 후보, 선택·해제, 당시 최소 5곡 확정 (현재 A에서 제한 제거), 최대 제한 없음. 완료 시 Era 내 중복 없이 Archive 저장 후 상세 복귀. 역사적 인기곡 공급은 미결정·미구현. |
+| Phase 5 — Memory Reconstruction | A·B·C 완료 / D~I 예정 | Strong Seed 2~3곡 권장·최소 없음, 15곡 round의 밀도 높은 목록/표와 세 평가·미평가 구분. HISTORICAL_CHART / CO_CHART / SAME_ARTIST / RELATED_ARTIST를 점진적으로 혼합. LISTENED만 현재 Era Anchor로 사용하고 untouched·NOT_LISTENED·UNASSIGNED는 제외. 중단 후 Archive, Era Detail에서 기억 더 찾기. |
 | Phase 6 — Unassigned | 예정 | 별도 UnassignedTrack 모델과 보관함, Era 선택·재배정과 여러 Era 저장. `sourceEraId`는 발견 맥락 Candidate이며 청취 Era가 아님. 중복·여러 출처·배정 후 잔류/삭제·저장 세부사항은 결정 후 구현. |
 | Phase 7 — Playlist / Archive 경험 | 예정 | 내부 Era Playlist, Life Timeline→음악 기록 탐색, 전체 기억 복원 경험 연결. |
 
@@ -250,13 +250,13 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 
 추천은 Seed와 사용자 피드백을 우선한다. 같은 아티스트·관련 아티스트·co-chart는 Phase 5 target source다. Personal은 이 source들이 Anchor로 개인화되는 상위 개념이며 단일 generator가 아니다. 장르·당시 연령/생활 단계·국가/시장은 Candidate이고 명시적 genre metadata scoring은 Later다. 추천은 한 곡씩 넘기는 UI가 아니며, 각 항목의 앨범 이미지·제목·아티스트·발매 시기·평가 상태를 목록에서 확인하는 방향이다. 별도 정렬 선택 기능은 현재 범위에 추가하지 않는다.
 
-### Phase 5 — 작은 구현 단계 (모두 예정)
+### Phase 5 — 작은 구현 단계 (A·B·C 완료, D~I 예정)
 
 | 단계 | 목표 |
 | --- | --- |
-| A | 현재 Seed 최소 5곡 조건 제거, 2~3곡 권장·0곡 건너뛰기. 최종 Strong Seed는 해당 Era 청취 확인으로 Archive/EraTrack에 연결. 별도 영구 Seed entity 없음. |
-| B | 15곡 후보 목록, LISTENED / UNASSIGNED / NOT_LISTENED와 untouched 구분. 미평가 feedback 미생성. |
-| C | round session·다음 후보 흐름, 강제 round 수 없이 중단·Archive 복귀·기억 더 찾기. session 저장 방식은 Needs Decision. |
+| A (완료) | Seed 최소 5곡 조건 제거, 2~3곡 권장·0곡 건너뛰기. 최종 Strong Seed는 해당 Era 청취 확인으로 Archive/EraTrack에 연결. 별도 영구 Seed entity 없음. |
+| B (현재 범위 완료) | Reconstruction 기본 화면, 전달받은 후보 목록·세 응답·선택 취소·완료 callback. 앱 후보는 빈 배열이며 fake/Archive/실험 후보 없음. 임시 응답만 관리하고 영구 feedback 미생성. |
+| C (현재 범위 완료) | 메모리 ReconstructionSession, Strong Seed ID snapshot·round별 candidateIds/explicit responses·다음 round 번호. 완료 후 상세 복귀, 실제 다음 후보 및 재개 연결은 D 이후. session 영구 저장 없음. |
 | D | HISTORICAL_CHART 후보 source 연결. 실험 Circle dataset과 제품 공급 방식은 구분. |
 | E | Confirmed LISTENED Track을 다음 round Anchor로 활용. 최초 Strong Seed와 의미는 구분하되 고정 수치 weight는 미정. |
 | F | SAME_ARTIST / CO_CHART source 연결. |
@@ -373,3 +373,29 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - rating 3은 이번 평가에서 관찰되지 않았다. v1/v1.1/v1.2에서 일부 후보를 이미 본 repeated exposure가 있어 strict blind recall test가 아니다. 잊었던 곡 복원이 불가능하다고 결론 내리지 않으며 Phase 5 fresh/unseen 후보로 재평가한다.
 - 현재 standalone Personal Recall experiment series concluded: v1.3 추가 튜닝 대신 결과를 Phase 5 source-mix 설계에 통합한다. 실제 제품 평가에서 필요성이 확인되면 후속 연구 가능.
 - D-25 제품 target과 현재 Phase 4 최소 5곡 동작의 차이를 기록했다. 코드·기존 실험 결과·AGENTS·앱 README는 수정하지 않았으며 앱 검사·브라우저 검증·API 실행·commit/push는 수행하지 않았다.
+
+### 2026-10-01 — Phase 5 A Strong Seed 진입 UX
+
+- SeedSelection의 5곡 버튼 제한과 App의 확정 후 최소 5곡 guard 제거. 2~3곡 권장 안내·현재 선택 개수만 표시하고 0곡에도 진행 가능. 최대 제한 없음.
+- 0곡 완료는 music 상태를 갱신하지 않고 `{ eraId, trackIds: [] }` 임시 세션만 남긴다. 1곡 이상은 기존 addTracksToEra로 확정·중복 ID 재사용·Archive 저장. 선택 중에는 임시 상태만 변경하며 세션은 localStorage에 저장하지 않는다.
+- 완료 후 Era Detail 복귀는 유지한다. App의 handleCompleteSeeds 마지막 화면 전환이 B 연결 지점이며 Reconstruction·15곡 후보·추천·Feedback는 아직 미구현.
+- 검증: Node에서 TypeScript를 변환한 React hook mock으로 0/1/2/3/4/6곡 완료, 0곡 Archive 불변·빈 세션, 저장 데이터 재초기화, 기존 곡 중복 관계 미생성, 검색·직접 입력 초안 선택, future/종료월/날짜 미상, cross-Era 비병합·UUID 확인. 실제 브라우저와 실시간 iTunes API는 검증하지 않았다.
+- npm run lint 및 npm run build(TypeScript 포함) 통과. 공통 검색·중복·storage 유틸, dependency와 미커밋 이미지 변경 없음. commit/push 미실행.
+
+### 2026-10-02 — Phase 5 B Reconstruction 기본 화면
+
+- Strong Seed 완료는 빈 trackIds 세션도 Reconstruction으로 연결한다. 기존 선택 boolean을 detail / seeds / reconstruction 화면 값으로 대체했으며 완료 여부를 곡 개수로 판단하지 않는다. Strong Seed의 기존 Archive 확정 규칙은 유지한다.
+- Reconstruction은 Era 맥락·Round 1·TrackSummary 후보 표시·범례·응답 개수·세 선택을 제공한다. 후보는 `{ id, track: TrackInput }`이며 후보 ID는 영구 Track ID가 아니다. 동일 응답 재클릭 시 CandidateResponse를 제거하며 untouched는 status나 레코드로 만들지 않는다.
+- App은 실제 후보 소스가 없어 빈 배열을 전달한다. 자연스러운 empty state와 상세 복귀만 표시하며 fake 곡·Archive 후보·실험 JSON을 사용하지 않는다. 후보가 있을 때 완료 callback은 선택된 응답만 전달하고 App은 저장 없이 상세로 임시 복귀한다.
+- C의 round/session 처리·다음 round, D 이후 source 연결, LISTENED Archive 반영·Unassigned·영구 Feedback는 아직 미구현. PRODUCT_SPEC/DECISIONS의 A 단계 설명은 앞선 상태를 보존하며 최신 실제 구현은 이 기록을 따른다.
+- 검증: React hook mock으로 0/1/3/6곡 Strong Seed 완료→Reconstruction→상세, localStorage 복원, 0 candidates, mock 후보 표시, 세 응답·변경·취소·untouched 제외·완료 callback, 응답 중 저장 없음, 기존 중복·발매월 필터 확인. 실제 브라우저 및 live iTunes 요청은 미검증.
+- npm run lint·npm run build(TypeScript 포함) 통과. 기존 A 변경·미커밋 이미지 유지, 새 dependency·commit/push 없음.
+
+### 2026-10-02 — Phase 5 C 메모리 session·round 이력
+
+- 기존 Strong Seed 세션을 ReconstructionSession으로 확장해 `eraId`, `strongSeedTrackIds`, `currentRoundNumber`, `completedRounds`를 한곳에서 관리한다. 빈 Strong Seed도 session 생성 가능. 누적 응답·shown IDs·status별 IDs는 completedRounds에서 도출하며 중복 상태로 저장하지 않는다.
+- Reconstruction은 roundNumber를 받아 표시하고 `{ roundNumber, candidateIds, responses }`를 전달한다. candidateIds는 untouched를 포함한 표시 이력이고 responses는 최종 명시적 응답만 포함한다. 후보 생성자는 round 간 안정적인 ID를 제공해야 하며 Track ID와 구분한다.
+- App에서 현재 Era·round를 확인해 결과 snapshot을 추가하고 다음 번호로 갱신한다. 같은 round 중복 기록을 막는다. 다음 후보는 생성하지 않으며 완료 후 상세 복귀해 빈 Round 2를 자동 표시하지 않는다. D는 현재 빈 candidates 전달 지점 및 session의 Strong Seed/표시/응답 이력을 활용할 수 있다.
+- Archive·Feedback·Unassigned에 round 응답을 반영하지 않고 session을 localStorage에 저장하지 않는다. 새로고침 시 session은 사라지며 기존 음악 저장 schema와 Strong Seed 확정 규칙은 유지한다.
+- 검증: React hook mock으로 Seed 0/1/4곡 session 생성, 응답 세 상태·변경·취소, untouched 표시 이력, 완료 기록·snapshot 불변·중복 완료 차단·다음 번호·상세 복귀, 저장 불변·새로고침 session 미복원·기존 Track 복원 및 empty state 확인. 실제 브라우저·외부 API 미검증.
+- npm run lint·npm run build(TypeScript 포함) 통과. PRODUCT_SPEC/DECISIONS는 추가 편집하지 않고 기존 변경을 보존했다. 이미지·dependency·storage 유틸 변경 및 commit/push 없음.

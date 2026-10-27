@@ -4,8 +4,10 @@ import Timeline from './components/Timeline'
 import EraDetail from './components/EraDetail'
 import EraModal from './components/EraModal'
 import SeedSelection from './components/SeedSelection'
+import Reconstruction from './components/Reconstruction'
 import type { Era, EraFormValues } from './types/era'
 import type { Track, EraTrack, TrackInput } from './types/track'
+import type { ReconstructionRoundResult, ReconstructionSession } from './types/reconstruction'
 import { addTracksToEra } from './utils/track'
 import { formatMonth } from './utils/date'
 import { createSchoolEras } from './utils/era'
@@ -24,8 +26,8 @@ function App() {
   const [selectedEraId, setSelectedEraId] = useState<string | null>(null)
   const [editingEraId, setEditingEraId] = useState<string | null>(null)
   const [isEraModalOpen, setIsEraModalOpen] = useState(false)
-  const [isSelectingSeeds, setIsSelectingSeeds] = useState(false)
-  const [reconstructionSession, setReconstructionSession] = useState<{ eraId: string; trackIds: string[] } | null>(null)
+  const [musicView, setMusicView] = useState<'detail' | 'seeds' | 'reconstruction'>('detail')
+  const [reconstructionSession, setReconstructionSession] = useState<ReconstructionSession | null>(null)
 
   useEffect(() => {
     saveArchive({ userProfile, eras, music })
@@ -75,10 +77,30 @@ function App() {
     const era = eras.find((item) => item.id === selectedEraId)
     if (!era) return
     const result = addTracksToEra(era, selected, music)
-    if (result.trackIds.length < 5) return
-    setMusic(result.music)
-    setReconstructionSession({ eraId: era.id, trackIds: result.trackIds })
-    setIsSelectingSeeds(false)
+    if (result.trackIds.length > 0) setMusic(result.music)
+    setReconstructionSession({
+      eraId: era.id, strongSeedTrackIds: [...result.trackIds],
+      currentRoundNumber: 1, completedRounds: [],
+    })
+    setMusicView('reconstruction')
+  }
+
+  function handleCompleteRound(result: ReconstructionRoundResult) {
+    setReconstructionSession((previous) => {
+      if (!previous || previous.eraId !== selectedEraId
+        || previous.currentRoundNumber !== result.roundNumber) return previous
+      return {
+        ...previous,
+        currentRoundNumber: previous.currentRoundNumber + 1,
+        completedRounds: [...previous.completedRounds, {
+          roundNumber: result.roundNumber,
+          candidateIds: [...result.candidateIds],
+          responses: result.responses.map((response) => ({ ...response })),
+        }],
+      }
+    })
+    // 다음 후보는 D에서 연결한다. 빈 다음 round를 자동으로 열지 않는다.
+    setMusicView('detail')
   }
 
   function handleRemoveTrack(trackId: string) {
@@ -123,9 +145,16 @@ function App() {
     music.eraTracks.some((relation) => relation.eraId === selectedEraId && relation.trackId === track.id),
   ).sort((a, b) => a.artist.localeCompare(b.artist, 'ko'))
 
-  if (isSelectingSeeds && selectedEra) {
+  if (musicView === 'seeds' && selectedEra) {
     return <SeedSelection key={selectedEra.id} era={selectedEra} tracks={selectedTracks}
-      onBack={() => setIsSelectingSeeds(false)} onComplete={handleCompleteSeeds} />
+      onBack={() => setMusicView('detail')} onComplete={handleCompleteSeeds} />
+  }
+
+  if (musicView === 'reconstruction' && selectedEra && reconstructionSession?.eraId === selectedEra.id) {
+    return <Reconstruction key={`${selectedEra.id}-${reconstructionSession.currentRoundNumber}`} era={selectedEra}
+      roundNumber={reconstructionSession.currentRoundNumber} candidates={[]}
+      onBack={() => setMusicView('detail')}
+      onCompleteRound={handleCompleteRound} />
   }
 
   return (
@@ -160,8 +189,8 @@ function App() {
 
       {selectedEra && (
         <EraDetail era={selectedEra} onEdit={openEditEraModal}
-          onStartReconstruction={() => setIsSelectingSeeds(true)}
-          confirmedSeedCount={reconstructionSession?.eraId === selectedEra.id ? reconstructionSession.trackIds.length : 0}
+          onStartReconstruction={() => setMusicView('seeds')}
+          confirmedSeedCount={reconstructionSession?.eraId === selectedEra.id ? reconstructionSession.strongSeedTrackIds.length : 0}
           tracks={selectedTracks} onAddTrack={handleAddTrack} onRemoveTrack={handleRemoveTrack} />
       )}
 

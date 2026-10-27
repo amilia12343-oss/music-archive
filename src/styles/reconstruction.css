@@ -1,0 +1,23 @@
+.reconstruction {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.reconstruction-empty {
+  padding: 24px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.reconstruction-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.reconstruction-actions button[aria-pressed='true'] {
+  background: #222;
+  color: white;
+}

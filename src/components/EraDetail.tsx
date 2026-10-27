@@ -40,7 +40,7 @@ function EraDetail({ era, onEdit, tracks, onAddTrack, onRemoveTrack, onStartReco
         </button>
       </div>
       <p><button type="button" onClick={onStartReconstruction}>기억 복원 시작</button></p>
-      {confirmedSeedCount > 0 && <p role="status">대표곡 {confirmedSeedCount}곡 선택을 완료했습니다. 기억 복원 추천 화면은 준비 중입니다.</p>}
+      {confirmedSeedCount > 0 && <p role="status">이 시절에 들은 대표곡 {confirmedSeedCount}곡을 확인했습니다.</p>}
       <EraTracks key={era.id} endMonth={era.endMonth} tracks={tracks} onAdd={onAddTrack} onRemove={onRemoveTrack} />
     </section>
   )
