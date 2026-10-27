@@ -104,3 +104,16 @@ Coverage와 permission은 별개다. 해당 월 자료가 있어도 허용 목�
 | session 진행 중 노출 이력 | 완료 전 이탈·다음 round 재개에서도 동일 후보 exclusion을 어떻게 보장할지 결정 |
 
 D0 문서 검토 기준: releaseDate와 차트 period 분리, 반복 등장의 기록 보존, source 간 중복 후보 제거, 안정적 ID, Seed UUID 대응, untouched shown 제외, 0 Seed, 누락/미허가 상태, 시기 균형 및 15곡 미만 처리. 후속 구현에서 실제 허가된 자료로 검증하기 전까지 설계 검토를 실행 검증으로 표시하지 않는다.
+
+## 9. Phase 5 D1 구현 경계 — 2026-10-27
+
+D0는 위 설계 당시 기록이다. D1에서는 [입력 타입](../src/types/historical.ts)과 [순수 선정 함수](../src/utils/historical.ts)만 구현했다. 실제 출처 확보·권한 검증·수집·카탈로그 매핑 구축·App 연결은 아직 미구현이며 Circle 답변 대기 상태는 변하지 않는다.
+
+- HistoricalData는 ready/failed를 구분한다. ready는 sourceId와 월간 주기, 검토된 catalogTrackId+TrackInput 목록, 월별 순위 목록이다. 단일 시리즈·허용된 기간/용도·canonical identity 및 원본 충돌 검토는 호출 측 선행 조건이다. sourceId는 이용 허가 증명이 아니며 DB/서버 모델도 아니다. 여러 시리즈를 합쳐 rank를 비교하지 않는다.
+- StrongSeedCatalogMatch는 Archive UUID→카탈로그 ID 대응을 명시한다. null은 전체 카탈로그 검토 결과 대응 곡 없음이며, 현재 시리즈의 tracks 부재나 매핑 생략과 구분한다. session의 모든 Strong Seed에 정확히 하나의 검증된 대응이 있어야 한다. 외부 검증된 catalogTrackId는 현재 HistoricalData.tracks에 없어도 historical:<catalogTrackId> 제외 집합에 반영하고 선정을 진행한다. 누락·중복/충돌·빈 ID이면 seed_mapping_required로 공급을 보류한다. 자동 title 매칭·alias 추론은 구현하지 않았다.
+- D0 baseline을 D1의 검증 가능한 기본값으로 구현: 전체 Era 달력을 최대 3개 연속 구간으로 분할, 3구간 각 5곡(2구간 8/7곡), 월별 rank·동률 ID 순 큐를 순환한다. round 번호로 시작 월을 회전하고 구간 부족분은 남은 큐에서 순환 충당한다. 전체 최대 15곡·catalogTrackId당 1곡이며 실제 부족하면 적은 수만 반환한다. 결과 표시는 아티스트 오름차순이다. 이 baseline은 향후 품질 평가에 따라 조정할 수 있으며 source mix 제품 비율의 확정이 아니다.
+- completedRounds의 candidateIds와 별도 shownCandidateIds를 제외한다. 후자는 현재/중도 이탈 round의 노출 이력을 상위가 제공할 연결점이며, D1이 이력을 자동 저장하는 것은 아니다. 후보 ID는 historical:<catalogTrackId>로 안정적이다.
+- 결과는 { status, candidates: ReconstructionCandidate[] }. ready는 1~15곡, no_period_data는 유효한 Era 내 순위 기록 없음, no_eligible_candidates는 기록은 있지만 제외/품질 조건 후 공급할 곡 없음이다. supply_failed는 상위 데이터 공급 실패, seed_mapping_required는 Seed 대응 미완료, invalid_input은 잘못된 Era/session 또는 중복 canonical ID 등 계약 오류다. no_eligible_candidates는 오직 제외 때문이라고 단정하지 않으며 coverage/권한의 상세 진단은 상위 책임이다.
+- 발매일을 차트 월로 만들지 않는다. D0의 곡 단위 발매/차트 이력 충돌 검토는 데이터 공급 측 선행 계약이다. 공급 측은 Era 밖을 포함한 확보된 이력과 metadata 근거를 검토해 충돌을 해결하거나 해당 곡을 보류한 뒤 ready 데이터를 전달한다. D1의 isTrackAvailableForEra(track, entry.month)는 행 단위 안전장치로, 알려진 발매 월보다 이른 차트 행만 제외한다. 잘못된 과거 행이 있어도 발매 월/이후의 유효한 행은 사용할 수 있으며 곡 전체를 자동 보류하거나 충돌 검토 완료를 증명하지 않는다. 월간 차트이므로 발매 월과 같은 월은 허용하고 날짜·원본 행을 수정하지 않는다. 별도 곡 단위 검증 시스템은 D1에 추가하지 않는다. 이미지/발매일 미상은 허용하고 지원되지 않는 optional metadata는 출력에서 생략한다. 원본 입력은 수정하지 않으며 출력 TrackInput도 복사한다.
+- 향후 App은 round 시작 시 session·데이터·Seed 매핑·shown 목록의 snapshot으로 한 번 선정하고 결과 배열을 해당 round 동안 유지해야 한다. 렌더/응답 변경마다 다시 호출하지 않는다. 동일 입력은 결정적이지만 데이터·매핑이 바뀌면 결과도 바뀔 수 있으므로 순수 함수만으로 round 고정성을 보장하지 않는다. 현재 App candidates=[]·Archive/localStorage·session 타입에는 변경이 없다.
+- 검증은 [합성 fixture 테스트](../tests/historical.test.mjs)로만 수행한다: node --test tests/historical.test.mjs. 실제 차트·실험 JSON·외부 API는 사용하지 않으며 테스트 음악은 production에서 import하지 않는다.
