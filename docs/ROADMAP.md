@@ -259,6 +259,7 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 | C (현재 범위 완료) | 메모리 ReconstructionSession, Strong Seed ID snapshot·round별 candidateIds/explicit responses·다음 round 번호. 완료 후 상세 복귀, 실제 다음 후보 및 재개 연결은 D 이후. session 영구 저장 없음. |
 | D0 (설계 문서 완료) | [과거 음악 데이터 설계](HISTORICAL_MUSIC_DATA.md): Track/ChartSource/ChartEntry 책임·권한/coverage·identity·기간 균형 제안. 모델 코드·데이터 확보·후보 공급은 미구현. |
 | D1 (로직 구현 완료) | 검토된 월간 입력에서 기간 균형·Seed/기노출 제외·중복 제거·최대 15곡 선정. 합성 데이터로 검증. 실제 데이터 및 App 공급 연결은 미구현. |
+| D2 (설계·형식 검사 완료) | [AI 제안 계약](AI_CANDIDATE_CONTRACT.md). JSON title/artist 형식·크기·표기 중복 검사만 구현. AI API·metadata 검증·최종 후보 공급·App 연결 미구현. D3~D6는 제안. |
 | D (연결 예정) | 허가·품질 확인 후 HISTORICAL_CHART 후보 source 연결. D0 문서 완료와 실제 공급을 구분하며 실험 Circle dataset은 자동 전용하지 않음. |
 | E | Confirmed LISTENED Track을 다음 round Anchor로 활용. 최초 Strong Seed와 의미는 구분하되 고정 수치 weight는 미정. |
 | F | SAME_ARTIST / CO_CHART source 연결. |
@@ -415,3 +416,10 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - Strong Seed는 확인된 UUID→catalogTrackId 매핑으로 제외하며 누락 시 보류한다. completedRounds와 상위가 전달하는 현재 shown ID를 제외한다. 자료 없음·후보 소진·공급 실패·매핑 필요·입력 오류를 결과에서 구분한다.
 - tests/historical.test.mjs는 실제 차트와 무관한 합성 fixture만 사용한다. 0 Seed, 노출 제외, 월 중복, 1개월/36개월, 양끝 경계, 15 미만/빈 기간/편중 자료, 안정 ID·입력 불변·발매일 충돌을 검증했다. 실행: node --test tests/historical.test.mjs. 합성 테스트 13개 및 npm run lint·npm run build(TypeScript 포함) 통과.
 - 실제 허가 검증·자료 공급·App candidates=[] 연결·round 시작 snapshot 보관·다음 Round 생성·feedback 저장은 미구현. 기존 이미지·Archive/localStorage·의존성·App 코드는 변경하지 않았고 commit/push하지 않았다. 상세 계약은 [D1 구현 경계](HISTORICAL_MUSIC_DATA.md#9-phase-5-d1-구현-경계--2026-10-27)를 따른다.
+
+### 2026-10-28 — Phase 5 D2 AI 곡 제안 계약
+
+- D1과 별도로 AI 곡 제안→음악 metadata/identity/날짜 검증→Seed/shown 제외→최대 15곡의 계약을 설계했다. fake ChartEntry를 만들지 않고 D1·App·Archive/localStorage는 유지한다.
+- types/aiCandidate.ts와 utils/aiCandidate.ts는 곡명·아티스트 JSON 형식 검사만 구현한다. valid는 곡 존재·정체성·날짜·청취 검증을 뜻하지 않는다.
+- 모델/공급자·안전한 실행 위치·Unknown 날짜 허용·source taxonomy/비율·canonical ID·다양성 수치·정확한 예산은 Needs Decision. D3~D6는 [계약 문서](AI_CANDIDATE_CONTRACT.md)의 제안이며 실제 API·키·서버·DB는 추가하지 않았다. 사적 실험의 후보/응답/정확한 성과 집계는 공개 기록으로 복제하지 않았다.
+- 검증: 합성 AI 형식 테스트 6개와 기존 D1 회귀 16개 통과(총 22개), npm run lint·npm run build(TypeScript 포함) 통과. 실제 API·metadata·브라우저·비용·추천 품질은 검증하지 않았다.

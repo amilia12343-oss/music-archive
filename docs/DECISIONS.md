@@ -226,6 +226,10 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 | O-08 (Resolved) | 앞선 구조 검토: 리팩터링 경계 | 2026-09-22 D-21로 확정하고 구현 완료. 추적 이력을 위해 행을 유지하며 더 이상 Open Decision이 아니다. | 해결됨: D-21 |
 | O-09 | 사용자 방향 + 설계 검토: 내부 Playlist·라우팅 | Playlist가 Era Archive의 표현인지 별도 모델인지, 독립 URL·라우터가 필요한 시점은 미정. | 해당 화면의 실제 확장 시 |
 
+### Phase 5 D2 — AI 경로 검토 / Needs Decision (2026-10-28)
+
+[AI 제안 계약](AI_CANDIDATE_CONTRACT.md)은 곡 제안과 음악 metadata 근거 검증을 분리한다. D2 형식 검사만 구현했고 AI 공급은 미구현이다. AI를 HISTORICAL_CHART 증거로 쓰지 않으며 D1·Archive 정책은 유지한다. 기존 generator taxonomy와의 관계·모델/공급자·실행 위치·날짜 미상 허용·canonical ID·다양성 수치/비율·정확한 예산은 Needs Decision이다. D3~D6는 제안이며 현재 구현 권한으로 확대하지 않는다.
+
 ## Superseded / Historical Alternative
 
 아래 두 항목은 사용자가 이번 문서 보완에서 알려준 과거 검토 아이디어다. 실제 최초 논의 날짜는 알 수 없으며 기록일은 2026-09-22다. 현재 요구로 복구하지 않고 이 문서에만 남긴다.

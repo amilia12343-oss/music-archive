@@ -226,6 +226,8 @@ RecommendationFeedback {
 
 1990년~현재의 장기 카탈로그와 2016~2018년 첫 검증을 검토한다. 곡 자체·차트 출처·기간별 순위를 분리하고 발매일을 차트 등장 시기로 대체하지 않는다. 권한 및 coverage 확인이 공급의 선행 조건이며 Circle 문의는 사용자 보고 기준 답변 대기다. 허가 미확인 Circle/Melon 자료는 production에 연결하지 않는다. 상세 책임·후보 선정 제안과 미결정 사항은 [D0 설계](HISTORICAL_MUSIC_DATA.md)를 따른다. D1에서 검토된 월간 입력을 받는 최대 15곡 선정 순수 로직을 합성 fixture로 구현·검증했다. A~C 및 D1 로직과 별개로 실제 데이터 공급·App 연결·다음 Round 생성·feedback 영구 저장은 여전히 미구현이다.
 
+AI를 곡명·아티스트 제안 수단으로 검토하는 D2 계약과 독립 형식 검사는 [AI 후보 계약](AI_CANDIDATE_CONTRACT.md)에 기록한다. 존재·정체성·날짜 검증과 AI 공급은 미구현이며 기존 generator/source mix를 대체하는 결정은 아니다.
+
 ### Candidate / Needs Decision
 
 - RecommendationFeedback의 구체적인 타입과 persistence 구현 세부사항. 모델의 유지, 세 가지 명시적 status, Era별 반응과 미평가 레코드 미생성 방향 자체는 미정이 아니다.
