@@ -260,6 +260,7 @@ Phase 5의 `UNASSIGNED` 선택에는 최소 보관 처리가 필요하므로 Pha
 | D0 (설계 문서 완료) | [과거 음악 데이터 설계](HISTORICAL_MUSIC_DATA.md): Track/ChartSource/ChartEntry 책임·권한/coverage·identity·기간 균형 제안. 모델 코드·데이터 확보·후보 공급은 미구현. |
 | D1 (로직 구현 완료) | 검토된 월간 입력에서 기간 균형·Seed/기노출 제외·중복 제거·최대 15곡 선정. 합성 데이터로 검증. 실제 데이터 및 App 공급 연결은 미구현. |
 | D2 (설계·형식 검사 완료) | [AI 제안 계약](AI_CANDIDATE_CONTRACT.md). JSON title/artist 형식·크기·표기 중복 검사만 구현. AI API·metadata 검증·최종 후보 공급·App 연결 미구현. D3~D6는 제안. |
+| D3 (현재 범위 완료) | Era/session·Archive·메모리 후보 lookup에서 AI 요청 데이터 생성. 0 Seed·LISTENED/제외 분리·누락/문맥 초과 보류. App·API·prompt transport는 미연결. |
 | D (연결 예정) | 허가·품질 확인 후 HISTORICAL_CHART 후보 source 연결. D0 문서 완료와 실제 공급을 구분하며 실험 Circle dataset은 자동 전용하지 않음. |
 | E | Confirmed LISTENED Track을 다음 round Anchor로 활용. 최초 Strong Seed와 의미는 구분하되 고정 수치 weight는 미정. |
 | F | SAME_ARTIST / CO_CHART source 연결. |
@@ -423,3 +424,9 @@ Notion은 선택적 개발 기록 수단이다. 자동 관리하지 않는다. �
 - types/aiCandidate.ts와 utils/aiCandidate.ts는 곡명·아티스트 JSON 형식 검사만 구현한다. valid는 곡 존재·정체성·날짜·청취 검증을 뜻하지 않는다.
 - 모델/공급자·안전한 실행 위치·Unknown 날짜 허용·source taxonomy/비율·canonical ID·다양성 수치·정확한 예산은 Needs Decision. D3~D6는 [계약 문서](AI_CANDIDATE_CONTRACT.md)의 제안이며 실제 API·키·서버·DB는 추가하지 않았다. 사적 실험의 후보/응답/정확한 성과 집계는 공개 기록으로 복제하지 않았다.
 - 검증: 합성 AI 형식 테스트 6개와 기존 D1 회귀 16개 통과(총 22개), npm run lint·npm run build(TypeScript 포함) 통과. 실제 API·metadata·브라우저·비용·추천 품질은 검증하지 않았다.
+
+### 2026-10-28 — Phase 5 D3 순수 요청 입력 변환
+
+- types/aiRequest.ts·utils/aiRequest.ts: Era·round·제안 수와 title/artist만 반환한다. Strong Seed UUID는 Archive에서, 이전 LISTENED/기노출 곡은 별도 같은 Era/session 후보 snapshot에서 조회한다. session에 곡 metadata가 없다는 경계를 명시했다.
+- NOT_LISTENED·UNASSIGNED·untouched를 positive로 쓰지 않고 shown 제외에는 보존한다. 참조 누락/충돌·입력 오류·문맥 초과를 구분하고 이력을 조용히 생략하지 않는다. 실제 lookup 보관·App·AI API·prompt/transport는 미구현이다.
+- tests/ai-request.test.mjs 합성 11개, D2/D1 회귀 포함 총 33개 및 npm run lint·npm run build(TypeScript 포함) 통과. 실제 API·모델·metadata·브라우저·비용 미검증. D1·Reconstruction·Archive/localStorage·이미지·dependency 변경 및 commit/push 없음. 상세는 [D3 계약](AI_CANDIDATE_CONTRACT.md)을 따른다.

@@ -228,7 +228,7 @@ Resolved로 표시한 이력 행을 제외한 아래 질문은 아직 확정되�
 
 ### Phase 5 D2 — AI 경로 검토 / Needs Decision (2026-10-28)
 
-[AI 제안 계약](AI_CANDIDATE_CONTRACT.md)은 곡 제안과 음악 metadata 근거 검증을 분리한다. D2 형식 검사만 구현했고 AI 공급은 미구현이다. AI를 HISTORICAL_CHART 증거로 쓰지 않으며 D1·Archive 정책은 유지한다. 기존 generator taxonomy와의 관계·모델/공급자·실행 위치·날짜 미상 허용·canonical ID·다양성 수치/비율·정확한 예산은 Needs Decision이다. D3~D6는 제안이며 현재 구현 권한으로 확대하지 않는다.
+[AI 제안 계약](AI_CANDIDATE_CONTRACT.md)은 곡 제안과 음악 metadata 근거 검증을 분리한다. D2 형식 검사와 D3 순수 요청 입력 변환(Archive UUID 조회·별도 메모리 후보 lookup 계약)을 구현했으며 AI 공급·실제 lookup 보관·App 연결은 미구현이다. AI를 HISTORICAL_CHART 증거로 쓰지 않으며 D1·Archive 정책은 유지한다. 기존 generator taxonomy와의 관계·모델/공급자·실행 위치·날짜 미상 허용·canonical ID·다양성 수치/비율·정확한 예산은 Needs Decision이다. D3~D6는 제안이며 현재 구현 권한으로 확대하지 않는다.
 
 ## Superseded / Historical Alternative
 

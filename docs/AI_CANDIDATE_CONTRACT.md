@@ -1,6 +1,6 @@
 # Phase 5 D2 — AI 곡 제안 입력·검증 계약
 
-기록일: 2026-10-28. **D2 설계와 응답 형식 검사만 구현. AI API·metadata 검증·최종 후보 공급·App 연결은 미구현.**
+기록일: 2026-10-28. **D2 응답 형식 검사·D3 순수 요청 데이터 변환 구현. AI API·metadata 검증·최종 후보 공급·App 연결은 미구현.**
 
 [PRODUCT_SPEC](PRODUCT_SPEC.md)의 사용자 확인 원칙과 [Historical 설계](HISTORICAL_MUSIC_DATA.md)의 identity/권한 경계를 따른다. 특정 소형 모델의 품질·가격을 보장하거나 공급자/모델을 선정하지 않는다.
 
@@ -16,7 +16,7 @@
 
 사용자가 공유한 사적 탐색 실험은 입력 조건에 따라 결과가 달랐다는 관찰로만 참고한다. 일반적인 추천 정확도도, 소형 모델의 재현된 성능도 아니다. C의 덜 유명한 후보 조건 차이를 고려하고 같은 아티스트의 곡이라고 청취를 보장하지 않는다. 개별 곡·응답·정확한 성과 집계는 공개 repository 기록이나 production fixture로 복제하지 않는다.
 
-## 2. 최소 요청 타입 제안 — builder 미구현
+## 2. D2 당시 요청 타입 제안 — 이후 D3 구현은 8절
 
 - era: { startMonth, endMonth }
 - strongSeeds: { title, artist }[] — 0곡도 정상이며 해당 Era explicit positive.
@@ -24,7 +24,7 @@
 - excludeSongs: { title, artist }[] — Seed와 기노출 후보를 제외하도록 주는 힌트.
 - requestedCount: 제한된 제안 수. 최종 표시 최대 15곡과 구분하며 탈락 여유를 포함한 최대 30 제안을 검토한다.
 
-이 타입은 문서 제안이며 미사용 요청 타입을 코드에 선제 추가하지 않는다. birthYear·Era 설명·사용자 UUID·key는 요청에 필요하지 않다. context도 길이·곡 수 예산을 적용하고 어떤 최근 feedback을 남길지는 D3에서 검증한다. prompt context를 줄여도 코드 측 전체 제외 이력은 유지해야 한다. 외부 문자열은 명령이 아닌 데이터로 직렬화한다.
+위 priorFeedback 등은 D2 당시 제안이며 D3는 8절의 더 작은 계약을 구현했다. 미사용 요청 필드는 선제 추가하지 않는다. birthYear·Era 설명·사용자 UUID·key는 요청에 필요하지 않다. context도 길이·곡 수 예산을 적용하고 어떤 최근 feedback을 남길지는 D3에서 검증한다. prompt context를 줄여도 코드 측 전체 제외 이력은 유지해야 한다. 외부 문자열은 명령이 아닌 데이터로 직렬화한다.
 
 LISTENED만 현재 Era positive, NOT_LISTENED는 해당 Track의 negative이며 artist/genre 전체로 전파하지 않는다. UNASSIGNED는 negative나 현재 Era Anchor가 아니다. untouched는 priorFeedback에 생성하지 않되 shown 제외에는 포함한다. AI가 제외 지시를 지킨다고 의존하지 않는다.
 
@@ -87,11 +87,40 @@ D2 합성 테스트: 정상/빈/30/31개, 잘못된 JSON·top-level·code fence,
 
 후속 경계 테스트: 0 Seed, context 예산 초과, 정상 not-found vs lookup failure, 다른 artist/version, 종료월/다음월/Older/부분 날짜/재발매, alias·cross-source 중복, Seed/untouched shown·불명확 매핑, 15 미만·artist/연도 편중, 예산 소진·취소/late response·중복 실행, round snapshot, key 비노출·Archive/localStorage 불변.
 
-| 단계 (모두 예정) | 제안 완료 기준 |
+| 단계 (D3 요청 데이터 변환 완료, 나머지 예정) | 제안 완료 기준 |
 | --- | --- |
-| D3 | 공급자 독립 prompt/context builder·요청 예산/transport interface를 mock 검증. 서비스·모델·브라우저 key 노출 없는 실행 위치·개인정보 전달 범위 결정. 서버 도입 자동 승인 아님 |
+| D3 (현재 범위 완료) | 순수 요청 데이터·곡 조회 계약·합성 검증 완료. 실제 prompt/transport·호출 예산 집행·실행 위치는 미구현·Needs Decision. 서버 도입 자동 승인 아님 |
 | D4 | metadata 검증 adapter를 mock 중심으로 구현. identity·날짜 정밀도·future·조회 실패 분리. 공급자/이용조건·날짜 미상 정책 결정 |
 | D5 | canonical ID·Seed/shown/cross-source 제외·최대 15·단순 다양성·round snapshot. 조회 레지스트리 수명/이탈 처리 검증 |
 | D6 | 실행 위치·예산·이용조건 확정 후 별도 승인된 제한 실험/비용·실패율 측정 및 App 연결 검토. 실제 작은 모델로 fresh 평가. feedback 영구 저장·기존 E~I 자동 구현 아님 |
 
 AI를 기존 D-25 generator taxonomy에서 어떻게 분류할지, Historical과의 source 비율, 실제 서비스/모델·실행 위치, 검증 미상 허용·ID 규칙·수치 정책은 Needs Decision이다. D1을 폐기하거나 AI를 HISTORICAL_CHART로 위장하지 않는다.
+
+## 8. D3 요청 데이터 계약 — 2026-10-28 구현
+
+현재 정보 부족: completedRounds에는 candidateId와 status만 있고 곡 metadata가 없다. ID를 Archive UUID로 간주하거나 네트워크/실험 자료로 추측하지 않는다. [AiCandidateLookup](../src/types/aiRequest.ts)의 { eraId, candidates: readonly ReconstructionCandidate[] }를 별도 입력으로 받아 해결한다. 메모리 조회 계약일 뿐 실제 App 보관 코드는 아직 없다.
+
+[buildAiRecommendationRequest](../src/utils/aiRequest.ts)의 입력: Era·session·archiveTracks·candidateLookup·requestedCount·optional shownCandidateIds. Strong Seed UUID는 Archive에서, 완료/current/이탈 shown 후보는 lookup에서 정확히 하나를 조회한다. 필요한 곡이 없으면 metadata_missing, 중복 ID lookup·잘못된 Era/round·표시 목록 밖 응답 등은 invalid_input으로 요청을 보류한다. metadata_missing의 ID는 로컬 진단이며 AI 요청이 아니다.
+
+ready의 request에는 다음만 포함한다.
+
+| 필드 | 의미 |
+| --- | --- |
+| era.startMonth / endMonth | Era 양끝 월. ID·이름·설명·출생연도 없음 |
+| roundNumber | session.currentRoundNumber |
+| requestedCount | 1~30 정수 제안 수. 최종 표시 최대 15곡과 구분 |
+| strongSeeds | Archive 조회 후 title/artist만 복사. 0곡 정상 |
+| listenedSongs | 이전 완료 round에서 LISTENED인 후보의 title/artist |
+| excludeSongs | Strong Seed 및 모든 완료/current/이탈 shown의 title/artist. untouched 포함 |
+
+NOT_LISTENED·UNASSIGNED는 positive에 넣지 않고 표시된 곡으로만 excludeSongs에 남긴다. 일반 취향/아티스트 거부·negative preference 필드 자체가 없다. untouched는 response 없이 shown 제외에만 포함한다. UUID·candidateId·이미지·발매일·프로필은 요청에 복사하지 않는다.
+
+동일 candidateId가 여러 round에 존재하면 방어적으로 round 순서의 마지막 명시적 응답을 반영한다. round 내 중복 응답은 오류다. 이는 재노출 권장이 아니며 정상 흐름에서는 제외 로직으로 재등장을 막아야 한다. 서로 다른 alias ID의 status 충돌 해소는 후속 identity 정책이다.
+
+표기 중복은 D2의 NFKC·소문자·공백 비교로 각 목록에서 제거하며 live/remix를 병합하지 않는다. 이것이 canonical identity 검증은 아니다. 원본을 수정하지 않고 title/artist를 복사한다. 예산 baseline은 필드 200 JavaScript 문자·request JSON 전체 16,000 문자이며 초과 시 context_limit_exceeded다. 제외 이력을 조용히 자르지 않는다. provider token/비용 상한·정확한 요약/우선순위는 Needs Decision이다.
+
+lookup은 같은 Era뿐 아니라 같은 session의 안정적 snapshot이어야 한다. 함수는 eraId와 참조 무결성을 검사하지만 session 소유권을 자동 증명하지 않는다. 상위는 후보 표시 전에 snapshot을 등록하고 ID의 곡 의미를 session 중 바꾸지 않으며 새 session에서 lookup을 초기화해야 한다. 후보/이탈 shown의 실제 관리·재개 연결은 아직 미구현이다. missing lookup을 메우려고 후보를 Archive에 자동 저장하지 않는다.
+
+현재 App candidates=[]와 session/localStorage 계약은 그대로다. D3는 곡 존재·identity·발매를 검증하지 않는다. prompt/transport·AI API·키·네트워크·개인 실험 데이터 저장 없음. 다음 단계는 D4 metadata 검증, D5 canonical 제외·lookup 수명·round snapshot 연결 검토다.
+
+검증: [합성 요청 테스트](../tests/ai-request.test.mjs) 11개(0 Seed·UUID 조회·status/untouched 분리·누락·current shown·중복·참조/범위 오류·예산·입력 불변), 기존 D2/D1 포함 총 33개 통과. lint·TypeScript 포함 build 통과. 실제 API·모델·metadata·브라우저·비용은 미검증.
